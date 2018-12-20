@@ -195,7 +195,7 @@ namespace Institucion_Comercial
                         MessageBox.Show("Usuario No Encontrado");
                     }
                 } catch (Exception error) {
-                    MessageBox.Show(error.Message);
+                    MessageBox.Show(text: "Usuario No Encontrado");
                 }
             }
             

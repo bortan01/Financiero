@@ -108,5 +108,15 @@ namespace Institucion_Comercial
         {
             Application.Exit();
         }
+
+        private void ContenedorPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
