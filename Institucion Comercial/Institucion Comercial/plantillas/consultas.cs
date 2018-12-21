@@ -43,6 +43,11 @@ namespace Institucion_Comercial.plantillas
                 Close();
             }
         }
+
+        private void consulta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
  

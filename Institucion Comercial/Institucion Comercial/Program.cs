@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Institucion_Comercial
+namespace Institucion_Comercial.comercial
 {
     static class Program
     {
@@ -16,7 +16,7 @@ namespace Institucion_Comercial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new  SeleccionarCliente());
         }
     }
 }
