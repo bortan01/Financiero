@@ -61,6 +61,12 @@
     <Compile Include="comercial\SeleccionarProducto.Designer.cs">
       <DependentUpon>SeleccionarProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="comercial\VentaContado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comercial\VentaContado.Designer.cs">
+      <DependentUpon>VentaContado.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContenedorPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     </Compile>
     <EmbeddedResource Include="comercial\SeleccionarCliente.resx">
       <DependentUpon>SeleccionarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comercial\SeleccionarProducto.resx">
+      <DependentUpon>SeleccionarProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comercial\VentaContado.resx">
+      <DependentUpon>VentaContado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorPrincipal.resx">
       <DependentUpon>ContenedorPrincipal.cs</DependentUpon>

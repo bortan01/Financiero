@@ -26,13 +26,13 @@ namespace Institucion_Comercial.comercial
             private void button3_Click_1(object sender, EventArgs e)
         {
 
-            if (String.IsNullOrEmpty(consulta.Text.Trim()) == false)
+            if (String.IsNullOrEmpty(textConsulta.Text.Trim()) == false)
             {
                 //MessageBox.Show("va por aqui");
                 try
                 {
                     DataSet ds;
-                    String sql = "select * from instituciones_financieras.cliente where nombre like ('%"+textBox1.Text+"%')";
+                    String sql = "select * from instituciones_financieras.cliente where nombre like ('%"+textConsulta.Text+"%')";
                   // MessageBox.Show(sql);
 
                    ds = Utilidades.Ejecutar(sql);

@@ -20,6 +20,7 @@ namespace Institucion_Comercial
         {
             InitializeComponent();
         }
+        public static String codigo = "1";
 
         private void InitializeComponent()
         {
@@ -186,6 +187,7 @@ namespace Institucion_Comercial
 
                     if (nombre.Equals(dui))
                     {
+                       // codigo = ds.Tables[0].Rows[0]["id_empleado"].ToString().Trim();
                         ContenedorPrincipal cp = new ContenedorPrincipal();
                         this.Hide();
                         cp.Show();
