@@ -73,7 +73,7 @@ namespace Institucion_Comercial
         {
             try
             {
-                string cmd = String.Format("SELECT IDENT_CURRENT('instituciones_financieras.empleado')+1 as IdActual");
+                string cmd = String.Format("SELECT CASE WHEN (SELECT COUNT(1) FROM instituciones_financieras.empleado) = 0 THEN 1 ELSE IDENT_CURRENT('instituciones_financieras.empleado') + 1 END AS IdActual;");
                 DataSet ds = Utilidades.Ejecutar(cmd);
 
                 txtid.Text = ds.Tables[0].Rows[0]["IdActual"].ToString().Trim();

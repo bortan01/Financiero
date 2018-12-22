@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Institucion_Comercial.proveedores;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -117,6 +118,20 @@ namespace Institucion_Comercial
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void registrarToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            registroProveedores rp = new registroProveedores();
+            rp.MdiParent = this;
+            rp.Show();
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            consultaProveedores cp = new consultaProveedores();
+            cp.MdiParent = this;
+            cp.Show();
         }
     }
 }
