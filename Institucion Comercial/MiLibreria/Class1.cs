@@ -10,6 +10,18 @@ namespace MiLibreria
 {
     public class Utilidades
     {
+        public static DataTable LlenarCombos(String cmd)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=instituciones_financieras;Integrated Security=True");
+            con.Open();
+
+            DataTable dt = new DataTable();
+            SqlDataAdapter dp = new SqlDataAdapter(cmd, con);
+            dp.Fill(dt);
+            con.Close();
+            return dt;
+        }
+
         public static DataSet Ejecutar(String cmd)
         {
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=instituciones_financieras;Integrated Security=True");
@@ -37,5 +49,7 @@ namespace MiLibreria
             }
 
         }
+
+        
     }
 }

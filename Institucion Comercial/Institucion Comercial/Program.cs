@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Institucion_Comercial.inventarios;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -16,7 +17,7 @@ namespace Institucion_Comercial.comercial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new  Login());
+            Application.Run(new  registroCompras());
         }
     }
 }

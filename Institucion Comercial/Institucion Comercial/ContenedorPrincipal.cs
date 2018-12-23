@@ -1,4 +1,5 @@
-﻿using Institucion_Comercial.proveedores;
+﻿using Institucion_Comercial.inventarios;
+using Institucion_Comercial.proveedores;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -132,6 +133,13 @@ namespace Institucion_Comercial
             consultaProveedores cp = new consultaProveedores();
             cp.MdiParent = this;
             cp.Show();
+        }
+
+        private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            registroProductos rp = new registroProductos();
+            rp.MdiParent = this;
+            rp.Show();
         }
     }
 }
