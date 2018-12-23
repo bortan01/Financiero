@@ -16,7 +16,10 @@ namespace Institucion_Comercial.comercial
         {
             InitializeComponent();
         }
-        public String id_cliente ;
+        public static String id_cliente ;
+        public static String id_producto;
+        
+
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -69,6 +72,8 @@ namespace Institucion_Comercial.comercial
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
+
             if (String.IsNullOrEmpty(txtBuscarProducto.Text.Trim()) == false)
             {
                 //MessageBox.Show("va por aqui");
@@ -89,6 +94,41 @@ namespace Institucion_Comercial.comercial
                     MessageBox.Show("ha ocurrido un error " + error.Message);
                 }
             }
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public static int cont_fila = 0;
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            bool existe = false;
+            int num_fila_seleccion = 0;
+            int num_fila_opcion = 0;
+
+
+
+            if (cont_fila == 0)
+            {
+                num_fila_opcion = dataGridView1.CurrentRow.Index; // para saber que fila se selecciono
+                dataCompra.Rows.Add(dataGridView1.Rows[num_fila_opcion].Cells[0].Value,
+                                    dataGridView1.Rows[num_fila_opcion].Cells[1].Value,
+                                    dataGridView1.Rows[num_fila_opcion].Cells[2].Value,
+                                    txtCantidad.Text);
+                cont_fila++;
+
+            }
+            else {
+                foreach (DataGridViewRow FilaR in dataCompra.Rows) {
+                    if (FilaR.Cells[0].Value.ToString() == dataGridView1.Rows[cont_fila].Cells[0].Value.ToString())
+                    {
+
+                    }
+                }
+             }
         }
     }
 }
