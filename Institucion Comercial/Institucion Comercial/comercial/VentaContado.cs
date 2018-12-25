@@ -16,9 +16,9 @@ namespace Institucion_Comercial.comercial
         {
             InitializeComponent();
         }
-        public static String id_cliente ;
+        public static String id_cliente;
         public static String id_producto;
-        
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -57,7 +57,7 @@ namespace Institucion_Comercial.comercial
 
         private void VentaContado_Load(object sender, EventArgs e)
         {
-            String sql = "select id_empleado,nombre,apellido from instituciones_financieras.empleado where id_empleado =" +Login.codigo;
+            String sql = "select id_empleado,nombre,apellido from instituciones_financieras.empleado where id_empleado =" + Login.codigo;
             DataSet ds;
             //MessageBox.Show(sql);
 
@@ -72,22 +72,24 @@ namespace Institucion_Comercial.comercial
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+
 
             if (String.IsNullOrEmpty(txtBuscarProducto.Text.Trim()) == false)
             {
                 //MessageBox.Show("va por aqui");
                 try
                 {
-                    DataSet ds;
-                    String sql = "select id_producto,nombre,descripcion,precio_venta from instituciones_financieras.producto where nombre  like ('%" + txtBuscarProducto.Text + "%')   or id_producto like ('%" + txtBuscarProducto.Text + "%') ";
+                    String sql = "SELECT instituciones_financieras.producto.nombre, instituciones_financieras.producto.precio_venta, instituciones_financieras.inventario.cantidad, instituciones_financieras.producto.descripcion, instituciones_financieras.producto.id_producto " +
+                        "FROM instituciones_financieras.producto INNER JOIN instituciones_financieras.inventario ON instituciones_financieras.inventario.id_producto = instituciones_financieras.producto.id_producto   where producto.nombre like('%"+txtBuscarProducto.Text+"%') or producto.id_producto LIKE('%"+txtBuscarProducto.Text+"%')";
                     // MessageBox.Show(sql);
 
-                    ds = Utilidades.Ejecutar(sql);
-                    dataGridView1.Rows.Add(ds.Tables[0].Rows[0]["id_producto"].ToString().Trim(),
-                                           ds.Tables[0].Rows[0]["nombre"].ToString().Trim(),
-                                           ds.Tables[0].Rows[0]["precio_venta"].ToString().Trim(),
-                                           ds.Tables[0].Rows[0]["descripcion"].ToString().Trim());
+                    DataSet ds = Utilidades.Ejecutar(sql);
+                    t1.Text = ds.Tables[0].Rows[0]["id_producto"].ToString().Trim();
+                    t2.Text = ds.Tables[0].Rows[0]["nombre"].ToString().Trim();
+                    t3.Text = ds.Tables[0].Rows[0]["precio_venta"].ToString().Trim();
+                    t4.Text = ds.Tables[0].Rows[0]["cantidad"].ToString().Trim();
+                    t5.Text = ds.Tables[0].Rows[0]["descripcion"].ToString().Trim();
+
                 }
                 catch (Exception error)
                 {
@@ -105,30 +107,16 @@ namespace Institucion_Comercial.comercial
 
         private void button3_Click(object sender, EventArgs e)
         {
-            bool existe = false;
-            int num_fila_seleccion = 0;
-            int num_fila_opcion = 0;
+        }
 
+        private void label3_Click(object sender, EventArgs e)
+        {
 
+        }
 
-            if (cont_fila == 0)
-            {
-                num_fila_opcion = dataGridView1.CurrentRow.Index; // para saber que fila se selecciono
-                dataCompra.Rows.Add(dataGridView1.Rows[num_fila_opcion].Cells[0].Value,
-                                    dataGridView1.Rows[num_fila_opcion].Cells[1].Value,
-                                    dataGridView1.Rows[num_fila_opcion].Cells[2].Value,
-                                    txtCantidad.Text);
-                cont_fila++;
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
 
-            }
-            else {
-                foreach (DataGridViewRow FilaR in dataCompra.Rows) {
-                    if (FilaR.Cells[0].Value.ToString() == dataGridView1.Rows[cont_fila].Cells[0].Value.ToString())
-                    {
-
-                    }
-                }
-             }
         }
     }
 }
