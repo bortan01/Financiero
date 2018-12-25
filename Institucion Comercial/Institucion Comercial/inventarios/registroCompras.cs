@@ -32,5 +32,10 @@ namespace Institucion_Comercial.inventarios
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

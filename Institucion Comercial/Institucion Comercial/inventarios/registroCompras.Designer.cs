@@ -44,16 +44,16 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tblcompras = new System.Windows.Forms.DataGridView();
-            this.label7 = new System.Windows.Forms.Label();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label7 = new System.Windows.Forms.Label();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblcompras)).BeginInit();
             this.SuspendLayout();
@@ -140,6 +140,7 @@
             this.button3.TabIndex = 10;
             this.button3.Text = "Agregar";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // txtcantidad
             // 
@@ -204,36 +205,6 @@
             this.tblcompras.Size = new System.Drawing.Size(776, 200);
             this.tblcompras.TabIndex = 16;
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(12, 364);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 18);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Comprobante";
-            // 
-            // openFileDialog1
-            // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(136, 361);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(149, 20);
-            this.textBox5.TabIndex = 18;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(284, 361);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(27, 20);
-            this.button4.TabIndex = 19;
-            this.button4.Text = "...";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // Column1
             // 
             this.Column1.FillWeight = 5.588427F;
@@ -269,6 +240,36 @@
             this.Column6.FillWeight = 304.5686F;
             this.Column6.HeaderText = "Total";
             this.Column6.Name = "Column6";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(12, 364);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(117, 18);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Comprobante";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(136, 361);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(149, 20);
+            this.textBox5.TabIndex = 18;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(284, 361);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(27, 20);
+            this.button4.TabIndex = 19;
+            this.button4.Text = "...";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // registroCompras
             // 

@@ -93,7 +93,7 @@ namespace Institucion_Comercial.comercial
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show("ha ocurrido un error " + error.Message);
+                    MessageBox.Show("PRODUCTO NO ENCONTRADO");
                 }
             }
         }
@@ -107,6 +107,40 @@ namespace Institucion_Comercial.comercial
 
         private void button3_Click(object sender, EventArgs e)
         {
+
+            bool existe = false;
+            int num_fila = 0;
+            if (cont_fila == 0) // noa hay nada 
+            {
+                dataCompra.Rows.Add(t1.Text, t2.Text, t3.Text, txtCantidad.Value);
+                double importe = Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[3].Value);
+                dataCompra.Rows[cont_fila].Cells[4].Value = importe;
+                cont_fila++;
+            }
+            else {
+
+                foreach (DataGridViewRow Fila in dataCompra.Rows)
+                {
+                    if (Fila.Cells[0].Value.ToString() == t1.Text)
+                    {
+                        existe = true;
+                        num_fila = Fila.Index;
+                    }
+                }
+                if (existe == true)
+                {
+                    dataCompra.Rows[num_fila].Cells[3].Value = txtCantidad.Value;
+                    double importe = Convert.ToDouble(dataCompra.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dataCompra.Rows[num_fila].Cells[3].Value);
+                    dataCompra.Rows[num_fila].Cells[4].Value = importe;
+                }
+                else {
+                    dataCompra.Rows.Add(t1.Text, t2.Text, t3.Text, txtCantidad.Value);
+                    double importe = Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[3].Value);
+                    dataCompra.Rows[cont_fila].Cells[4].Value = importe;
+                    cont_fila++;
+                }
+            }
+
         }
 
         private void label3_Click(object sender, EventArgs e)
