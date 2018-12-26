@@ -17,7 +17,7 @@ namespace Institucion_Comercial.comercial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new  VentaContado());
+            Application.Run(new  registroCompras());
         }
     }
 }

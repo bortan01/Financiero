@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
+
 namespace MiLibreria
 {
     public class Utilidades
@@ -22,6 +23,37 @@ namespace MiLibreria
             return dt;
         }
 
+        public static String InsertarImagen(double total, DateTime fecha, System.IO.MemoryStream imagen)
+        {
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=instituciones_financieras;Integrated Security=True");
+            try
+            {
+                
+                con.Open();
+
+                SqlCommand comando = new SqlCommand("Insert into compras(total,fecha_compra,comprobante) " +
+                    "values (@total, @fecha, @comprobante)", con);
+                comando.Parameters.Add("@total", SqlDbType.Money);
+                comando.Parameters.Add("@fecha", SqlDbType.Date);
+                comando.Parameters.Add("@comprobante", SqlDbType.Image);
+
+                comando.Parameters["@total"].Value = total;
+                comando.Parameters["@fecha"].Value = fecha.Date;
+                comando.Parameters["@comprobante"].Value = imagen.GetBuffer();
+                comando.ExecuteNonQuery();
+                return "Exito";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+            finally
+            {
+                con.Close();
+            }
+
+        }
+
         public static DataSet Ejecutar(String cmd)
         {
             SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=instituciones_financieras;Integrated Security=True");
@@ -36,9 +68,10 @@ namespace MiLibreria
 
         public static string Registrar(String cmd)
         {
+            SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=instituciones_financieras;Integrated Security=True");
             try
             {
-                SqlConnection con = new SqlConnection("Data Source=.;Initial Catalog=instituciones_financieras;Integrated Security=True");
+                
                 con.Open();
                 SqlCommand comando = new SqlCommand(cmd, con);
                 comando.ExecuteNonQuery();
@@ -46,6 +79,10 @@ namespace MiLibreria
             }
             catch (Exception ex) {
                 return ex.Message;
+            }
+            finally
+            {
+                con.Close();
             }
 
         }

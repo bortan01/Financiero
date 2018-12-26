@@ -210,14 +210,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtid;
-        private System.Windows.Forms.TextBox txtnombre;
-        private System.Windows.Forms.TextBox txtdescripcion;
-        private System.Windows.Forms.ComboBox cbproveedor;
-        private System.Windows.Forms.TextBox txtcompra;
-        private System.Windows.Forms.TextBox txtventa;
-        private System.Windows.Forms.TextBox txtminimo;
         private System.Windows.Forms.Button btnguardar;
         private System.Windows.Forms.Button btncancelar;
         private System.Windows.Forms.Label label1;
@@ -227,5 +219,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox txtid;
+        public System.Windows.Forms.TextBox txtnombre;
+        public System.Windows.Forms.TextBox txtdescripcion;
+        public System.Windows.Forms.ComboBox cbproveedor;
+        public System.Windows.Forms.TextBox txtcompra;
+        public System.Windows.Forms.TextBox txtventa;
+        public System.Windows.Forms.TextBox txtminimo;
     }
 }

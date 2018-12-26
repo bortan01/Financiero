@@ -137,7 +137,7 @@ namespace Institucion_Comercial
 
         private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            registroProductos rp = new registroProductos();
+            registroProductos rp = new registroProductos(1);
             rp.MdiParent = this;
             rp.Show();
         }

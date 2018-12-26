@@ -13,11 +13,13 @@ namespace Institucion_Comercial.inventarios
 {
     public partial class registroProductos : Form
     {
-        public registroProductos()
+        public int tipo;
+        public registroProductos( int tipo)
         {
             InitializeComponent();
             cargarCombo();
             llenarId();
+            this.tipo = tipo;
         }
 
         private void textBox5_TextChanged(object sender, EventArgs e)
@@ -89,8 +91,17 @@ namespace Institucion_Comercial.inventarios
             MessageBox.Show(msj);
             if (msj.Equals("Registro Completado"))
             {
-                limpiar();
-                llenarId();
+                if (this.tipo == 0)
+                {
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else
+                {
+                    limpiar();
+                    llenarId();
+                }
+                
             }
         }
     }

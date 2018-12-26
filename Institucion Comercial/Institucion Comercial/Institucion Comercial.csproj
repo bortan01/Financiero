@@ -73,6 +73,12 @@
     <Compile Include="ContenedorPrincipal.Designer.cs">
       <DependentUpon>ContenedorPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventarios\consultarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventarios\consultarProductos.Designer.cs">
+      <DependentUpon>consultarProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="inventarios\registroCompras.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ContenedorPrincipal.resx">
       <DependentUpon>ContenedorPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventarios\consultarProductos.resx">
+      <DependentUpon>consultarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inventarios\registroCompras.resx">
       <DependentUpon>registroCompras.cs</DependentUpon>
