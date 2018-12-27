@@ -10,15 +10,15 @@ using System.Windows.Forms;
 using MiLibreria;
 namespace Institucion_Comercial.comercial
 {
-    public partial class VentaContado : Form
+    public partial class Venta : Form
     {
-        public VentaContado()
+        public Venta()
         {
             InitializeComponent();
         }
         public static String id_cliente;
         public static String id_producto;
-
+        public static Double total;
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -104,7 +104,8 @@ namespace Institucion_Comercial.comercial
         }
 
         public static int cont_fila = 0;
-
+      
+        
         private void button3_Click(object sender, EventArgs e)
         {
 
@@ -140,7 +141,12 @@ namespace Institucion_Comercial.comercial
                     cont_fila++;
                 }
             }
-
+            total = 0;
+            foreach (DataGridViewRow Fila in dataCompra.Rows)
+            {
+                total += Convert.ToDouble(Fila.Cells[4].Value);
+            }
+            txtTotal.Text = total.ToString();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -151,6 +157,17 @@ namespace Institucion_Comercial.comercial
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (cont_fila >0 )
+            {
+                total = total - (Convert.ToDouble(dataCompra.Rows[dataCompra.CurrentRow.Index].Cells[4].Value));
+                txtTotal.Text = total.ToString();
+                dataCompra.Rows.RemoveAt(dataCompra.CurrentRow.Index);
+                cont_fila--;
+            }
         }
     }
 }

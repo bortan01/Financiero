@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Institucion_Comercial.comercial
 {
     static class Program
@@ -17,7 +18,7 @@ namespace Institucion_Comercial.comercial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new  registroCompras());
+            Application.Run(new  venta_contado());
         }
     }
 }
