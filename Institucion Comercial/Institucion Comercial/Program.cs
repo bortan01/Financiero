@@ -18,7 +18,7 @@ namespace Institucion_Comercial.comercial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new  registroCompras());
+            Application.Run(new  Login());
         }
     }
 }

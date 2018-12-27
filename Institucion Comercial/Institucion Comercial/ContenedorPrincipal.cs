@@ -141,5 +141,19 @@ namespace Institucion_Comercial
             rp.MdiParent = this;
             rp.Show();
         }
+
+        private void registrarCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            registroCompras rc = new registroCompras();
+            rc.MdiParent = this;
+            rc.Show();
+        }
+
+        private void consultarInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            consultarInventario ci = new consultarInventario();
+            ci.MdiParent = this;
+            ci.Show();
+        }
     }
 }

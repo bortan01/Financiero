@@ -20,7 +20,7 @@ namespace Institucion_Comercial.inventarios
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
-
+            tablaProductos.DataSource = Buscar(txtbuscar.Text.ToString()).Tables[0];
         }
 
         private void consultarProductos_Load(object sender, EventArgs e)

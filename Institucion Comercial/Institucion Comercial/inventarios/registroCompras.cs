@@ -66,7 +66,7 @@ namespace Institucion_Comercial.inventarios
             txtproveedor.Text = "";
             txtprecio.Text = "";
         }
-
+        public static int contador_fila = 0;
         public void agregar()
         {
             string codigo = txtcodigo.Text.ToString();
@@ -76,10 +76,35 @@ namespace Institucion_Comercial.inventarios
             string proveedor = txtproveedor.Text.Trim();
             string precio = txtprecio.Text.Trim();
             double total = Convert.ToDouble(cantidad) * Convert.ToDouble(precio);
-            tblcompras.Rows.Insert(tblcompras.RowCount,codigo, nombre, descripcion, proveedor, precio, cantidad, total);
-            limpiarCampos();
-            total2 += total;
-            txttotal.Text = total2.ToString();
+            bool existe = false;
+            int num_fila = 0;
+            if (contador_fila ==0) {
+                tblcompras.Rows.Insert(tblcompras.RowCount, codigo, nombre, descripcion, proveedor, precio, cantidad, total);
+                limpiarCampos();
+                total2 += total;
+                txttotal.Text = total2.ToString();
+                contador_fila++;
+            }
+            else
+            {
+                foreach (DataGridViewRow fila in tblcompras.Rows)
+                {
+                    if (fila.Cells[0].Value.ToString() == txtcodigo.Text)
+                    {
+                        existe = true;
+                        num_fila = fila.Index;
+                        break;
+                    }   
+                }
+                if (existe)
+                {
+                    tblcompras.Rows[num_fila].Cells[5].Value = (Convert.ToDouble(cantidad) + Convert.ToDouble(tblcompras.Rows[num_fila].Cells[5].Value)).ToString();
+                    tblcompras.Rows[num_fila].Cells[6].Value = (Convert.ToDouble(total) + Convert.ToDouble(tblcompras.Rows[num_fila].Cells[6].Value)).ToString();
+                    total2 += total;
+                    txttotal.Text = total2.ToString();
+                    limpiarCampos();
+                }
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
