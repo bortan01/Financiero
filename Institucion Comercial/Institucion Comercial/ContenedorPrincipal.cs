@@ -155,5 +155,12 @@ namespace Institucion_Comercial
             ci.MdiParent = this;
             ci.Show();
         }
+
+        private void consultarCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            consultaCompras ci = new consultaCompras();
+            ci.MdiParent = this;
+            ci.Show();
+        }
     }
 }
