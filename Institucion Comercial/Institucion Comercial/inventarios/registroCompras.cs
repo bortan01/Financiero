@@ -18,7 +18,7 @@ namespace Institucion_Comercial.inventarios
         {
             InitializeComponent();
             
-            txttotal.Text =obtenerId();
+            txttotal.Text =total2.ToString();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -208,10 +208,10 @@ namespace Institucion_Comercial.inventarios
                 {
                     string producto = fila.Cells[0].Value.ToString();
                     string cantidad = fila.Cells[5].Value.ToString();
-                   msj += "\n"+fila.Index+"- "+Utilidades.Registrar("Insert into detalle_compras (id_producto , id_compra, cantidad) " +
+                   msj += "\n"+(fila.Index+1)+"- "+Utilidades.Registrar("Insert into detalle_compras (id_producto , id_compra, cantidad) " +
                        " values ('"+producto+"', '"+ultimo+"', '"+cantidad+"')");
-                    
-                   
+
+                    meterInventario(producto, cantidad);
 
                 }
                 MessageBox.Show(msj);
@@ -219,6 +219,27 @@ namespace Institucion_Comercial.inventarios
             else
             {
                 MessageBox.Show(resultado);
+            }
+        }
+
+        public void meterInventario(string prod, string cantidad)
+        {
+            DataSet ds;
+            ds=Utilidades.Ejecutar("Select count(*) as existe from instituciones_financieras.inventario where id_producto='"+prod+"'");
+            string existe = ds.Tables[0].Rows[0]["existe"].ToString();
+           // MessageBox.Show(existe);
+            if (existe.Equals("1"))
+            {
+                ds = Utilidades.Ejecutar("Select cantidad from instituciones_financieras.inventario where id_producto = '" + prod + "'");
+                int cantidad2 = Convert.ToInt16(ds.Tables[0].Rows[0]["cantidad"]);
+                int total = Convert.ToInt16(cantidad) + cantidad2;
+               Utilidades.Registrar("Update instituciones_financieras.inventario set " +
+                    "cantidad='"+total+"' where id_producto = '"+prod+"'");
+            }
+            else
+            {
+                Utilidades.Registrar("Insert into instituciones_financieras.inventario (cantidad, id_producto) " +
+                    "values ('"+cantidad+"','"+prod+"')");
             }
         }
 
