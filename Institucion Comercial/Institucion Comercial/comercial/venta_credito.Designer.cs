@@ -31,6 +31,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtPrima = new System.Windows.Forms.TextBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboCuota = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,6 +43,10 @@
             // button3
             // 
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Size = new System.Drawing.Size(101, 20);
             // 
             // label15
             // 
@@ -55,7 +61,7 @@
             // txtPrima
             // 
             this.txtPrima.Enabled = false;
-            this.txtPrima.Location = new System.Drawing.Point(406, 428);
+            this.txtPrima.Location = new System.Drawing.Point(422, 428);
             this.txtPrima.Name = "txtPrima";
             this.txtPrima.Size = new System.Drawing.Size(124, 20);
             this.txtPrima.TabIndex = 39;
@@ -69,16 +75,35 @@
             this.btnFinalizar.Text = "Finalizar Compra";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(0, 0);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 41;
+            // 
+            // comboCuota
+            // 
+            this.comboCuota.FormattingEnabled = true;
+            this.comboCuota.Location = new System.Drawing.Point(201, 428);
+            this.comboCuota.Name = "comboCuota";
+            this.comboCuota.Size = new System.Drawing.Size(121, 21);
+            this.comboCuota.TabIndex = 42;
+            // 
             // venta_credito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 492);
+            this.Controls.Add(this.comboCuota);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.txtPrima);
             this.Controls.Add(this.label15);
             this.Name = "venta_credito";
             this.Text = "venta_credito";
+            this.Load += new System.EventHandler(this.venta_credito_Load);
             this.Controls.SetChildIndex(this.txtBuscarCliente, 0);
             this.Controls.SetChildIndex(this.txtDuiCliente, 0);
             this.Controls.SetChildIndex(this.txtNombreCliente, 0);
@@ -99,6 +124,8 @@
             this.Controls.SetChildIndex(this.label15, 0);
             this.Controls.SetChildIndex(this.txtPrima, 0);
             this.Controls.SetChildIndex(this.btnFinalizar, 0);
+            this.Controls.SetChildIndex(this.comboBox1, 0);
+            this.Controls.SetChildIndex(this.comboCuota, 0);
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -110,5 +137,7 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtPrima;
         private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboCuota;
     }
 }

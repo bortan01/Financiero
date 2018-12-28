@@ -67,6 +67,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="comercial\controladorPlan.cs" />
+    <Compile Include="comercial\plan.cs" />
     <Compile Include="comercial\SeleccionarCliente.cs">
       <SubType>Form</SubType>
     </Compile>

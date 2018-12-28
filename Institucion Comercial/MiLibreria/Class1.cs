@@ -65,6 +65,12 @@ namespace MiLibreria
             con.Close();
             return ds;
         }
+        public static SqlConnection obtenerConexion() {
+            SqlConnection Conexion = new SqlConnection("Data Source=.;Initial Catalog=instituciones_financieras;Integrated Security=True");
+            Conexion.Open();
+            return Conexion;
+        }
+
 
         public static string Registrar(String cmd)
         {

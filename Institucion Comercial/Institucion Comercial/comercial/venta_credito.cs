@@ -30,5 +30,13 @@ namespace Institucion_Comercial.comercial
         {
 
         }
+
+        private void venta_credito_Load(object sender, EventArgs e)
+        {
+
+            comboCuota.DataSource = controladorPlan.ObtenerPlan();
+            comboCuota.DisplayMember= "cuota";
+            comboCuota.ValueMember = "id_plan";
+        }
     }
 }
