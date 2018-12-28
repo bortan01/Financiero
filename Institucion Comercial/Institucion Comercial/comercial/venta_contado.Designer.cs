@@ -44,6 +44,7 @@
             this.button5.TabIndex = 38;
             this.button5.Text = "Finalizar Compra";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // venta_contado
             // 
@@ -53,6 +54,7 @@
             this.Controls.Add(this.button5);
             this.Name = "venta_contado";
             this.Text = "venta_contado";
+            this.Controls.SetChildIndex(this.label14, 0);
             this.Controls.SetChildIndex(this.txtBuscarCliente, 0);
             this.Controls.SetChildIndex(this.txtDuiCliente, 0);
             this.Controls.SetChildIndex(this.txtNombreCliente, 0);
