@@ -1,5 +1,6 @@
 ﻿using Institucion_Comercial.inventarios;
 using Institucion_Comercial.proveedores;
+using Institucion_Comercial.activo;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -161,6 +162,13 @@ namespace Institucion_Comercial
             consultaCompras ci = new consultaCompras();
             ci.MdiParent = this;
             ci.Show();
+        }
+
+        private void registrarToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            registroActivo ra = new registroActivo();
+            ra.MdiParent = this;
+            ra.Show();
         }
     }
 }

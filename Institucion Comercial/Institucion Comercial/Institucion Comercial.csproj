@@ -67,6 +67,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="activo\registroActivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\registroActivo.Designer.cs">
+      <DependentUpon>registroActivo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="activo\registroTipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\registroTipo.Designer.cs">
+      <DependentUpon>registroTipo.cs</DependentUpon>
+    </Compile>
     <Compile Include="comercial\controladorPlan.cs" />
     <Compile Include="comercial\plan.cs" />
     <Compile Include="comercial\SeleccionarCliente.cs">
@@ -180,6 +192,9 @@
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="activo\registroActivo.resx">
+      <DependentUpon>registroActivo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="comercial\SeleccionarCliente.resx">
       <DependentUpon>SeleccionarCliente.cs</DependentUpon>
     </EmbeddedResource>

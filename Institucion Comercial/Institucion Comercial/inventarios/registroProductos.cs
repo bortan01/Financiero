@@ -104,5 +104,10 @@ namespace Institucion_Comercial.inventarios
                 
             }
         }
+
+        private void cbproveedor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

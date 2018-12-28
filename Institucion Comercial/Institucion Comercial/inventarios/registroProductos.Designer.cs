@@ -75,6 +75,7 @@
             this.cbproveedor.Name = "cbproveedor";
             this.cbproveedor.Size = new System.Drawing.Size(257, 21);
             this.cbproveedor.TabIndex = 2;
+            this.cbproveedor.SelectedIndexChanged += new System.EventHandler(this.cbproveedor_SelectedIndexChanged);
             // 
             // txtcompra
             // 
