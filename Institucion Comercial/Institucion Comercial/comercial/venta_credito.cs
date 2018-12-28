@@ -25,26 +25,22 @@ namespace Institucion_Comercial.comercial
                 totalPrima = total * 0.25;
                 txtPrima.Text = totalPrima.ToString();
 
+
+                DataSet ds;
+                String id_plan = comboCuota.SelectedValue.ToString();
+                String sql = "select * from instituciones_financieras.plan_pago where instituciones_financieras.plan_pago.id_plan = '" + id_plan.ToString() + "'";
+
+                ds = Utilidades.Ejecutar(sql);
+                double toal1 = Convert.ToDouble(txtTotal.Text.ToString());
+                double prima1 = Convert.ToDouble(txtPrima.Text.ToString());
+                double porcentaje = (Convert.ToDouble(ds.Tables[0].Rows[0]["tasa"].ToString().Trim())) / 100;
+                int meses = Convert.ToInt32(ds.Tables[0].Rows[0]["cuotas"].ToString().Trim());
+                double penitencia = (toal1 - prima1);
+                penitencia = (porcentaje * penitencia) + penitencia;
+                penitencia = (penitencia / meses);
+                txtCuota.Text = penitencia.ToString();
             }
-            DataSet ds;
-            String id_plan = comboCuota.SelectedValue.ToString();
-            String sql = "select * from instituciones_financieras.plan_pago where instituciones_financieras.plan_pago.id_plan = '" + id_plan.ToString() + "'";
-
-            ds = Utilidades.Ejecutar(sql);
-            double toal1 = Convert.ToDouble(txtTotal.Text.ToString());
-            double prima1 = Convert.ToDouble(txtPrima.Text.ToString());
-            double porcentaje = (Convert.ToDouble(ds.Tables[0].Rows[0]["tasa"].ToString().Trim())) / 100;
-            int meses = Convert.ToInt32(ds.Tables[0].Rows[0]["cuotas"].ToString().Trim());
-            double penitencia = (toal1 - prima1);
-            MessageBox.Show(penitencia.ToString());
-
-            penitencia = (porcentaje*penitencia) +penitencia;
-            MessageBox.Show(penitencia.ToString());
-
-            penitencia = (penitencia / meses);
-            MessageBox.Show(penitencia.ToString());
-
-            txtCuota.Text = penitencia.ToString();
+            
         }
 
         private void label15_Click(object sender, EventArgs e)
@@ -79,7 +75,7 @@ namespace Institucion_Comercial.comercial
                     double porcentaje = (Convert.ToDouble(ds.Tables[0].Rows[0]["tasa"].ToString().Trim())) / 100;
                     int meses = Convert.ToInt32(ds.Tables[0].Rows[0]["cuotas"].ToString().Trim());
                     double penitencia = (toal1 - prima1);
-                    penitencia *= porcentaje;
+                    penitencia = (porcentaje * penitencia) + penitencia;
                     penitencia = (penitencia / meses);
                     txtCuota.Text = penitencia.ToString();
                 }
@@ -93,6 +89,29 @@ namespace Institucion_Comercial.comercial
         private void label16_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (txtTotal.Text.ToString() != ""  )
+            {
+                totalPrima = total * 0.25;
+                txtPrima.Text = totalPrima.ToString();
+
+                DataSet ds;
+                String id_plan = comboCuota.SelectedValue.ToString();
+                String sql = "select * from instituciones_financieras.plan_pago where instituciones_financieras.plan_pago.id_plan = '" + id_plan.ToString() + "'";
+
+                ds = Utilidades.Ejecutar(sql);
+                double toal1 = Convert.ToDouble(txtTotal.Text.ToString());
+                double prima1 = Convert.ToDouble(txtPrima.Text.ToString());
+                double porcentaje = (Convert.ToDouble(ds.Tables[0].Rows[0]["tasa"].ToString().Trim())) / 100;
+                int meses = Convert.ToInt32(ds.Tables[0].Rows[0]["cuotas"].ToString().Trim());
+                double penitencia = (toal1 - prima1);
+                penitencia = (porcentaje * penitencia) + penitencia;
+                penitencia = (penitencia / meses);
+                txtCuota.Text = penitencia.ToString();
+            }
         }
     }
 }

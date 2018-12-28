@@ -46,6 +46,10 @@
             // 
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // button4
+            // 
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // txtTotal
             // 
             this.txtTotal.Location = new System.Drawing.Point(604, 428);
@@ -129,6 +133,7 @@
             this.Name = "venta_credito";
             this.Text = "venta_credito";
             this.Load += new System.EventHandler(this.venta_credito_Load);
+            this.Controls.SetChildIndex(this.label14, 0);
             this.Controls.SetChildIndex(this.txtBuscarCliente, 0);
             this.Controls.SetChildIndex(this.txtDuiCliente, 0);
             this.Controls.SetChildIndex(this.txtNombreCliente, 0);
