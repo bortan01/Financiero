@@ -23,8 +23,11 @@ namespace Institucion_Comercial.comercial
                 plan plan = new plan();
 
                 plan.id_plan = _reader.GetInt32(0);
-                plan.tasa = _reader.GetFloat(1);
-                plan.cuota = _reader.GetInt32(2);
+                double tasa = _reader.GetFloat(1);
+                tasa = Math.Round(tasa, 2);
+                double cuotas = _reader.GetInt32(2);
+
+                plan.texto = cuotas.ToString() + " meses, tasa de " + tasa.ToString() + "%";
                 _lista.Add(plan);
             }
             return _lista;

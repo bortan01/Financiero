@@ -31,7 +31,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtPrima = new System.Windows.Forms.TextBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboCuota = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.SuspendLayout();
@@ -75,20 +74,12 @@
             this.btnFinalizar.Text = "Finalizar Compra";
             this.btnFinalizar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(0, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 41;
-            // 
             // comboCuota
             // 
             this.comboCuota.FormattingEnabled = true;
-            this.comboCuota.Location = new System.Drawing.Point(201, 428);
+            this.comboCuota.Location = new System.Drawing.Point(172, 428);
             this.comboCuota.Name = "comboCuota";
-            this.comboCuota.Size = new System.Drawing.Size(121, 21);
+            this.comboCuota.Size = new System.Drawing.Size(155, 21);
             this.comboCuota.TabIndex = 42;
             // 
             // venta_credito
@@ -97,7 +88,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(798, 492);
             this.Controls.Add(this.comboCuota);
-            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.txtPrima);
             this.Controls.Add(this.label15);
@@ -124,7 +114,6 @@
             this.Controls.SetChildIndex(this.label15, 0);
             this.Controls.SetChildIndex(this.txtPrima, 0);
             this.Controls.SetChildIndex(this.btnFinalizar, 0);
-            this.Controls.SetChildIndex(this.comboBox1, 0);
             this.Controls.SetChildIndex(this.comboCuota, 0);
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.ResumeLayout(false);
@@ -137,7 +126,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtPrima;
         private System.Windows.Forms.Button btnFinalizar;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboCuota;
     }
 }

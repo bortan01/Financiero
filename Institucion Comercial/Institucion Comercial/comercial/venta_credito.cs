@@ -35,7 +35,7 @@ namespace Institucion_Comercial.comercial
         {
 
             comboCuota.DataSource = controladorPlan.ObtenerPlan();
-            comboCuota.DisplayMember= "cuota";
+            comboCuota.DisplayMember= "texto";
             comboCuota.ValueMember = "id_plan";
         }
     }

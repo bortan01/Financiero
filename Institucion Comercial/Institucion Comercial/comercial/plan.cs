@@ -11,5 +11,6 @@ namespace Institucion_Comercial.comercial
         public int id_plan { get; set; }
         public double tasa { get; set; }
         public double cuota { get; set; }
+        public String texto { get; set; }
     }
 }
