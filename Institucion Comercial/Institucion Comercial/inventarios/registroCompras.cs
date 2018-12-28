@@ -104,6 +104,14 @@ namespace Institucion_Comercial.inventarios
                     txttotal.Text = total2.ToString();
                     limpiarCampos();
                 }
+                else
+                {
+                    tblcompras.Rows.Insert(tblcompras.RowCount, codigo, nombre, descripcion, proveedor, precio, cantidad, total);
+                    limpiarCampos();
+                    total2 += total;
+                    txttotal.Text = total2.ToString();
+                    contador_fila++;
+                }
             }
         }
 
@@ -233,8 +241,9 @@ namespace Institucion_Comercial.inventarios
                 {
                     string producto = fila.Cells[0].Value.ToString();
                     string cantidad = fila.Cells[5].Value.ToString();
-                   msj += "\n"+(fila.Index+1)+"- "+Utilidades.Registrar("Insert into detalle_compras (id_producto , id_compra, cantidad) " +
-                       " values ('"+producto+"', '"+ultimo+"', '"+cantidad+"')");
+                    string precio = fila.Cells[4].Value.ToString();
+                    msj += "\n"+(fila.Index+1)+"- "+Utilidades.Registrar("Insert into detalle_compras (id_producto , id_compra, cantidad, precio) " +
+                       " values ('"+producto+"', '"+ultimo+"', '"+cantidad+ "', '" + precio + "')");
 
                     meterInventario(producto, cantidad);
 

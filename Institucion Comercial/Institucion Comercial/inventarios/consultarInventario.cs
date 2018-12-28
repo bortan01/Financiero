@@ -16,12 +16,9 @@ namespace Institucion_Comercial.inventarios
         public consultarInventario()
         {
             InitializeComponent();
-        }
-
-        private void consultarInventario_Load(object sender, EventArgs e)
-        {
-            tablaProductos.DataSource = Buscar("").Tables[0];
             colore();
+
+            
             tablaProductos.Columns[0].HeaderText = "Código";
             tablaProductos.Columns[1].HeaderText = "Nombre";
             tablaProductos.Columns[2].HeaderText = "Descripcion";
@@ -29,8 +26,14 @@ namespace Institucion_Comercial.inventarios
             tablaProductos.Columns[4].HeaderText = "Precio de Venta";
             tablaProductos.Columns[5].HeaderText = "Existencias";
             tablaProductos.Columns[6].HeaderText = "Minimo Permitido";
+            tablaProductos.DataSource = Buscar("").Tables[0];
+            colore();
+        }
+
+        private void consultarInventario_Load(object sender, EventArgs e)
+        {
             
-           
+
         }
 
         public void colore()
@@ -39,17 +42,18 @@ namespace Institucion_Comercial.inventarios
             {
                 if (Convert.ToInt32(fila.Cells[5].Value.ToString())< Convert.ToInt32(fila.Cells[6].Value.ToString()))
                 {
-                    fila.DefaultCellStyle.BackColor = Color.Red;
-                    fila.DefaultCellStyle.ForeColor = Color.White;
+                    fila.DefaultCellStyle.BackColor = Color.LightPink;
+                    fila.DefaultCellStyle.ForeColor = Color.DarkRed;
                 }
                 if (Convert.ToInt32(fila.Cells[5].Value.ToString()) > Convert.ToInt32(fila.Cells[6].Value.ToString()))
                 {
-                    fila.DefaultCellStyle.BackColor = Color.Green;
-                    fila.DefaultCellStyle.ForeColor = Color.White;
+                    fila.DefaultCellStyle.BackColor = Color.LightGreen;
+                    fila.DefaultCellStyle.ForeColor = Color.DarkGreen;
                 }
                 if (Convert.ToInt32(fila.Cells[5].Value.ToString()) == Convert.ToInt32(fila.Cells[6].Value.ToString()))
                 {
-                    fila.DefaultCellStyle.BackColor = Color.Yellow;
+                    fila.DefaultCellStyle.BackColor = Color.LightYellow;
+                    fila.DefaultCellStyle.ForeColor = Color.DarkOrange;
                 }
             }
         }

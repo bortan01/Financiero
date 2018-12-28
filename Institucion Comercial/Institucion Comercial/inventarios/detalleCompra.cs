@@ -28,8 +28,9 @@ namespace Institucion_Comercial.inventarios
             try
             {
                 DataSet ds = Buscar(idcompra);
+                DateTime fecha = Convert.ToDateTime(ds.Tables[0].Rows[0]["fecha_compra"].ToString());
                 txtcodigo.Text = ds.Tables[0].Rows[0]["id_compra"].ToString();
-                txtfecha.Text = ds.Tables[0].Rows[0]["fecha_compra"].ToString();
+                txtfecha.Text = fecha.ToShortDateString();
                 txttotal.Text = ds.Tables[0].Rows[0]["total"].ToString();
                 byte[] datos = new byte[0];
                 datos = (byte[])ds.Tables[0].Rows[0]["comprobante"];
@@ -64,7 +65,7 @@ namespace Institucion_Comercial.inventarios
             DataSet ds = new DataSet();
             try
             {
-                string cmd = "Select p.id_producto,p.nombre,p.descripcion,p.precio_compra, dc.cantidad, (p.precio_compra*dc.cantidad) as total from instituciones_financieras.producto as p, detalle_compras as dc, compras where compras.id_compra = '"+idcompra+"' and dc.id_compra = compras.id_compra and p.id_producto= dc.id_producto";
+                string cmd = "Select p.id_producto,p.nombre,p.descripcion,p.precio_compra, dc.cantidad, (dc.precio*dc.cantidad) as total from instituciones_financieras.producto as p, detalle_compras as dc, compras where compras.id_compra = '"+idcompra+"' and dc.id_compra = compras.id_compra and p.id_producto= dc.id_producto";
                 ds = Utilidades.Ejecutar(cmd);
             }
             catch (Exception error)
