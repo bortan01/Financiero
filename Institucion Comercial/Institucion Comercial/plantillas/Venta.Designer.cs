@@ -501,7 +501,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox t5;
-        private System.Windows.Forms.Label label14;
         public System.Windows.Forms.TextBox txtBuscarCliente;
         public System.Windows.Forms.TextBox txtDuiCliente;
         public System.Windows.Forms.TextBox txtNombreCliente;
@@ -520,5 +519,6 @@
         public System.Windows.Forms.Button button4;
         public System.Windows.Forms.DataGridView dataCompra;
         public System.Windows.Forms.TextBox txtTotal;
+        public System.Windows.Forms.Label label14;
     }
 }

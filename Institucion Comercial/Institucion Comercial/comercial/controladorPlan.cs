@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using MiLibreria;
 
 namespace Institucion_Comercial.comercial
@@ -21,8 +22,8 @@ namespace Institucion_Comercial.comercial
             while (_reader.Read())
             {
                 plan plan = new plan();
-
-                plan.id_plan = _reader.GetInt32(0);
+               plan.id_plan = _reader.GetInt32(0);
+            //    MessageBox.Show(plan.id_plan.ToString());
                 double tasa = _reader.GetFloat(1);
                 tasa = Math.Round(tasa, 2);
                 double cuotas = _reader.GetInt32(2);

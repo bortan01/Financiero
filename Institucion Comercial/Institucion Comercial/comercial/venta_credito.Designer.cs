@@ -32,6 +32,9 @@
             this.txtPrima = new System.Windows.Forms.TextBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.comboCuota = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtCuota = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -45,12 +48,13 @@
             // 
             // txtTotal
             // 
+            this.txtTotal.Location = new System.Drawing.Point(604, 428);
             this.txtTotal.Size = new System.Drawing.Size(101, 20);
             // 
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(352, 431);
+            this.label15.Location = new System.Drawing.Point(214, 431);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(48, 13);
             this.label15.TabIndex = 38;
@@ -60,14 +64,14 @@
             // txtPrima
             // 
             this.txtPrima.Enabled = false;
-            this.txtPrima.Location = new System.Drawing.Point(422, 428);
+            this.txtPrima.Location = new System.Drawing.Point(268, 428);
             this.txtPrima.Name = "txtPrima";
-            this.txtPrima.Size = new System.Drawing.Size(124, 20);
+            this.txtPrima.Size = new System.Drawing.Size(111, 20);
             this.txtPrima.TabIndex = 39;
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(28, 426);
+            this.btnFinalizar.Location = new System.Drawing.Point(81, 499);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(120, 23);
             this.btnFinalizar.TabIndex = 40;
@@ -77,16 +81,47 @@
             // comboCuota
             // 
             this.comboCuota.FormattingEnabled = true;
-            this.comboCuota.Location = new System.Drawing.Point(172, 428);
+            this.comboCuota.Location = new System.Drawing.Point(46, 428);
             this.comboCuota.Name = "comboCuota";
             this.comboCuota.Size = new System.Drawing.Size(155, 21);
             this.comboCuota.TabIndex = 42;
+            this.comboCuota.SelectedIndexChanged += new System.EventHandler(this.comboCuota_SelectedIndexChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 431);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(28, 13);
+            this.label16.TabIndex = 43;
+            this.label16.Text = "Plan";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(394, 431);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(35, 13);
+            this.label17.TabIndex = 44;
+            this.label17.Text = "Cuota";
+            // 
+            // txtCuota
+            // 
+            this.txtCuota.Enabled = false;
+            this.txtCuota.Location = new System.Drawing.Point(435, 428);
+            this.txtCuota.Name = "txtCuota";
+            this.txtCuota.Size = new System.Drawing.Size(111, 20);
+            this.txtCuota.TabIndex = 45;
             // 
             // venta_credito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 492);
+            this.ClientSize = new System.Drawing.Size(796, 571);
+            this.Controls.Add(this.txtCuota);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
             this.Controls.Add(this.comboCuota);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.txtPrima);
@@ -115,6 +150,9 @@
             this.Controls.SetChildIndex(this.txtPrima, 0);
             this.Controls.SetChildIndex(this.btnFinalizar, 0);
             this.Controls.SetChildIndex(this.comboCuota, 0);
+            this.Controls.SetChildIndex(this.label16, 0);
+            this.Controls.SetChildIndex(this.label17, 0);
+            this.Controls.SetChildIndex(this.txtCuota, 0);
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -127,5 +165,8 @@
         private System.Windows.Forms.TextBox txtPrima;
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.ComboBox comboCuota;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox txtCuota;
     }
 }
