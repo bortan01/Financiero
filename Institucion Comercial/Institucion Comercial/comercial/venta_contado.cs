@@ -22,7 +22,8 @@ namespace Institucion_Comercial.comercial
 
         private void button5_Click(object sender, EventArgs e)
         {
-            if (Convert.ToDecimal(txtTotal.Text.ToString().Trim()) > 0)
+
+            if (cont_fila > 0 && Convert.ToDecimal(txtTotal.Text.ToString().Trim()) > 0 )
             {
 
                 String Id_empleado = Login.codigo.ToString().Trim();

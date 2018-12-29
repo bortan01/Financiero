@@ -75,12 +75,13 @@
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Location = new System.Drawing.Point(81, 499);
+            this.btnFinalizar.Location = new System.Drawing.Point(28, 488);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(120, 23);
             this.btnFinalizar.TabIndex = 40;
             this.btnFinalizar.Text = "Finalizar Compra";
             this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // comboCuota
             // 
