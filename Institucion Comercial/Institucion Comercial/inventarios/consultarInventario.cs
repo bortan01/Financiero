@@ -16,9 +16,9 @@ namespace Institucion_Comercial.inventarios
         public consultarInventario()
         {
             InitializeComponent();
-            colore();
 
-            tablaProductos.DataSource = Buscar("").Tables[0];
+
+            busqueda();
             tablaProductos.Columns[0].HeaderText = "Código";
             tablaProductos.Columns[1].HeaderText = "Nombre";
             tablaProductos.Columns[2].HeaderText = "Descripcion";
@@ -26,21 +26,21 @@ namespace Institucion_Comercial.inventarios
             tablaProductos.Columns[4].HeaderText = "Precio de Venta";
             tablaProductos.Columns[5].HeaderText = "Existencias";
             tablaProductos.Columns[6].HeaderText = "Minimo Permitido";
-            
-            colore();
+           
+
         }
 
         private void consultarInventario_Load(object sender, EventArgs e)
         {
-            
 
+            busqueda();
         }
 
         public void colore()
         {
             foreach (DataGridViewRow fila in tablaProductos.Rows)
             {
-                if (Convert.ToInt32(fila.Cells[5].Value.ToString())< Convert.ToInt32(fila.Cells[6].Value.ToString()))
+                if (Convert.ToDouble(fila.Cells[5].Value.ToString())< Convert.ToDouble(fila.Cells[6].Value.ToString()))
                 {
                     fila.DefaultCellStyle.BackColor = Color.LightPink;
                     fila.DefaultCellStyle.ForeColor = Color.DarkRed;
@@ -75,6 +75,11 @@ namespace Institucion_Comercial.inventarios
         }
 
         private void txtbuscar_TextChanged(object sender, EventArgs e)
+        {
+            busqueda();
+        }
+
+        public void busqueda()
         {
             tablaProductos.DataSource = Buscar(txtbuscar.Text.ToString()).Tables[0];
             colore();
