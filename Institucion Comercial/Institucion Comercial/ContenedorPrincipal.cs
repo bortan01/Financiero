@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Institucion_Comercial.Clientes;
 
 namespace Institucion_Comercial
 {
@@ -169,6 +170,20 @@ namespace Institucion_Comercial
             registroActivo ra = new registroActivo();
             ra.MdiParent = this;
             ra.Show();
+        }
+
+        private void registrarToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            registroClientes rc = new registroClientes();
+            rc.MdiParent = this;
+            rc.Show();
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            consultarClientes cc = new consultarClientes();
+            cc.MdiParent = this;
+            cc.Show();
         }
     }
 }

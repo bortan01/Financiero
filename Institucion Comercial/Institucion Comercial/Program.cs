@@ -1,4 +1,5 @@
-﻿using Institucion_Comercial.inventarios;
+﻿using Institucion_Comercial.Clientes;
+using Institucion_Comercial.inventarios;
 using System;
 using System.Collections.Generic;
 using System.Linq;

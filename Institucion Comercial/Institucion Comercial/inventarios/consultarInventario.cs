@@ -18,7 +18,7 @@ namespace Institucion_Comercial.inventarios
             InitializeComponent();
             colore();
 
-            
+            tablaProductos.DataSource = Buscar("").Tables[0];
             tablaProductos.Columns[0].HeaderText = "Código";
             tablaProductos.Columns[1].HeaderText = "Nombre";
             tablaProductos.Columns[2].HeaderText = "Descripcion";
@@ -26,7 +26,7 @@ namespace Institucion_Comercial.inventarios
             tablaProductos.Columns[4].HeaderText = "Precio de Venta";
             tablaProductos.Columns[5].HeaderText = "Existencias";
             tablaProductos.Columns[6].HeaderText = "Minimo Permitido";
-            tablaProductos.DataSource = Buscar("").Tables[0];
+            
             colore();
         }
 
@@ -64,7 +64,7 @@ namespace Institucion_Comercial.inventarios
             try
             {
                 string cmd = "Select prod.id_producto, prod.nombre, prod.descripcion, prov.nombre, prod.precio_venta, inv.cantidad, prod.minimo from instituciones_financieras.producto as prod, instituciones_financieras.proveedor as prov, instituciones_financieras.inventario as inv " +
-                    "where (prod.id_producto like '%" + campo + "%' or prod.nombre like '%" + campo + "%' or prod.descripcion like '%" + campo + "%' or prod.precio_compra like '%" + campo + "%' or prod.precio_venta like '%" + campo + "%' or prov.nombre like '%" + campo + "%') and prod.id_producto = inv.id_producto";
+                    "where (prod.id_producto like '%" + campo + "%' or prod.nombre like '%" + campo + "%' or prod.descripcion like '%" + campo + "%' or prod.precio_compra like '%" + campo + "%' or prod.precio_venta like '%" + campo + "%' or prov.nombre like '%" + campo + "%') and prod.id_producto = inv.id_producto order by inv.cantidad asc";
                 ds = Utilidades.Ejecutar(cmd);
             }
             catch (Exception error)
