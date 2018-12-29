@@ -108,45 +108,58 @@ namespace Institucion_Comercial.comercial
         
         private void button3_Click(object sender, EventArgs e)
         {
+            int CANT = Convert.ToInt16(txtCantidad.Value.ToString());
+            int DISP = Convert.ToInt16(t4.Text.ToString());
 
-            bool existe = false;
-            int num_fila = 0;
-            if (cont_fila == 0) // noa hay nada 
+            if (CANT <= DISP)
             {
-                dataCompra.Rows.Add(t1.Text, t2.Text, t3.Text, txtCantidad.Value);
-                double importe = Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[3].Value);
-                dataCompra.Rows[cont_fila].Cells[4].Value = importe;
-                cont_fila++;
-            }
-            else {
-
-                foreach (DataGridViewRow Fila in dataCompra.Rows)
+                bool existe = false;
+                int num_fila = 0;
+                if (cont_fila == 0) // noa hay nada 
                 {
-                    if (Fila.Cells[0].Value.ToString() == t1.Text)
-                    {
-                        existe = true;
-                        num_fila = Fila.Index;
-                    }
-                }
-                if (existe == true)
-                {
-                    dataCompra.Rows[num_fila].Cells[3].Value = txtCantidad.Value;
-                    double importe = Convert.ToDouble(dataCompra.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dataCompra.Rows[num_fila].Cells[3].Value);
-                    dataCompra.Rows[num_fila].Cells[4].Value = importe;
-                }
-                else {
                     dataCompra.Rows.Add(t1.Text, t2.Text, t3.Text, txtCantidad.Value);
                     double importe = Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[3].Value);
                     dataCompra.Rows[cont_fila].Cells[4].Value = importe;
                     cont_fila++;
                 }
+                else
+                {
+
+                    foreach (DataGridViewRow Fila in dataCompra.Rows)
+                    {
+                        if (Fila.Cells[0].Value.ToString() == t1.Text)
+                        {
+                            existe = true;
+                            num_fila = Fila.Index;
+                        }
+                    }
+                    if (existe == true)
+                    {
+                        dataCompra.Rows[num_fila].Cells[3].Value = txtCantidad.Value;
+                        double importe = Convert.ToDouble(dataCompra.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dataCompra.Rows[num_fila].Cells[3].Value);
+                        dataCompra.Rows[num_fila].Cells[4].Value = importe;
+                    }
+                    else
+                    {
+                        dataCompra.Rows.Add(t1.Text, t2.Text, t3.Text, txtCantidad.Value);
+                        double importe = Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dataCompra.Rows[cont_fila].Cells[3].Value);
+                        dataCompra.Rows[cont_fila].Cells[4].Value = importe;
+                        cont_fila++;
+                    }
+                }
+                total = 0;
+                foreach (DataGridViewRow Fila in dataCompra.Rows)
+                {
+                    total += Convert.ToDouble(Fila.Cells[4].Value);
+
+                }
+                txtTotal.Text = total.ToString();
             }
-            total = 0;
-            foreach (DataGridViewRow Fila in dataCompra.Rows)
-            {
-                total += Convert.ToDouble(Fila.Cells[4].Value);
+            else {
+                MessageBox.Show("LA CANTIDAD SOLICITADA ES MAYOR A LA DISPONIBLE");
             }
-            txtTotal.Text = total.ToString();
+
+            
         }
 
         private void label3_Click(object sender, EventArgs e)

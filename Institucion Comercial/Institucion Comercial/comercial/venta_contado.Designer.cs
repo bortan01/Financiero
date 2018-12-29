@@ -36,6 +36,10 @@
             // 
             this.txtEmpleado.Text = "Juan PedroTenorio Arreoza";
             // 
+            // button3
+            // 
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // button5
             // 
             this.button5.Location = new System.Drawing.Point(28, 420);
