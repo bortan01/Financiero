@@ -185,5 +185,19 @@ namespace Institucion_Comercial
             cc.MdiParent = this;
             cc.Show();
         }
+
+        private void reporteDeInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ReporteInventario ri = new ReporteInventario();
+            ri.MdiParent = this;
+            ri.Show();
+        }
+
+        private void reporteDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            reporteCompras rc = new reporteCompras();
+            rc.MdiParent = this;
+            rc.Show();
+        }
     }
 }
