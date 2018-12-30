@@ -135,11 +135,25 @@
     <Compile Include="inventarios\consultarInventario.Designer.cs">
       <DependentUpon>consultarInventario.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventarios\DataSetInventario.cs">
+      <DependentUpon>DataSetInventario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="inventarios\DataSetInventario.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetInventario.xsd</DependentUpon>
+    </Compile>
     <Compile Include="inventarios\detalleCompra.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="inventarios\detalleCompra.Designer.cs">
       <DependentUpon>detalleCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inventarios\ReporteInventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventarios\ReporteInventario.Designer.cs">
+      <DependentUpon>ReporteInventario.cs</DependentUpon>
     </Compile>
     <Compile Include="plantillas\Factura.cs">
       <SubType>Form</SubType>
@@ -243,6 +257,10 @@
     <EmbeddedResource Include="inventarios\detalleCompra.resx">
       <DependentUpon>detalleCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="inventarios\Report1.rdlc" />
+    <EmbeddedResource Include="inventarios\ReporteInventario.resx">
+      <DependentUpon>ReporteInventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="plantillas\Factura.resx">
       <DependentUpon>Factura.cs</DependentUpon>
     </EmbeddedResource>
@@ -285,6 +303,17 @@
     <EmbeddedResource Include="RegistrarEmpleado.resx">
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="inventarios\DataSetInventario.xsc">
+      <DependentUpon>DataSetInventario.xsd</DependentUpon>
+    </None>
+    <None Include="inventarios\DataSetInventario.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetInventario.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="inventarios\DataSetInventario.xss">
+      <DependentUpon>DataSetInventario.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -313,6 +342,12 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
