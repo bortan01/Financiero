@@ -34,8 +34,10 @@ namespace Institucion_Comercial.inventarios
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ReportParameter p1 = new ReportParameter("fechaInicio",txtinicio.Value.Date.ToString());
-            ReportParameter p2 = new ReportParameter("fechaFin", txtfin.Value.Date.ToString());
+            DateTime inicio = Convert.ToDateTime(txtinicio.Value.ToString());
+            DateTime fin = Convert.ToDateTime(txtfin.Value.ToString());
+            ReportParameter p1 = new ReportParameter("fechaInicio",inicio.ToShortDateString());
+            ReportParameter p2 = new ReportParameter("fechaFin", fin.ToShortDateString());
             reportViewer1.LocalReport.SetParameters(p1);
             reportViewer1.LocalReport.SetParameters(p2);
             reportViewer1.RefreshReport();
