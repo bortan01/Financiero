@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace Institucion_Comercial.inventarios
 {
@@ -29,6 +30,15 @@ namespace Institucion_Comercial.inventarios
                // MessageBox.Show(ex.Message);
             }
             this.reportViewer1.RefreshReport();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ReportParameter p1 = new ReportParameter("fechaInicio",txtinicio.Value.Date.ToString());
+            ReportParameter p2 = new ReportParameter("fechaFin", txtfin.Value.Date.ToString());
+            reportViewer1.LocalReport.SetParameters(p1);
+            reportViewer1.LocalReport.SetParameters(p2);
+            reportViewer1.RefreshReport();
         }
     }
 }
