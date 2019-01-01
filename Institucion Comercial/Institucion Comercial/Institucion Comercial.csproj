@@ -98,6 +98,13 @@
       <DependentUpon>registroClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="comercial\controladorPlan.cs" />
+    <Compile Include="comercial\DataSet1.Designer.cs" />
+    <Compile Include="comercial\FCredito.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comercial\FCredito.Designer.cs">
+      <DependentUpon>FCredito.cs</DependentUpon>
+    </Compile>
     <Compile Include="comercial\plan.cs" />
     <Compile Include="comercial\SeleccionarCliente.cs">
       <SubType>Form</SubType>
@@ -242,6 +249,11 @@
     <EmbeddedResource Include="Clientes\registroClientes.resx">
       <DependentUpon>registroClientes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="comercial\Contrato.rdlc" />
+    <EmbeddedResource Include="comercial\FCredito.resx">
+      <DependentUpon>FCredito.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="comercial\Reporte_Contado.rdlc" />
     <EmbeddedResource Include="comercial\SeleccionarCliente.resx">
       <DependentUpon>SeleccionarCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -313,6 +325,13 @@
     <EmbeddedResource Include="RegistrarEmpleado.resx">
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="comercial\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="comercial\DataSet1.xsd" />
+    <None Include="comercial\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
     <None Include="inventarios\DataSetInventario.xsc">
       <DependentUpon>DataSetInventario.xsd</DependentUpon>
     </None>
