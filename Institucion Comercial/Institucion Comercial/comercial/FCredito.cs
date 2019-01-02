@@ -16,5 +16,18 @@ namespace Institucion_Comercial.comercial
         {
             InitializeComponent();
         }
+
+        private void FCredito_Load(object sender, EventArgs e)
+        {
+            // TODO: esta línea de código carga datos en la tabla 'DetalleCredito.DataTable1' Puede moverla o quitarla según sea necesario.
+            this.DataTable1TableAdapter.Fill(this.DetalleCredito.DataTable1);
+
+            this.reportViewer1.RefreshReport();
+        }
+
+        private void reportViewer1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

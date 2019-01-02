@@ -99,6 +99,11 @@
     </Compile>
     <Compile Include="comercial\controladorPlan.cs" />
     <Compile Include="comercial\DataSet1.Designer.cs" />
+    <Compile Include="comercial\DetalleCredito.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetalleCredito.xsd</DependentUpon>
+    </Compile>
     <Compile Include="comercial\FCredito.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -325,12 +330,16 @@
     <EmbeddedResource Include="RegistrarEmpleado.resx">
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="comercial\DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="comercial\DetalleCredito.xsc">
+      <DependentUpon>DetalleCredito.xsd</DependentUpon>
     </None>
-    <None Include="comercial\DataSet1.xsd" />
-    <None Include="comercial\DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
+    <None Include="comercial\DetalleCredito.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DetalleCredito.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="comercial\DetalleCredito.xss">
+      <DependentUpon>DetalleCredito.xsd</DependentUpon>
     </None>
     <None Include="inventarios\DataSetInventario.xsc">
       <DependentUpon>DataSetInventario.xsd</DependentUpon>

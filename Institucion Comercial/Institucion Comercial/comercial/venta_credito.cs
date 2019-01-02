@@ -187,9 +187,16 @@ namespace Institucion_Comercial.comercial
                 MessageBox.Show(msj);
                 if (msj.Equals("Registro Completado"))
                 {
-
+                    FCredito re = new FCredito();
+                    re.ShowDialog();
                 }
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FCredito re = new FCredito();
+            re.ShowDialog();
         }
     }
 }
