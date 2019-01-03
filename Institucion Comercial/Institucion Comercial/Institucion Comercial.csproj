@@ -99,6 +99,9 @@
     </Compile>
     <Compile Include="comercial\controladorPlan.cs" />
     <Compile Include="comercial\DataSet1.Designer.cs" />
+    <Compile Include="comercial\DetalleCredito.cs">
+      <DependentUpon>DetalleCredito.xsd</DependentUpon>
+    </Compile>
     <Compile Include="comercial\DetalleCredito.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

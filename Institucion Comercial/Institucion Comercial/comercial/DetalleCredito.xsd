@@ -13,6 +13,7 @@
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT
+instituciones_financieras.producto.id_producto,
 instituciones_financieras.venta.id_venta,
 instituciones_financieras.cliente.nombre + ' ' + instituciones_financieras.cliente.apellido   as nombreCliente,
 instituciones_financieras.cliente.direccion as direccionCliente,
@@ -31,7 +32,8 @@ instituciones_financieras.venta.prestamo_original as total,
 instituciones_financieras.plan_pago.tasa as tasa,
 instituciones_financieras.plan_pago.cuotas as cuota,
 instituciones_financieras.venta.tipo as tipo,
-instituciones_financieras.venta.proximo_pago as proximo
+instituciones_financieras.venta.proximo_pago as proximo,
+instituciones_financieras.venta.cuota as penitencia
 
 FROM
 instituciones_financieras.venta
@@ -69,6 +71,8 @@ instituciones_financieras.venta.id_venta = '54'</CommandText>
               <Mapping SourceColumn="tipo" DataSetColumn="tipo" />
               <Mapping SourceColumn="proximo" DataSetColumn="proximo" />
               <Mapping SourceColumn="id_venta" DataSetColumn="id_venta" />
+              <Mapping SourceColumn="id_producto" DataSetColumn="id_producto" />
+              <Mapping SourceColumn="penitencia" DataSetColumn="penitencia" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -80,7 +84,7 @@ instituciones_financieras.venta.id_venta = '54'</CommandText>
   <xs:element name="DetalleCredito" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DetalleCredito" msprop:Generator_UserDSName="DetalleCredito">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msdata:Locale="es-US" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msdata:Locale="es-US" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombreCliente" msprop:Generator_ColumnVarNameInTable="columnnombreCliente" msprop:Generator_ColumnPropNameInRow="nombreCliente" msprop:Generator_ColumnPropNameInTable="nombreClienteColumn" msprop:Generator_UserColumnName="nombreCliente" minOccurs="0">
@@ -150,6 +154,8 @@ instituciones_financieras.venta.id_venta = '54'</CommandText>
               </xs:element>
               <xs:element name="proximo" msprop:Generator_ColumnVarNameInTable="columnproximo" msprop:Generator_ColumnPropNameInRow="proximo" msprop:Generator_ColumnPropNameInTable="proximoColumn" msprop:Generator_UserColumnName="proximo" type="xs:dateTime" minOccurs="0" />
               <xs:element name="id_venta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_venta" msprop:Generator_ColumnPropNameInRow="id_venta" msprop:Generator_ColumnPropNameInTable="id_ventaColumn" msprop:Generator_UserColumnName="id_venta" type="xs:int" />
+              <xs:element name="id_producto" msprop:Generator_ColumnVarNameInTable="columnid_producto" msprop:Generator_ColumnPropNameInRow="id_producto" msprop:Generator_ColumnPropNameInTable="id_productoColumn" msprop:Generator_UserColumnName="id_producto" type="xs:int" />
+              <xs:element name="penitencia" msprop:Generator_ColumnVarNameInTable="columnpenitencia" msprop:Generator_ColumnPropNameInRow="penitencia" msprop:Generator_ColumnPropNameInTable="penitenciaColumn" msprop:Generator_UserColumnName="penitencia" type="xs:float" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -157,7 +163,7 @@ instituciones_financieras.venta.id_venta = '54'</CommandText>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DataTable1" />
-      <xs:field xpath="mstns:id_venta" />
+      <xs:field xpath="mstns:id_producto" />
     </xs:unique>
   </xs:element>
 </xs:schema>

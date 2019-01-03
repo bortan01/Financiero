@@ -317,6 +317,10 @@ namespace Institucion_Comercial.comercial {
             
             private global::System.Data.DataColumn columnid_venta;
             
+            private global::System.Data.DataColumn columnid_producto;
+            
+            private global::System.Data.DataColumn columnpenitencia;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -504,6 +508,22 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_productoColumn {
+                get {
+                    return this.columnid_producto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn penitenciaColumn {
+                get {
+                    return this.columnpenitencia;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -556,7 +576,9 @@ namespace Institucion_Comercial.comercial {
                         float tasa, 
                         int cuota, 
                         string tipo, 
-                        System.DateTime proximo) {
+                        System.DateTime proximo, 
+                        int id_producto, 
+                        float penitencia) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         nombreCliente,
@@ -577,7 +599,9 @@ namespace Institucion_Comercial.comercial {
                         cuota,
                         tipo,
                         proximo,
-                        null};
+                        null,
+                        id_producto,
+                        penitencia};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -585,9 +609,9 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row FindByid_venta(int id_venta) {
+            public DataTable1Row FindByid_producto(int id_producto) {
                 return ((DataTable1Row)(this.Rows.Find(new object[] {
-                            id_venta})));
+                            id_producto})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -626,6 +650,8 @@ namespace Institucion_Comercial.comercial {
                 this.columntipo = base.Columns["tipo"];
                 this.columnproximo = base.Columns["proximo"];
                 this.columnid_venta = base.Columns["id_venta"];
+                this.columnid_producto = base.Columns["id_producto"];
+                this.columnpenitencia = base.Columns["penitencia"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -669,8 +695,12 @@ namespace Institucion_Comercial.comercial {
                 base.Columns.Add(this.columnproximo);
                 this.columnid_venta = new global::System.Data.DataColumn("id_venta", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid_venta);
+                this.columnid_producto = new global::System.Data.DataColumn("id_producto", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_producto);
+                this.columnpenitencia = new global::System.Data.DataColumn("penitencia", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnpenitencia);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid_venta}, true));
+                                this.columnid_producto}, true));
                 this.columnnombreCliente.MaxLength = 30;
                 this.columndireccionCliente.MaxLength = 100;
                 this.columnduiCliente.MaxLength = 15;
@@ -690,7 +720,8 @@ namespace Institucion_Comercial.comercial {
                 this.columnid_venta.AutoIncrementStep = -1;
                 this.columnid_venta.AllowDBNull = false;
                 this.columnid_venta.ReadOnly = true;
-                this.columnid_venta.Unique = true;
+                this.columnid_producto.AllowDBNull = false;
+                this.columnid_producto.Unique = true;
                 this.Locale = new global::System.Globalization.CultureInfo("es-US");
             }
             
@@ -1128,6 +1159,33 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_producto {
+                get {
+                    return ((int)(this[this.tableDataTable1.id_productoColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.id_productoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public float penitencia {
+                get {
+                    try {
+                        return ((float)(this[this.tableDataTable1.penitenciaColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'penitencia\' de la tabla \'DataTable1\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableDataTable1.penitenciaColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsnombreClienteNull() {
                 return this.IsNull(this.tableDataTable1.nombreClienteColumn);
             }
@@ -1329,6 +1387,18 @@ namespace Institucion_Comercial.comercial {
             public void SetproximoNull() {
                 this[this.tableDataTable1.proximoColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IspenitenciaNull() {
+                return this.IsNull(this.tableDataTable1.penitenciaColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetpenitenciaNull() {
+                this[this.tableDataTable1.penitenciaColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1509,6 +1579,8 @@ namespace Institucion_Comercial.comercial.DetalleCreditoTableAdapters {
             tableMapping.ColumnMappings.Add("tipo", "tipo");
             tableMapping.ColumnMappings.Add("proximo", "proximo");
             tableMapping.ColumnMappings.Add("id_venta", "id_venta");
+            tableMapping.ColumnMappings.Add("id_producto", "id_producto");
+            tableMapping.ColumnMappings.Add("penitencia", "penitencia");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1525,36 +1597,38 @@ namespace Institucion_Comercial.comercial.DetalleCreditoTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT\r\ninstituciones_financieras.venta.id_venta,\r\ninstituciones_financieras.clie" +
-                "nte.nombre + \' \' + instituciones_financieras.cliente.apellido   as nombreCliente" +
-                ",\r\ninstituciones_financieras.cliente.direccion as direccionCliente,\r\ninstitucion" +
-                "es_financieras.cliente.dui as duiCliente,\r\ninstituciones_financieras.cliente.tel" +
-                "efono as telefonoCliente,\r\ninstituciones_financieras.empleado.id_empleado as cod" +
-                "igoEmpleado,\r\ninstituciones_financieras.empleado.nombre + \' \' +instituciones_fin" +
-                "ancieras.empleado.apellido as nombreEmpleado,\r\ninstituciones_financieras.product" +
-                "o.nombre as nombreProducto,\r\ninstituciones_financieras.producto.descripcion as d" +
-                "escripcionProducto,\r\ninstituciones_financieras.producto.precio_venta as precioVe" +
-                "nte,\r\ninstituciones_financieras.detalle_venta.cantidad as cantidadProducto,\r\nins" +
-                "tituciones_financieras.producto.precio_venta * instituciones_financieras.detalle" +
-                "_venta.cantidad as subtotal ,\r\ninstituciones_financieras.pago.fecha as fechaVent" +
-                "a,\r\ninstituciones_financieras.pago.monto as prima,\r\ninstituciones_financieras.ve" +
-                "nta.prestamo_original as total,\r\ninstituciones_financieras.plan_pago.tasa as tas" +
-                "a,\r\ninstituciones_financieras.plan_pago.cuotas as cuota,\r\ninstituciones_financie" +
-                "ras.venta.tipo as tipo,\r\ninstituciones_financieras.venta.proximo_pago as proximo" +
-                "\r\n\r\nFROM\r\ninstituciones_financieras.venta\r\nINNER JOIN instituciones_financieras." +
-                "detalle_compra ON instituciones_financieras.detalle_compra.id_venta = institucio" +
-                "nes_financieras.venta.id_venta\r\nINNER JOIN instituciones_financieras.empleado ON" +
-                " instituciones_financieras.venta.id_empleado = instituciones_financieras.emplead" +
-                "o.id_empleado\r\nINNER JOIN instituciones_financieras.detalle_venta ON institucion" +
-                "es_financieras.detalle_venta.id_venta = instituciones_financieras.venta.id_venta" +
-                "\r\nINNER JOIN instituciones_financieras.pago ON instituciones_financieras.pago.id" +
-                "_venta = instituciones_financieras.venta.id_venta\r\nINNER JOIN instituciones_fina" +
-                "ncieras.cliente ON instituciones_financieras.detalle_compra.id_cliente = institu" +
-                "ciones_financieras.cliente.id_cliente\r\nINNER JOIN instituciones_financieras.prod" +
-                "ucto ON instituciones_financieras.detalle_venta.id_producto = instituciones_fina" +
-                "ncieras.producto.id_producto\r\nINNER JOIN instituciones_financieras.plan_pago ON " +
-                "instituciones_financieras.venta.id_plan = instituciones_financieras.plan_pago.id" +
-                "_plan\r\nWHERE\r\ninstituciones_financieras.venta.id_venta = \'54\'";
+            this._commandCollection[0].CommandText = "SELECT\r\ninstituciones_financieras.producto.id_producto,\r\ninstituciones_financiera" +
+                "s.venta.id_venta,\r\ninstituciones_financieras.cliente.nombre + \' \' + institucione" +
+                "s_financieras.cliente.apellido   as nombreCliente,\r\ninstituciones_financieras.cl" +
+                "iente.direccion as direccionCliente,\r\ninstituciones_financieras.cliente.dui as d" +
+                "uiCliente,\r\ninstituciones_financieras.cliente.telefono as telefonoCliente,\r\ninst" +
+                "ituciones_financieras.empleado.id_empleado as codigoEmpleado,\r\ninstituciones_fin" +
+                "ancieras.empleado.nombre + \' \' +instituciones_financieras.empleado.apellido as n" +
+                "ombreEmpleado,\r\ninstituciones_financieras.producto.nombre as nombreProducto,\r\nin" +
+                "stituciones_financieras.producto.descripcion as descripcionProducto,\r\ninstitucio" +
+                "nes_financieras.producto.precio_venta as precioVente,\r\ninstituciones_financieras" +
+                ".detalle_venta.cantidad as cantidadProducto,\r\ninstituciones_financieras.producto" +
+                ".precio_venta * instituciones_financieras.detalle_venta.cantidad as subtotal ,\r\n" +
+                "instituciones_financieras.pago.fecha as fechaVenta,\r\ninstituciones_financieras.p" +
+                "ago.monto as prima,\r\ninstituciones_financieras.venta.prestamo_original as total," +
+                "\r\ninstituciones_financieras.plan_pago.tasa as tasa,\r\ninstituciones_financieras.p" +
+                "lan_pago.cuotas as cuota,\r\ninstituciones_financieras.venta.tipo as tipo,\r\ninstit" +
+                "uciones_financieras.venta.proximo_pago as proximo,\r\ninstituciones_financieras.ve" +
+                "nta.cuota as penitencia\r\n\r\nFROM\r\ninstituciones_financieras.venta\r\nINNER JOIN ins" +
+                "tituciones_financieras.detalle_compra ON instituciones_financieras.detalle_compr" +
+                "a.id_venta = instituciones_financieras.venta.id_venta\r\nINNER JOIN instituciones_" +
+                "financieras.empleado ON instituciones_financieras.venta.id_empleado = institucio" +
+                "nes_financieras.empleado.id_empleado\r\nINNER JOIN instituciones_financieras.detal" +
+                "le_venta ON instituciones_financieras.detalle_venta.id_venta = instituciones_fin" +
+                "ancieras.venta.id_venta\r\nINNER JOIN instituciones_financieras.pago ON institucio" +
+                "nes_financieras.pago.id_venta = instituciones_financieras.venta.id_venta\r\nINNER " +
+                "JOIN instituciones_financieras.cliente ON instituciones_financieras.detalle_comp" +
+                "ra.id_cliente = instituciones_financieras.cliente.id_cliente\r\nINNER JOIN institu" +
+                "ciones_financieras.producto ON instituciones_financieras.detalle_venta.id_produc" +
+                "to = instituciones_financieras.producto.id_producto\r\nINNER JOIN instituciones_fi" +
+                "nancieras.plan_pago ON instituciones_financieras.venta.id_plan = instituciones_f" +
+                "inancieras.plan_pago.id_plan\r\nWHERE\r\ninstituciones_financieras.venta.id_venta = " +
+                "\'54\'";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
