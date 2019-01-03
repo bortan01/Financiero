@@ -279,6 +279,10 @@ namespace Institucion_Comercial.comercial {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DataTable1DataTable : global::System.Data.TypedTableBase<DataTable1Row> {
             
+            private global::System.Data.DataColumn columnid_producto;
+            
+            private global::System.Data.DataColumn columnid_venta;
+            
             private global::System.Data.DataColumn columnnombreCliente;
             
             private global::System.Data.DataColumn columndireccionCliente;
@@ -311,15 +315,9 @@ namespace Institucion_Comercial.comercial {
             
             private global::System.Data.DataColumn columncuota;
             
-            private global::System.Data.DataColumn columntipo;
-            
             private global::System.Data.DataColumn columnproximo;
             
-            private global::System.Data.DataColumn columnid_venta;
-            
-            private global::System.Data.DataColumn columnid_producto;
-            
-            private global::System.Data.DataColumn columnpenitencia;
+            private global::System.Data.DataColumn columntipo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
@@ -352,6 +350,22 @@ namespace Institucion_Comercial.comercial {
             protected DataTable1DataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_productoColumn {
+                get {
+                    return this.columnid_producto;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_ventaColumn {
+                get {
+                    return this.columnid_venta;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -484,14 +498,6 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn tipoColumn {
-                get {
-                    return this.columntipo;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn proximoColumn {
                 get {
                     return this.columnproximo;
@@ -500,25 +506,9 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn id_ventaColumn {
+            public global::System.Data.DataColumn tipoColumn {
                 get {
-                    return this.columnid_venta;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn id_productoColumn {
-                get {
-                    return this.columnid_producto;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn penitenciaColumn {
-                get {
-                    return this.columnpenitencia;
+                    return this.columntipo;
                 }
             }
             
@@ -560,6 +550,7 @@ namespace Institucion_Comercial.comercial {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1Row AddDataTable1Row(
+                        int id_producto, 
                         string nombreCliente, 
                         string direccionCliente, 
                         string duiCliente, 
@@ -575,12 +566,12 @@ namespace Institucion_Comercial.comercial {
                         float total, 
                         float tasa, 
                         int cuota, 
-                        string tipo, 
                         System.DateTime proximo, 
-                        int id_producto, 
-                        float penitencia) {
+                        float tipo) {
                 DataTable1Row rowDataTable1Row = ((DataTable1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        id_producto,
+                        null,
                         nombreCliente,
                         direccionCliente,
                         duiCliente,
@@ -597,11 +588,8 @@ namespace Institucion_Comercial.comercial {
                         total,
                         tasa,
                         cuota,
-                        tipo,
                         proximo,
-                        null,
-                        id_producto,
-                        penitencia};
+                        tipo};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
                 return rowDataTable1Row;
@@ -631,6 +619,8 @@ namespace Institucion_Comercial.comercial {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
+                this.columnid_producto = base.Columns["id_producto"];
+                this.columnid_venta = base.Columns["id_venta"];
                 this.columnnombreCliente = base.Columns["nombreCliente"];
                 this.columndireccionCliente = base.Columns["direccionCliente"];
                 this.columnduiCliente = base.Columns["duiCliente"];
@@ -647,16 +637,17 @@ namespace Institucion_Comercial.comercial {
                 this.columntotal = base.Columns["total"];
                 this.columntasa = base.Columns["tasa"];
                 this.columncuota = base.Columns["cuota"];
-                this.columntipo = base.Columns["tipo"];
                 this.columnproximo = base.Columns["proximo"];
-                this.columnid_venta = base.Columns["id_venta"];
-                this.columnid_producto = base.Columns["id_producto"];
-                this.columnpenitencia = base.Columns["penitencia"];
+                this.columntipo = base.Columns["tipo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
+                this.columnid_producto = new global::System.Data.DataColumn("id_producto", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_producto);
+                this.columnid_venta = new global::System.Data.DataColumn("id_venta", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_venta);
                 this.columnnombreCliente = new global::System.Data.DataColumn("nombreCliente", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnnombreCliente);
                 this.columndireccionCliente = new global::System.Data.DataColumn("direccionCliente", typeof(string), null, global::System.Data.MappingType.Element);
@@ -689,19 +680,21 @@ namespace Institucion_Comercial.comercial {
                 base.Columns.Add(this.columntasa);
                 this.columncuota = new global::System.Data.DataColumn("cuota", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncuota);
-                this.columntipo = new global::System.Data.DataColumn("tipo", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntipo);
                 this.columnproximo = new global::System.Data.DataColumn("proximo", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnproximo);
-                this.columnid_venta = new global::System.Data.DataColumn("id_venta", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_venta);
-                this.columnid_producto = new global::System.Data.DataColumn("id_producto", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid_producto);
-                this.columnpenitencia = new global::System.Data.DataColumn("penitencia", typeof(float), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpenitencia);
+                this.columntipo = new global::System.Data.DataColumn("tipo", typeof(float), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columntipo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid_producto}, true));
-                this.columnnombreCliente.MaxLength = 30;
+                this.columnid_producto.AllowDBNull = false;
+                this.columnid_producto.Unique = true;
+                this.columnid_venta.AutoIncrement = true;
+                this.columnid_venta.AutoIncrementSeed = -1;
+                this.columnid_venta.AutoIncrementStep = -1;
+                this.columnid_venta.AllowDBNull = false;
+                this.columnid_venta.ReadOnly = true;
+                this.columnnombreCliente.ReadOnly = true;
+                this.columnnombreCliente.MaxLength = 61;
                 this.columndireccionCliente.MaxLength = 100;
                 this.columnduiCliente.MaxLength = 15;
                 this.columntelefonoCliente.MaxLength = 12;
@@ -710,19 +703,11 @@ namespace Institucion_Comercial.comercial {
                 this.columncodigoEmpleado.AutoIncrementStep = -1;
                 this.columncodigoEmpleado.AllowDBNull = false;
                 this.columncodigoEmpleado.ReadOnly = true;
-                this.columnnombreEmpleado.MaxLength = 30;
+                this.columnnombreEmpleado.ReadOnly = true;
+                this.columnnombreEmpleado.MaxLength = 61;
                 this.columnnombreProducto.MaxLength = 45;
                 this.columndescripcionProducto.MaxLength = 200;
                 this.columnsubtotal.ReadOnly = true;
-                this.columntipo.MaxLength = 45;
-                this.columnid_venta.AutoIncrement = true;
-                this.columnid_venta.AutoIncrementSeed = -1;
-                this.columnid_venta.AutoIncrementStep = -1;
-                this.columnid_venta.AllowDBNull = false;
-                this.columnid_venta.ReadOnly = true;
-                this.columnid_producto.AllowDBNull = false;
-                this.columnid_producto.Unique = true;
-                this.Locale = new global::System.Globalization.CultureInfo("es-US");
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -861,6 +846,28 @@ namespace Institucion_Comercial.comercial {
             internal DataTable1Row(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
                 this.tableDataTable1 = ((DataTable1DataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_producto {
+                get {
+                    return ((int)(this[this.tableDataTable1.id_productoColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.id_productoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_venta {
+                get {
+                    return ((int)(this[this.tableDataTable1.id_ventaColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.id_ventaColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1116,22 +1123,6 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string tipo {
-                get {
-                    try {
-                        return ((string)(this[this.tableDataTable1.tipoColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tipo\' de la tabla \'DataTable1\' es DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableDataTable1.tipoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime proximo {
                 get {
                     try {
@@ -1148,39 +1139,17 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int id_venta {
-                get {
-                    return ((int)(this[this.tableDataTable1.id_ventaColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.id_ventaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int id_producto {
-                get {
-                    return ((int)(this[this.tableDataTable1.id_productoColumn]));
-                }
-                set {
-                    this[this.tableDataTable1.id_productoColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public float penitencia {
+            public float tipo {
                 get {
                     try {
-                        return ((float)(this[this.tableDataTable1.penitenciaColumn]));
+                        return ((float)(this[this.tableDataTable1.tipoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'penitencia\' de la tabla \'DataTable1\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'tipo\' de la tabla \'DataTable1\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDataTable1.penitenciaColumn] = value;
+                    this[this.tableDataTable1.tipoColumn] = value;
                 }
             }
             
@@ -1366,18 +1335,6 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IstipoNull() {
-                return this.IsNull(this.tableDataTable1.tipoColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SettipoNull() {
-                this[this.tableDataTable1.tipoColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsproximoNull() {
                 return this.IsNull(this.tableDataTable1.proximoColumn);
             }
@@ -1390,14 +1347,14 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IspenitenciaNull() {
-                return this.IsNull(this.tableDataTable1.penitenciaColumn);
+            public bool IstipoNull() {
+                return this.IsNull(this.tableDataTable1.tipoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetpenitenciaNull() {
-                this[this.tableDataTable1.penitenciaColumn] = global::System.Convert.DBNull;
+            public void SettipoNull() {
+                this[this.tableDataTable1.tipoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1560,6 +1517,8 @@ namespace Institucion_Comercial.comercial.DetalleCreditoTableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "DataTable1";
+            tableMapping.ColumnMappings.Add("id_producto", "id_producto");
+            tableMapping.ColumnMappings.Add("id_venta", "id_venta");
             tableMapping.ColumnMappings.Add("nombreCliente", "nombreCliente");
             tableMapping.ColumnMappings.Add("direccionCliente", "direccionCliente");
             tableMapping.ColumnMappings.Add("duiCliente", "duiCliente");
@@ -1576,11 +1535,8 @@ namespace Institucion_Comercial.comercial.DetalleCreditoTableAdapters {
             tableMapping.ColumnMappings.Add("total", "total");
             tableMapping.ColumnMappings.Add("tasa", "tasa");
             tableMapping.ColumnMappings.Add("cuota", "cuota");
-            tableMapping.ColumnMappings.Add("tipo", "tipo");
             tableMapping.ColumnMappings.Add("proximo", "proximo");
-            tableMapping.ColumnMappings.Add("id_venta", "id_venta");
-            tableMapping.ColumnMappings.Add("id_producto", "id_producto");
-            tableMapping.ColumnMappings.Add("penitencia", "penitencia");
+            tableMapping.ColumnMappings.Add("tipo", "tipo");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1597,38 +1553,40 @@ namespace Institucion_Comercial.comercial.DetalleCreditoTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT\r\ninstituciones_financieras.producto.id_producto,\r\ninstituciones_financiera" +
-                "s.venta.id_venta,\r\ninstituciones_financieras.cliente.nombre + \' \' + institucione" +
-                "s_financieras.cliente.apellido   as nombreCliente,\r\ninstituciones_financieras.cl" +
-                "iente.direccion as direccionCliente,\r\ninstituciones_financieras.cliente.dui as d" +
-                "uiCliente,\r\ninstituciones_financieras.cliente.telefono as telefonoCliente,\r\ninst" +
-                "ituciones_financieras.empleado.id_empleado as codigoEmpleado,\r\ninstituciones_fin" +
-                "ancieras.empleado.nombre + \' \' +instituciones_financieras.empleado.apellido as n" +
-                "ombreEmpleado,\r\ninstituciones_financieras.producto.nombre as nombreProducto,\r\nin" +
-                "stituciones_financieras.producto.descripcion as descripcionProducto,\r\ninstitucio" +
-                "nes_financieras.producto.precio_venta as precioVente,\r\ninstituciones_financieras" +
-                ".detalle_venta.cantidad as cantidadProducto,\r\ninstituciones_financieras.producto" +
-                ".precio_venta * instituciones_financieras.detalle_venta.cantidad as subtotal ,\r\n" +
-                "instituciones_financieras.pago.fecha as fechaVenta,\r\ninstituciones_financieras.p" +
-                "ago.monto as prima,\r\ninstituciones_financieras.venta.prestamo_original as total," +
-                "\r\ninstituciones_financieras.plan_pago.tasa as tasa,\r\ninstituciones_financieras.p" +
-                "lan_pago.cuotas as cuota,\r\ninstituciones_financieras.venta.tipo as tipo,\r\ninstit" +
-                "uciones_financieras.venta.proximo_pago as proximo,\r\ninstituciones_financieras.ve" +
-                "nta.cuota as penitencia\r\n\r\nFROM\r\ninstituciones_financieras.venta\r\nINNER JOIN ins" +
-                "tituciones_financieras.detalle_compra ON instituciones_financieras.detalle_compr" +
-                "a.id_venta = instituciones_financieras.venta.id_venta\r\nINNER JOIN instituciones_" +
-                "financieras.empleado ON instituciones_financieras.venta.id_empleado = institucio" +
-                "nes_financieras.empleado.id_empleado\r\nINNER JOIN instituciones_financieras.detal" +
-                "le_venta ON instituciones_financieras.detalle_venta.id_venta = instituciones_fin" +
-                "ancieras.venta.id_venta\r\nINNER JOIN instituciones_financieras.pago ON institucio" +
-                "nes_financieras.pago.id_venta = instituciones_financieras.venta.id_venta\r\nINNER " +
-                "JOIN instituciones_financieras.cliente ON instituciones_financieras.detalle_comp" +
-                "ra.id_cliente = instituciones_financieras.cliente.id_cliente\r\nINNER JOIN institu" +
-                "ciones_financieras.producto ON instituciones_financieras.detalle_venta.id_produc" +
-                "to = instituciones_financieras.producto.id_producto\r\nINNER JOIN instituciones_fi" +
-                "nancieras.plan_pago ON instituciones_financieras.venta.id_plan = instituciones_f" +
-                "inancieras.plan_pago.id_plan\r\nWHERE\r\ninstituciones_financieras.venta.id_venta = " +
-                "\'54\'";
+            this._commandCollection[0].CommandText = "SELECT        instituciones_financieras.producto.id_producto, instituciones_finan" +
+                "cieras.venta.id_venta, instituciones_financieras.cliente.nombre + \' \' + instituc" +
+                "iones_financieras.cliente.apellido AS nombreCliente, \r\n                         " +
+                "instituciones_financieras.cliente.direccion AS direccionCliente, instituciones_f" +
+                "inancieras.cliente.dui AS duiCliente, instituciones_financieras.cliente.telefono" +
+                " AS telefonoCliente, \r\n                         instituciones_financieras.emplea" +
+                "do.id_empleado AS codigoEmpleado, instituciones_financieras.empleado.nombre + \' " +
+                "\' + instituciones_financieras.empleado.apellido AS nombreEmpleado, \r\n           " +
+                "              instituciones_financieras.producto.nombre AS nombreProducto, insti" +
+                "tuciones_financieras.producto.descripcion AS descripcionProducto, instituciones_" +
+                "financieras.producto.precio_venta AS precioVente, \r\n                         ins" +
+                "tituciones_financieras.detalle_venta.cantidad AS cantidadProducto, instituciones" +
+                "_financieras.producto.precio_venta * instituciones_financieras.detalle_venta.can" +
+                "tidad AS subtotal, \r\n                         instituciones_financieras.pago.fec" +
+                "ha AS fechaVenta, instituciones_financieras.pago.monto AS prima, instituciones_f" +
+                "inancieras.venta.prestamo_original AS total, instituciones_financieras.plan_pago" +
+                ".tasa, \r\n                         instituciones_financieras.plan_pago.cuotas AS " +
+                "cuota,instituciones_financieras.venta.proximo_pago AS proximo, instituciones_fin" +
+                "ancieras.venta.cuota AS tipo\r\nFROM            instituciones_financieras.venta IN" +
+                "NER JOIN\r\n                         instituciones_financieras.detalle_compra ON i" +
+                "nstituciones_financieras.detalle_compra.id_venta = instituciones_financieras.ven" +
+                "ta.id_venta INNER JOIN\r\n                         instituciones_financieras.emple" +
+                "ado ON instituciones_financieras.venta.id_empleado = instituciones_financieras.e" +
+                "mpleado.id_empleado INNER JOIN\r\n                         instituciones_financier" +
+                "as.detalle_venta ON instituciones_financieras.detalle_venta.id_venta = instituci" +
+                "ones_financieras.venta.id_venta INNER JOIN\r\n                         institucion" +
+                "es_financieras.pago ON instituciones_financieras.pago.id_venta = instituciones_f" +
+                "inancieras.venta.id_venta INNER JOIN\r\n                         instituciones_fin" +
+                "ancieras.cliente ON instituciones_financieras.detalle_compra.id_cliente = instit" +
+                "uciones_financieras.cliente.id_cliente INNER JOIN\r\n                         inst" +
+                "ituciones_financieras.producto ON instituciones_financieras.detalle_venta.id_pro" +
+                "ducto = instituciones_financieras.producto.id_producto INNER JOIN\r\n             " +
+                "            instituciones_financieras.plan_pago ON instituciones_financieras.ven" +
+                "ta.id_plan = instituciones_financieras.plan_pago.id_plan \r\n\r\n";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 using MiLibreria;
 
 namespace Institucion_Comercial.comercial
@@ -195,8 +196,11 @@ namespace Institucion_Comercial.comercial
 
         private void button5_Click(object sender, EventArgs e)
         {
+          
+
+
             FCredito re = new FCredito();
-            re.ShowDialog();
+                  re.ShowDialog();
         }
     }
 }
