@@ -199,7 +199,7 @@ namespace Institucion_Comercial.comercial
           
 
 
-            FCredito re = new FCredito();
+            FCredito re = new FCredito("54");
                   re.ShowDialog();
         }
     }
