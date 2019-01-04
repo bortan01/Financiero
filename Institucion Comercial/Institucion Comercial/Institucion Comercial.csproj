@@ -99,6 +99,11 @@
     </Compile>
     <Compile Include="comercial\controladorPlan.cs" />
     <Compile Include="comercial\DataSet1.Designer.cs" />
+    <Compile Include="comercial\DetalleContado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetalleContado.xsd</DependentUpon>
+    </Compile>
     <Compile Include="comercial\DetalleCredito.cs">
       <DependentUpon>DetalleCredito.xsd</DependentUpon>
     </Compile>
@@ -106,6 +111,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DetalleCredito.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="comercial\FContado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comercial\FContado.Designer.cs">
+      <DependentUpon>FContado.cs</DependentUpon>
     </Compile>
     <Compile Include="comercial\FCredito.cs">
       <SubType>Form</SubType>
@@ -258,6 +269,9 @@
       <DependentUpon>registroClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="comercial\Contrato.rdlc" />
+    <EmbeddedResource Include="comercial\FContado.resx">
+      <DependentUpon>FContado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="comercial\FCredito.resx">
       <DependentUpon>FCredito.cs</DependentUpon>
     </EmbeddedResource>
@@ -333,6 +347,17 @@
     <EmbeddedResource Include="RegistrarEmpleado.resx">
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="comercial\DetalleContado.xsc">
+      <DependentUpon>DetalleContado.xsd</DependentUpon>
+    </None>
+    <None Include="comercial\DetalleContado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DetalleContado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="comercial\DetalleContado.xss">
+      <DependentUpon>DetalleContado.xsd</DependentUpon>
+    </None>
     <None Include="comercial\DetalleCredito.xsc">
       <DependentUpon>DetalleCredito.xsd</DependentUpon>
     </None>

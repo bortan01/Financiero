@@ -19,7 +19,7 @@ namespace Institucion_Comercial.comercial
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new  venta_credito());
+            Application.Run(new  venta_contado());
         }
     }
 }

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema id="DetalleCredito" targetNamespace="http://tempuri.org/DetalleCredito.xsd" xmlns:mstns="http://tempuri.org/DetalleCredito.xsd" xmlns="http://tempuri.org/DetalleCredito.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+<xs:schema id="DetalleContado" targetNamespace="http://tempuri.org/DetalleContado.xsd" xmlns:mstns="http://tempuri.org/DetalleContado.xsd" xmlns="http://tempuri.org/DetalleContado.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
@@ -12,36 +12,42 @@
               <DbSource ConnectionRef="instituciones_financierasConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        instituciones_financieras.producto.id_producto, instituciones_financieras.venta.id_venta, instituciones_financieras.cliente.nombre + ' ' + instituciones_financieras.cliente.apellido AS nombreCliente, 
-                         instituciones_financieras.cliente.direccion AS direccionCliente, instituciones_financieras.cliente.dui AS duiCliente, instituciones_financieras.cliente.telefono AS telefonoCliente, 
-                         instituciones_financieras.empleado.id_empleado AS codigoEmpleado, instituciones_financieras.empleado.nombre + ' ' + instituciones_financieras.empleado.apellido AS nombreEmpleado, 
-                         instituciones_financieras.producto.nombre AS nombreProducto, instituciones_financieras.producto.descripcion AS descripcionProducto, instituciones_financieras.producto.precio_venta AS precioVente, 
-                         instituciones_financieras.detalle_venta.cantidad AS cantidadProducto, instituciones_financieras.producto.precio_venta * instituciones_financieras.detalle_venta.cantidad AS subtotal, 
-                         instituciones_financieras.pago.fecha AS fechaVenta, instituciones_financieras.pago.monto AS prima, instituciones_financieras.venta.prestamo_original AS total, instituciones_financieras.plan_pago.tasa, 
-                         instituciones_financieras.plan_pago.cuotas AS cuota,instituciones_financieras.venta.proximo_pago AS proximo, instituciones_financieras.venta.cuota AS tipo
-FROM            instituciones_financieras.venta INNER JOIN
-                         instituciones_financieras.detalle_compra ON instituciones_financieras.detalle_compra.id_venta = instituciones_financieras.venta.id_venta INNER JOIN
-                         instituciones_financieras.empleado ON instituciones_financieras.venta.id_empleado = instituciones_financieras.empleado.id_empleado INNER JOIN
-                         instituciones_financieras.detalle_venta ON instituciones_financieras.detalle_venta.id_venta = instituciones_financieras.venta.id_venta INNER JOIN
-                         instituciones_financieras.pago ON instituciones_financieras.pago.id_venta = instituciones_financieras.venta.id_venta INNER JOIN
-                         instituciones_financieras.cliente ON instituciones_financieras.detalle_compra.id_cliente = instituciones_financieras.cliente.id_cliente INNER JOIN
-                         instituciones_financieras.producto ON instituciones_financieras.detalle_venta.id_producto = instituciones_financieras.producto.id_producto INNER JOIN
-                         instituciones_financieras.plan_pago ON instituciones_financieras.venta.id_plan = instituciones_financieras.plan_pago.id_plan 
+                    <CommandText>SELECT
+instituciones_financieras.cliente.nombre + ' ' +instituciones_financieras.cliente.apellido as nombreCliente,
+instituciones_financieras.cliente.direccion as direccionCliente,
+instituciones_financieras.cliente.dui as duiCliente,
+instituciones_financieras.cliente.telefono as telefonoCliente,
+instituciones_financieras.empleado.nombre + ' ' + instituciones_financieras.empleado.apellido as nombreEmpleado,
+instituciones_financieras.producto.nombre as nombreProducto,
+instituciones_financieras.producto.descripcion as descripcionProducto,
+instituciones_financieras.producto.precio_venta as precioVente,
+instituciones_financieras.detalle_venta.cantidad as cantidadProducto,
+instituciones_financieras.producto.precio_venta * instituciones_financieras.detalle_venta.cantidad as subtotal ,
+instituciones_financieras.pago.fecha as fechaVenta,
+instituciones_financieras.venta.prestamo_original as total,
+instituciones_financieras.venta.id_venta,
+instituciones_financieras.empleado.id_empleado as codigoEmpleado
 
-</CommandText>
+
+FROM
+instituciones_financieras.venta
+INNER JOIN instituciones_financieras.detalle_compra ON instituciones_financieras.detalle_compra.id_venta = instituciones_financieras.venta.id_venta
+INNER JOIN instituciones_financieras.empleado ON instituciones_financieras.venta.id_empleado = instituciones_financieras.empleado.id_empleado
+INNER JOIN instituciones_financieras.detalle_venta ON instituciones_financieras.detalle_venta.id_venta = instituciones_financieras.venta.id_venta
+INNER JOIN instituciones_financieras.pago ON instituciones_financieras.pago.id_venta = instituciones_financieras.venta.id_venta
+INNER JOIN instituciones_financieras.cliente ON instituciones_financieras.detalle_compra.id_cliente = instituciones_financieras.cliente.id_cliente
+INNER JOIN instituciones_financieras.producto ON instituciones_financieras.detalle_venta.id_producto = instituciones_financieras.producto.id_producto
+INNER JOIN instituciones_financieras.plan_pago ON instituciones_financieras.venta.id_plan = instituciones_financieras.plan_pago.id_plan</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="id_producto" DataSetColumn="id_producto" />
-              <Mapping SourceColumn="id_venta" DataSetColumn="id_venta" />
               <Mapping SourceColumn="nombreCliente" DataSetColumn="nombreCliente" />
               <Mapping SourceColumn="direccionCliente" DataSetColumn="direccionCliente" />
               <Mapping SourceColumn="duiCliente" DataSetColumn="duiCliente" />
               <Mapping SourceColumn="telefonoCliente" DataSetColumn="telefonoCliente" />
-              <Mapping SourceColumn="codigoEmpleado" DataSetColumn="codigoEmpleado" />
               <Mapping SourceColumn="nombreEmpleado" DataSetColumn="nombreEmpleado" />
               <Mapping SourceColumn="nombreProducto" DataSetColumn="nombreProducto" />
               <Mapping SourceColumn="descripcionProducto" DataSetColumn="descripcionProducto" />
@@ -49,12 +55,9 @@ FROM            instituciones_financieras.venta INNER JOIN
               <Mapping SourceColumn="cantidadProducto" DataSetColumn="cantidadProducto" />
               <Mapping SourceColumn="subtotal" DataSetColumn="subtotal" />
               <Mapping SourceColumn="fechaVenta" DataSetColumn="fechaVenta" />
-              <Mapping SourceColumn="prima" DataSetColumn="prima" />
               <Mapping SourceColumn="total" DataSetColumn="total" />
-              <Mapping SourceColumn="tasa" DataSetColumn="tasa" />
-              <Mapping SourceColumn="cuota" DataSetColumn="cuota" />
-              <Mapping SourceColumn="proximo" DataSetColumn="proximo" />
-              <Mapping SourceColumn="tipo" DataSetColumn="tipo" />
+              <Mapping SourceColumn="id_venta" DataSetColumn="id_venta" />
+              <Mapping SourceColumn="codigoEmpleado" DataSetColumn="codigoEmpleado" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -63,14 +66,12 @@ FROM            instituciones_financieras.venta INNER JOIN
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DetalleCredito" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DetalleCredito" msprop:Generator_UserDSName="DetalleCredito">
+  <xs:element name="DetalleContado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DetalleContado" msprop:Generator_UserDSName="DetalleContado">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id_producto" msprop:Generator_ColumnVarNameInTable="columnid_producto" msprop:Generator_ColumnPropNameInRow="id_producto" msprop:Generator_ColumnPropNameInTable="id_productoColumn" msprop:Generator_UserColumnName="id_producto" type="xs:int" />
-              <xs:element name="id_venta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_venta" msprop:Generator_ColumnPropNameInRow="id_venta" msprop:Generator_ColumnPropNameInTable="id_ventaColumn" msprop:Generator_UserColumnName="id_venta" type="xs:int" />
               <xs:element name="nombreCliente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombreCliente" msprop:Generator_ColumnPropNameInRow="nombreCliente" msprop:Generator_ColumnPropNameInTable="nombreClienteColumn" msprop:Generator_UserColumnName="nombreCliente" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -99,7 +100,6 @@ FROM            instituciones_financieras.venta INNER JOIN
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="codigoEmpleado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigoEmpleado" msprop:Generator_ColumnPropNameInRow="codigoEmpleado" msprop:Generator_ColumnPropNameInTable="codigoEmpleadoColumn" msprop:Generator_UserColumnName="codigoEmpleado" type="xs:int" />
               <xs:element name="nombreEmpleado" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombreEmpleado" msprop:Generator_ColumnPropNameInRow="nombreEmpleado" msprop:Generator_ColumnPropNameInTable="nombreEmpleadoColumn" msprop:Generator_UserColumnName="nombreEmpleado" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -125,12 +125,9 @@ FROM            instituciones_financieras.venta INNER JOIN
               <xs:element name="cantidadProducto" msprop:Generator_ColumnVarNameInTable="columncantidadProducto" msprop:Generator_ColumnPropNameInRow="cantidadProducto" msprop:Generator_ColumnPropNameInTable="cantidadProductoColumn" msprop:Generator_UserColumnName="cantidadProducto" type="xs:int" minOccurs="0" />
               <xs:element name="subtotal" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnsubtotal" msprop:Generator_ColumnPropNameInRow="subtotal" msprop:Generator_ColumnPropNameInTable="subtotalColumn" msprop:Generator_UserColumnName="subtotal" type="xs:float" minOccurs="0" />
               <xs:element name="fechaVenta" msprop:Generator_ColumnVarNameInTable="columnfechaVenta" msprop:Generator_ColumnPropNameInRow="fechaVenta" msprop:Generator_ColumnPropNameInTable="fechaVentaColumn" msprop:Generator_UserColumnName="fechaVenta" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="prima" msprop:Generator_ColumnVarNameInTable="columnprima" msprop:Generator_ColumnPropNameInRow="prima" msprop:Generator_ColumnPropNameInTable="primaColumn" msprop:Generator_UserColumnName="prima" type="xs:float" minOccurs="0" />
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:float" minOccurs="0" />
-              <xs:element name="tasa" msprop:Generator_ColumnVarNameInTable="columntasa" msprop:Generator_ColumnPropNameInRow="tasa" msprop:Generator_ColumnPropNameInTable="tasaColumn" msprop:Generator_UserColumnName="tasa" type="xs:float" minOccurs="0" />
-              <xs:element name="cuota" msprop:Generator_ColumnVarNameInTable="columncuota" msprop:Generator_ColumnPropNameInRow="cuota" msprop:Generator_ColumnPropNameInTable="cuotaColumn" msprop:Generator_UserColumnName="cuota" type="xs:int" minOccurs="0" />
-              <xs:element name="proximo" msprop:Generator_ColumnVarNameInTable="columnproximo" msprop:Generator_ColumnPropNameInRow="proximo" msprop:Generator_ColumnPropNameInTable="proximoColumn" msprop:Generator_UserColumnName="proximo" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="tipo" msprop:Generator_ColumnVarNameInTable="columntipo" msprop:Generator_ColumnPropNameInRow="tipo" msprop:Generator_ColumnPropNameInTable="tipoColumn" msprop:Generator_UserColumnName="tipo" type="xs:float" minOccurs="0" />
+              <xs:element name="id_venta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_venta" msprop:Generator_ColumnPropNameInRow="id_venta" msprop:Generator_ColumnPropNameInTable="id_ventaColumn" msprop:Generator_UserColumnName="id_venta" type="xs:int" />
+              <xs:element name="codigoEmpleado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigoEmpleado" msprop:Generator_ColumnPropNameInRow="codigoEmpleado" msprop:Generator_ColumnPropNameInTable="codigoEmpleadoColumn" msprop:Generator_UserColumnName="codigoEmpleado" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

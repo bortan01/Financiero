@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,11 +51,22 @@
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(243, 420);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 39;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // venta_contado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(801, 474);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Name = "venta_contado";
             this.Text = "venta_contado";
@@ -77,6 +89,7 @@
             this.Controls.SetChildIndex(this.button4, 0);
             this.Controls.SetChildIndex(this.txtTotal, 0);
             this.Controls.SetChildIndex(this.button5, 0);
+            this.Controls.SetChildIndex(this.button6, 0);
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -86,5 +99,6 @@
         #endregion
 
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
     }
 }

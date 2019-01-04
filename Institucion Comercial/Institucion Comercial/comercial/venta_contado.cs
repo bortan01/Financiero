@@ -77,7 +77,13 @@ namespace Institucion_Comercial.comercial
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
+        }
 
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FContado a = new FContado("55");
+            a.ShowDialog();
         }
     }
 }
