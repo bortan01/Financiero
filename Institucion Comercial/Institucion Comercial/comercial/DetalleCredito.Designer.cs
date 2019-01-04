@@ -597,13 +597,6 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public DataTable1Row FindByid_producto(int id_producto) {
-                return ((DataTable1Row)(this.Rows.Find(new object[] {
-                            id_producto})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
                 DataTable1DataTable cln = ((DataTable1DataTable)(base.Clone()));
                 cln.InitVars();
@@ -684,10 +677,7 @@ namespace Institucion_Comercial.comercial {
                 base.Columns.Add(this.columnproximo);
                 this.columntipo = new global::System.Data.DataColumn("tipo", typeof(float), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columntipo);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid_producto}, true));
                 this.columnid_producto.AllowDBNull = false;
-                this.columnid_producto.Unique = true;
                 this.columnid_venta.AutoIncrement = true;
                 this.columnid_venta.AutoIncrementSeed = -1;
                 this.columnid_venta.AutoIncrementStep = -1;

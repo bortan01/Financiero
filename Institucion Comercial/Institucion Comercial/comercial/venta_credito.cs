@@ -188,7 +188,7 @@ namespace Institucion_Comercial.comercial
                 MessageBox.Show(msj);
                 if (msj.Equals("Registro Completado"))
                 {
-                    FCredito re = new FCredito("54");
+                    FCredito re = new FCredito(id_venta);
                     re.ShowDialog();
                 }
             }
@@ -199,7 +199,7 @@ namespace Institucion_Comercial.comercial
           
 
 
-            FCredito re = new FCredito("54");
+            FCredito re = new FCredito("55");
                   re.ShowDialog();
         }
     }

@@ -136,9 +136,5 @@ FROM            instituciones_financieras.venta INNER JOIN
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:DataTable1" />
-      <xs:field xpath="mstns:id_producto" />
-    </xs:unique>
   </xs:element>
 </xs:schema>
