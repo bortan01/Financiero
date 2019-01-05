@@ -73,6 +73,10 @@
           <DataField>codigoEmpleado</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
+        <Field Name="id_pago">
+          <DataField>id_pago</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DetalleContado</rd:DataSetName>
@@ -95,7 +99,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Contrato de Venta al Credito</Value>
+                    <Value>Factura de Venta al Contado</Value>
                     <Style>
                       <FontStyle>Italic</FontStyle>
                       <FontSize>12pt</FontSize>
@@ -157,7 +161,7 @@
             <rd:DefaultName>Textbox1</rd:DefaultName>
             <Top>0.83193cm</Top>
             <Height>1.56765cm</Height>
-            <Width>16.7731cm</Width>
+            <Width>16.85669cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -187,6 +191,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>2.43486cm</Top>
+            <Left>0.03584cm</Left>
             <Height>0.81167cm</Height>
             <Width>3.98167cm</Width>
             <ZIndex>1</ZIndex>
@@ -202,7 +207,7 @@
           </Textbox>
           <Line Name="Line1">
             <Top>2.92902cm</Top>
-            <Left>4.05222cm</Left>
+            <Left>4.08806cm</Left>
             <Height>0cm</Height>
             <Width>7.22461cm</Width>
             <ZIndex>2</ZIndex>
@@ -231,7 +236,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>2.43486cm</Top>
-            <Left>11.28202cm</Left>
+            <Left>11.31786cm</Left>
             <Height>0.81167cm</Height>
             <Width>1.89208cm</Width>
             <ZIndex>3</ZIndex>
@@ -247,7 +252,7 @@
           </Textbox>
           <Line Name="Line2">
             <Top>2.92902cm</Top>
-            <Left>13.20937cm</Left>
+            <Left>13.24521cm</Left>
             <Height>0cm</Height>
             <Width>3.56373cm</Width>
             <ZIndex>4</ZIndex>
@@ -276,7 +281,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>3.24652cm</Top>
-            <Left>3.98167cm</Left>
+            <Left>4.01751cm</Left>
             <Height>0.81167cm</Height>
             <Width>3.58515cm</Width>
             <ZIndex>5</ZIndex>
@@ -309,7 +314,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>3.21125cm</Top>
-            <Left>12.56893cm</Left>
+            <Left>12.60477cm</Left>
             <Height>0.84694cm</Height>
             <Width>1.04479cm</Width>
             <ZIndex>6</ZIndex>
@@ -325,7 +330,7 @@
           </Textbox>
           <Line Name="Line5">
             <Top>4.60375cm</Top>
-            <Left>1.94437cm</Left>
+            <Left>1.98021cm</Left>
             <Height>0cm</Height>
             <Width>2.64055cm</Width>
             <ZIndex>7</ZIndex>
@@ -354,6 +359,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>4.05819cm</Top>
+            <Left>0.03584cm</Left>
             <Height>0.81167cm</Height>
             <Width>1.94437cm</Width>
             <ZIndex>8</ZIndex>
@@ -386,7 +392,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>4.12875cm</Top>
-            <Left>4.54766cm</Left>
+            <Left>4.5835cm</Left>
             <Height>0.74111cm</Height>
             <Width>2.44708cm</Width>
             <ZIndex>9</ZIndex>
@@ -419,6 +425,7 @@
             </Paragraphs>
             <rd:DefaultName>Textbox2</rd:DefaultName>
             <Top>3.24652cm</Top>
+            <Left>0.03584cm</Left>
             <Height>0.81167cm</Height>
             <Width>1.70625cm</Width>
             <ZIndex>10</ZIndex>
@@ -436,6 +443,7 @@
             <Source>Embedded</Source>
             <Value>logo</Value>
             <Sizing>FitProportional</Sizing>
+            <Left>0.03584cm</Left>
             <Height>2.39958cm</Height>
             <Width>4.26015cm</Width>
             <ZIndex>11</ZIndex>
@@ -447,7 +455,7 @@
           </Image>
           <Line Name="Line9">
             <Top>3.71153cm</Top>
-            <Left>7.56682cm</Left>
+            <Left>7.60266cm</Left>
             <Height>0cm</Height>
             <Width>5.00211cm</Width>
             <ZIndex>12</ZIndex>
@@ -459,7 +467,7 @@
           </Line>
           <Line Name="Line10">
             <Top>3.71153cm</Top>
-            <Left>1.74152cm</Left>
+            <Left>1.77736cm</Left>
             <Height>0cm</Height>
             <Width>2.24014cm</Width>
             <ZIndex>13</ZIndex>
@@ -471,7 +479,7 @@
           </Line>
           <Line Name="Line4">
             <Top>3.71153cm</Top>
-            <Left>13.66146cm</Left>
+            <Left>13.6973cm</Left>
             <Height>0cm</Height>
             <Width>3.15938cm</Width>
             <ZIndex>14</ZIndex>
@@ -483,7 +491,7 @@
           </Line>
           <Line Name="Line6">
             <Top>4.60375cm</Top>
-            <Left>6.99474cm</Left>
+            <Left>7.03058cm</Left>
             <Height>0cm</Height>
             <Width>9.77836cm</Width>
             <ZIndex>15</ZIndex>
@@ -885,8 +893,8 @@
                 </FilterValues>
               </Filter>
             </Filters>
-            <Top>5.64625cm</Top>
-            <Left>0.06682cm</Left>
+            <Top>5.82264cm</Top>
+            <Left>0.10266cm</Left>
             <Height>1.2cm</Height>
             <Width>16.75402cm</Width>
             <ZIndex>16</ZIndex>
@@ -915,8 +923,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox21</rd:DefaultName>
-            <Top>4.86986cm</Top>
-            <Left>6.57141cm</Left>
+            <Top>5.04625cm</Top>
+            <Left>6.60725cm</Left>
             <Height>0.6cm</Height>
             <Width>4.02269cm</Width>
             <ZIndex>17</ZIndex>
@@ -997,7 +1005,7 @@
               </Filter>
             </Filters>
             <Top>3.17596cm</Top>
-            <Left>7.56682cm</Left>
+            <Left>7.60266cm</Left>
             <Height>0.6cm</Height>
             <Width>5.00211cm</Width>
             <ZIndex>18</ZIndex>
@@ -1074,7 +1082,7 @@
               </Filter>
             </Filters>
             <Top>2.47013cm</Top>
-            <Left>4.0875cm</Left>
+            <Left>4.12334cm</Left>
             <Height>0.6cm</Height>
             <Width>7.18933cm</Width>
             <ZIndex>19</ZIndex>
@@ -1151,7 +1159,7 @@
               </Filter>
             </Filters>
             <Top>2.43486cm</Top>
-            <Left>13.24466cm</Left>
+            <Left>13.2805cm</Left>
             <Height>0.6cm</Height>
             <Width>3.4926cm</Width>
             <ZIndex>20</ZIndex>
@@ -1230,7 +1238,7 @@
               </Filter>
             </Filters>
             <Top>3.24652cm</Top>
-            <Left>1.70625cm</Left>
+            <Left>1.74209cm</Left>
             <Height>0.6cm</Height>
             <Width>2.27541cm</Width>
             <ZIndex>21</ZIndex>
@@ -1307,7 +1315,7 @@
               </Filter>
             </Filters>
             <Top>3.17597cm</Top>
-            <Left>13.66146cm</Left>
+            <Left>13.6973cm</Left>
             <Height>0.6cm</Height>
             <Width>3.0758cm</Width>
             <ZIndex>22</ZIndex>
@@ -1384,7 +1392,7 @@
               </Filter>
             </Filters>
             <Top>4.12875cm</Top>
-            <Left>6.99474cm</Left>
+            <Left>7.03058cm</Left>
             <Height>0.6cm</Height>
             <Width>9.74252cm</Width>
             <ZIndex>23</ZIndex>
@@ -1461,10 +1469,413 @@
               </Filter>
             </Filters>
             <Top>4.12875cm</Top>
-            <Left>1.9771cm</Left>
+            <Left>2.01294cm</Left>
             <Height>0.6cm</Height>
             <Width>2.57056cm</Width>
             <ZIndex>24</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox8">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve">                                   </Value>
+                    <Style>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve">                         </Value>
+                    <Style />
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve">                                   </Value>
+                    <Style>
+                      <TextDecoration>Underline</TextDecoration>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>                     Comprador/a                                             Vendedor/a    </Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value xml:space="preserve">                                                     </Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox8</rd:DefaultName>
+            <Top>8.62778cm</Top>
+            <Left>3.30313cm</Left>
+            <Height>0.83812cm</Height>
+            <Width>11.50149cm</Width>
+            <ZIndex>25</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix16">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.47576cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="cuota8">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!nombreEmpleado.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>cuota1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet1</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!id_venta.Value</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!id_venta.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>9.50118cm</Top>
+            <Left>10.0623cm</Left>
+            <Height>0.6cm</Height>
+            <Width>3.47576cm</Width>
+            <ZIndex>26</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix22">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>3.72745cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="cuota14">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!nombreCliente.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>cuota1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet1</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!id_venta.Value</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!id_venta.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>9.50118cm</Top>
+            <Left>3.30313cm</Left>
+            <Height>0.6cm</Height>
+            <Width>3.72745cm</Width>
+            <ZIndex>27</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Textbox Name="Textbox9">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Código Factura:</Value>
+                    <Style>
+                      <FontSize>11pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox2</rd:DefaultName>
+            <Top>0.13491cm</Top>
+            <Left>10.0623cm</Left>
+            <Height>0.52063cm</Height>
+            <Width>3.14764cm</Width>
+            <ZIndex>28</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Tablix Name="Tablix23">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.57056cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.62646cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="cuota15">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!id_pago.Value</Value>
+                                  <Style>
+                                    <FontFamily>Arial Black</FontFamily>
+                                    <Color>Red</Color>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>cuota1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet1</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!id_venta.Value</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!id_venta.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>0.13491cm</Top>
+            <Left>13.2805cm</Left>
+            <Height>0.62646cm</Height>
+            <Width>2.57056cm</Width>
+            <ZIndex>29</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Tablix>
+          <Tablix Name="Tablix24">
+            <TablixBody>
+              <TablixColumns>
+                <TablixColumn>
+                  <Width>2.41642cm</Width>
+                </TablixColumn>
+              </TablixColumns>
+              <TablixRows>
+                <TablixRow>
+                  <Height>0.6cm</Height>
+                  <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="cuota16">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!total.Value</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>cuota1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Style>None</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                  </TablixCells>
+                </TablixRow>
+              </TablixRows>
+            </TablixBody>
+            <TablixColumnHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixColumnHierarchy>
+            <TablixRowHierarchy>
+              <TablixMembers>
+                <TablixMember />
+              </TablixMembers>
+            </TablixRowHierarchy>
+            <DataSetName>DataSet1</DataSetName>
+            <Filters>
+              <Filter>
+                <FilterExpression>=Fields!id_venta.Value</FilterExpression>
+                <Operator>Equal</Operator>
+                <FilterValues>
+                  <FilterValue>=Parameters!id_venta.Value</FilterValue>
+                </FilterValues>
+              </Filter>
+            </Filters>
+            <Top>7.12847cm</Top>
+            <Left>14.39252cm</Left>
+            <Height>0.6cm</Height>
+            <Width>2.41642cm</Width>
+            <ZIndex>30</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -1475,7 +1886,7 @@
         <Height>11.57103in</Height>
         <Style />
       </Body>
-      <Width>6.62238in</Width>
+      <Width>6.63649in</Width>
       <Page>
         <PageHeight>29.7cm</PageHeight>
         <PageWidth>21cm</PageWidth>

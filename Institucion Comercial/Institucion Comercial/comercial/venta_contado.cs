@@ -70,7 +70,8 @@ namespace Institucion_Comercial.comercial
                 MessageBox.Show(msj);
                 if (msj.Equals("Registro Completado"))
                 {
-
+                    FContado ass = new FContado(id_venta);
+                    ass.ShowDialog();
                 }
             }
         }
@@ -82,8 +83,8 @@ namespace Institucion_Comercial.comercial
 
         private void button6_Click(object sender, EventArgs e)
         {
-            FContado a = new FContado("55");
-            a.ShowDialog();
+            FContado ass = new FContado("55");
+            ass.ShowDialog();
         }
     }
 }

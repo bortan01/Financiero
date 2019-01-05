@@ -307,6 +307,8 @@ namespace Institucion_Comercial.comercial {
             
             private global::System.Data.DataColumn columncodigoEmpleado;
             
+            private global::System.Data.DataColumn columnid_pago;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public DataTable1DataTable() {
@@ -454,6 +456,14 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn id_pagoColumn {
+                get {
+                    return this.columnid_pago;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -505,6 +515,7 @@ namespace Institucion_Comercial.comercial {
                         fechaVenta,
                         total,
                         null,
+                        null,
                         null};
                 rowDataTable1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDataTable1Row);
@@ -542,6 +553,7 @@ namespace Institucion_Comercial.comercial {
                 this.columntotal = base.Columns["total"];
                 this.columnid_venta = base.Columns["id_venta"];
                 this.columncodigoEmpleado = base.Columns["codigoEmpleado"];
+                this.columnid_pago = base.Columns["id_pago"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -575,6 +587,8 @@ namespace Institucion_Comercial.comercial {
                 base.Columns.Add(this.columnid_venta);
                 this.columncodigoEmpleado = new global::System.Data.DataColumn("codigoEmpleado", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columncodigoEmpleado);
+                this.columnid_pago = new global::System.Data.DataColumn("id_pago", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_pago);
                 this.columnnombreCliente.ReadOnly = true;
                 this.columnnombreCliente.MaxLength = 61;
                 this.columndireccionCliente.MaxLength = 100;
@@ -595,6 +609,11 @@ namespace Institucion_Comercial.comercial {
                 this.columncodigoEmpleado.AutoIncrementStep = -1;
                 this.columncodigoEmpleado.AllowDBNull = false;
                 this.columncodigoEmpleado.ReadOnly = true;
+                this.columnid_pago.AutoIncrement = true;
+                this.columnid_pago.AutoIncrementSeed = -1;
+                this.columnid_pago.AutoIncrementStep = -1;
+                this.columnid_pago.AllowDBNull = false;
+                this.columnid_pago.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -951,6 +970,17 @@ namespace Institucion_Comercial.comercial {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int id_pago {
+                get {
+                    return ((int)(this[this.tableDataTable1.id_pagoColumn]));
+                }
+                set {
+                    this[this.tableDataTable1.id_pagoColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsnombreClienteNull() {
                 return this.IsNull(this.tableDataTable1.nombreClienteColumn);
             }
@@ -1267,6 +1297,7 @@ namespace Institucion_Comercial.comercial.DetalleContadoTableAdapters {
             tableMapping.ColumnMappings.Add("total", "total");
             tableMapping.ColumnMappings.Add("id_venta", "id_venta");
             tableMapping.ColumnMappings.Add("codigoEmpleado", "codigoEmpleado");
+            tableMapping.ColumnMappings.Add("id_pago", "id_pago");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -1295,20 +1326,21 @@ namespace Institucion_Comercial.comercial.DetalleContadoTableAdapters {
                 "precio_venta * instituciones_financieras.detalle_venta.cantidad as subtotal ,\r\ni" +
                 "nstituciones_financieras.pago.fecha as fechaVenta,\r\ninstituciones_financieras.ve" +
                 "nta.prestamo_original as total,\r\ninstituciones_financieras.venta.id_venta,\r\ninst" +
-                "ituciones_financieras.empleado.id_empleado as codigoEmpleado\r\n\r\n\r\nFROM\r\ninstituc" +
-                "iones_financieras.venta\r\nINNER JOIN instituciones_financieras.detalle_compra ON " +
-                "instituciones_financieras.detalle_compra.id_venta = instituciones_financieras.ve" +
-                "nta.id_venta\r\nINNER JOIN instituciones_financieras.empleado ON instituciones_fin" +
-                "ancieras.venta.id_empleado = instituciones_financieras.empleado.id_empleado\r\nINN" +
-                "ER JOIN instituciones_financieras.detalle_venta ON instituciones_financieras.det" +
-                "alle_venta.id_venta = instituciones_financieras.venta.id_venta\r\nINNER JOIN insti" +
-                "tuciones_financieras.pago ON instituciones_financieras.pago.id_venta = instituci" +
-                "ones_financieras.venta.id_venta\r\nINNER JOIN instituciones_financieras.cliente ON" +
-                " instituciones_financieras.detalle_compra.id_cliente = instituciones_financieras" +
-                ".cliente.id_cliente\r\nINNER JOIN instituciones_financieras.producto ON institucio" +
-                "nes_financieras.detalle_venta.id_producto = instituciones_financieras.producto.i" +
-                "d_producto\r\nINNER JOIN instituciones_financieras.plan_pago ON instituciones_fina" +
-                "ncieras.venta.id_plan = instituciones_financieras.plan_pago.id_plan";
+                "ituciones_financieras.empleado.id_empleado as codigoEmpleado,\r\ninstituciones_fin" +
+                "ancieras.pago.id_pago\r\n\r\n\r\nFROM\r\ninstituciones_financieras.venta\r\nINNER JOIN ins" +
+                "tituciones_financieras.detalle_compra ON instituciones_financieras.detalle_compr" +
+                "a.id_venta = instituciones_financieras.venta.id_venta\r\nINNER JOIN instituciones_" +
+                "financieras.empleado ON instituciones_financieras.venta.id_empleado = institucio" +
+                "nes_financieras.empleado.id_empleado\r\nINNER JOIN instituciones_financieras.detal" +
+                "le_venta ON instituciones_financieras.detalle_venta.id_venta = instituciones_fin" +
+                "ancieras.venta.id_venta\r\nINNER JOIN instituciones_financieras.pago ON institucio" +
+                "nes_financieras.pago.id_venta = instituciones_financieras.venta.id_venta\r\nINNER " +
+                "JOIN instituciones_financieras.cliente ON instituciones_financieras.detalle_comp" +
+                "ra.id_cliente = instituciones_financieras.cliente.id_cliente\r\nINNER JOIN institu" +
+                "ciones_financieras.producto ON instituciones_financieras.detalle_venta.id_produc" +
+                "to = instituciones_financieras.producto.id_producto\r\nINNER JOIN instituciones_fi" +
+                "nancieras.plan_pago ON instituciones_financieras.venta.id_plan = instituciones_f" +
+                "inancieras.plan_pago.id_plan";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

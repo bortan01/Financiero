@@ -26,7 +26,8 @@ instituciones_financieras.producto.precio_venta * instituciones_financieras.deta
 instituciones_financieras.pago.fecha as fechaVenta,
 instituciones_financieras.venta.prestamo_original as total,
 instituciones_financieras.venta.id_venta,
-instituciones_financieras.empleado.id_empleado as codigoEmpleado
+instituciones_financieras.empleado.id_empleado as codigoEmpleado,
+instituciones_financieras.pago.id_pago
 
 
 FROM
@@ -58,6 +59,7 @@ INNER JOIN instituciones_financieras.plan_pago ON instituciones_financieras.vent
               <Mapping SourceColumn="total" DataSetColumn="total" />
               <Mapping SourceColumn="id_venta" DataSetColumn="id_venta" />
               <Mapping SourceColumn="codigoEmpleado" DataSetColumn="codigoEmpleado" />
+              <Mapping SourceColumn="id_pago" DataSetColumn="id_pago" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -69,7 +71,7 @@ INNER JOIN instituciones_financieras.plan_pago ON instituciones_financieras.vent
   <xs:element name="DetalleContado" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DetalleContado" msprop:Generator_UserDSName="DetalleContado">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="nombreCliente" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnnombreCliente" msprop:Generator_ColumnPropNameInRow="nombreCliente" msprop:Generator_ColumnPropNameInTable="nombreClienteColumn" msprop:Generator_UserColumnName="nombreCliente" minOccurs="0">
@@ -128,6 +130,7 @@ INNER JOIN instituciones_financieras.plan_pago ON instituciones_financieras.vent
               <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:float" minOccurs="0" />
               <xs:element name="id_venta" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_venta" msprop:Generator_ColumnPropNameInRow="id_venta" msprop:Generator_ColumnPropNameInTable="id_ventaColumn" msprop:Generator_UserColumnName="id_venta" type="xs:int" />
               <xs:element name="codigoEmpleado" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columncodigoEmpleado" msprop:Generator_ColumnPropNameInRow="codigoEmpleado" msprop:Generator_ColumnPropNameInTable="codigoEmpleadoColumn" msprop:Generator_UserColumnName="codigoEmpleado" type="xs:int" />
+              <xs:element name="id_pago" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_pago" msprop:Generator_ColumnPropNameInRow="id_pago" msprop:Generator_ColumnPropNameInTable="id_pagoColumn" msprop:Generator_UserColumnName="id_pago" type="xs:int" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
