@@ -30,6 +30,8 @@ namespace Institucion_Comercial.comercial
 
         }
 
+        
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txtBuscarCliente.Text.Trim()) == false)
@@ -50,7 +52,7 @@ namespace Institucion_Comercial.comercial
                 }
                 catch (Exception error)
                 {
-                    MessageBox.Show("ha ocurrido un error " + error.Message);
+                    MessageBox.Show("CLIENTE NO ENCONTRADO");
                 }
             }
         }
@@ -182,5 +184,29 @@ namespace Institucion_Comercial.comercial
                 cont_fila--;
             }
         }
+
+        public  void limpiar()
+        {
+            txtBuscarCliente.Text = "";
+            txtBuscarProducto.Text = "";
+            txtCantidad.Text = "";
+            txtDuiCliente.Text = "";
+         
+            txtNitCliente.Text = "";
+            txtNombreCliente.Text = "";
+            txtTelefonoCliente.Text = "";
+            txtTotal.Text = "";
+            t1.Text = "";
+            t2.Text = "";
+            t3.Text = "";
+            t4.Text = "";
+            t5.Text = "";
+            dataCompra.Rows.Clear();
+            cont_fila = 0;
+            total = 0;
+
+        }
+
+        
     }
 }

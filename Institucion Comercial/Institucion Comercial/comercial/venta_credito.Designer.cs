@@ -35,7 +35,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.txtCuota = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -120,22 +119,11 @@
             this.txtCuota.Size = new System.Drawing.Size(111, 20);
             this.txtCuota.TabIndex = 45;
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(217, 509);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 46;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
             // venta_credito
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(796, 571);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.txtCuota);
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label16);
@@ -171,7 +159,6 @@
             this.Controls.SetChildIndex(this.label16, 0);
             this.Controls.SetChildIndex(this.label17, 0);
             this.Controls.SetChildIndex(this.txtCuota, 0);
-            this.Controls.SetChildIndex(this.button5, 0);
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -187,6 +174,5 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtCuota;
-        private System.Windows.Forms.Button button5;
     }
 }

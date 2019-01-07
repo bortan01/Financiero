@@ -190,7 +190,9 @@ namespace Institucion_Comercial.comercial
                 {
                     FCredito re = new FCredito(id_venta);
                     re.ShowDialog();
+                    limpiar();
                 }
+                
             }
         }
 

@@ -72,6 +72,7 @@ namespace Institucion_Comercial.comercial
                 {
                     FContado ass = new FContado(id_venta);
                     ass.ShowDialog();
+                    limpiar();
                 }
             }
         }
