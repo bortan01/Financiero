@@ -41,14 +41,16 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnPagar = new System.Windows.Forms.Button();
             this.c1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.c8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPagar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +58,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(289, 9);
+            this.label1.Location = new System.Drawing.Point(405, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(233, 22);
             this.label1.TabIndex = 0;
@@ -66,7 +68,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(141, 72);
+            this.label2.Location = new System.Drawing.Point(257, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
@@ -74,14 +76,14 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(224, 69);
+            this.textBox1.Location = new System.Drawing.Point(340, 69);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(347, 20);
             this.textBox1.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(613, 67);
+            this.button1.Location = new System.Drawing.Point(729, 67);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
@@ -109,7 +111,9 @@
             this.c3,
             this.c6,
             this.c4,
+            this.c7,
             this.c5,
+            this.c8,
             this.Column1});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(12, 125);
@@ -119,9 +123,19 @@
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(776, 241);
+            this.dataGridView1.Size = new System.Drawing.Size(993, 241);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnPagar
+            // 
+            this.btnPagar.Location = new System.Drawing.Point(31, 384);
+            this.btnPagar.Name = "btnPagar";
+            this.btnPagar.Size = new System.Drawing.Size(75, 23);
+            this.btnPagar.TabIndex = 5;
+            this.btnPagar.Text = "PAGAR";
+            this.btnPagar.UseVisualStyleBackColor = true;
+            this.btnPagar.Click += new System.EventHandler(this.button2_Click);
             // 
             // c1
             // 
@@ -154,8 +168,13 @@
             // 
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.c4.DefaultCellStyle = dataGridViewCellStyle5;
-            this.c4.HeaderText = "Mora";
+            this.c4.HeaderText = "Mora Acumulada";
             this.c4.Name = "c4";
+            // 
+            // c7
+            // 
+            this.c7.HeaderText = "Capital Acumulado";
+            this.c7.Name = "c7";
             // 
             // c5
             // 
@@ -163,6 +182,11 @@
             this.c5.DefaultCellStyle = dataGridViewCellStyle6;
             this.c5.HeaderText = "Total";
             this.c5.Name = "c5";
+            // 
+            // c8
+            // 
+            this.c8.HeaderText = "Saldo Actual";
+            this.c8.Name = "c8";
             // 
             // Column1
             // 
@@ -172,21 +196,11 @@
             this.Column1.Name = "Column1";
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // btnPagar
-            // 
-            this.btnPagar.Location = new System.Drawing.Point(31, 384);
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(75, 23);
-            this.btnPagar.TabIndex = 5;
-            this.btnPagar.Text = "PAGAR";
-            this.btnPagar.UseVisualStyleBackColor = true;
-            this.btnPagar.Click += new System.EventHandler(this.button2_Click);
-            // 
             // listado_deudas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1038, 450);
             this.Controls.Add(this.btnPagar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -209,13 +223,15 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnPagar;
         private System.Windows.Forms.DataGridViewTextBoxColumn c1;
         private System.Windows.Forms.DataGridViewTextBoxColumn c2;
         private System.Windows.Forms.DataGridViewTextBoxColumn c3;
         private System.Windows.Forms.DataGridViewTextBoxColumn c6;
         private System.Windows.Forms.DataGridViewTextBoxColumn c4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c7;
         private System.Windows.Forms.DataGridViewTextBoxColumn c5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn c8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.Button btnPagar;
     }
 }
