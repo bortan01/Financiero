@@ -73,6 +73,30 @@
     <Compile Include="activo\registroActivo.Designer.cs">
       <DependentUpon>registroActivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="activo\registroDepartamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\registroDepartamento.designer.cs">
+      <DependentUpon>registroDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="activo\registroEncargadoMantenimineto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\registroEncargadoMantenimineto.designer.cs">
+      <DependentUpon>registroEncargadoMantenimineto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="activo\registroInstitucion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\registroInstitucion.designer.cs">
+      <DependentUpon>registroInstitucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="activo\registroMantenimineto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\registroMantenimineto.designer.cs">
+      <DependentUpon>registroMantenimineto.cs</DependentUpon>
+    </Compile>
     <Compile Include="activo\registroTipo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -271,6 +295,21 @@
     <EmbeddedResource Include="activo\registroActivo.resx">
       <DependentUpon>registroActivo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="activo\registroDepartamento.resx">
+      <DependentUpon>registroDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="activo\registroEncargadoMantenimineto.resx">
+      <DependentUpon>registroEncargadoMantenimineto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="activo\registroInstitucion.resx">
+      <DependentUpon>registroInstitucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="activo\registroMantenimineto.resx">
+      <DependentUpon>registroMantenimineto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="activo\registroTipo.resx">
+      <DependentUpon>registroTipo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Clientes\consultarClientes.resx">
       <DependentUpon>consultarClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -410,6 +449,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -423,12 +468,6 @@
     <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\DataSources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,12 +32,33 @@ namespace Institucion_Comercial.activo
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)//registro tipo
         {
-            this.Enabled = false;
+            
             registroTipo registroTipo = new registroTipo();
+            
             registroTipo.Show();
+            
 
         }
+
+        private void button4_Click(object sender, EventArgs e)//registro sucursal
+        {
+            registroInstitucion registroInst = new registroInstitucion();
+
+            registroInst.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            registroDepartamento registroDepartamento = new registroDepartamento();
+            registroDepartamento.Show();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            registroEncargadoMantenimineto registroEncargado = new registroEncargadoMantenimineto();
+            registroEncargado.Show();
+        } 
     }
 }
