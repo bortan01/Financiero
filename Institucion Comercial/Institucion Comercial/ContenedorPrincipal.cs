@@ -199,5 +199,12 @@ namespace Institucion_Comercial
             rc.MdiParent = this;
             rc.Show();
         }
+
+        private void manteniminetoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            registroMantenimineto rm = new registroMantenimineto();
+            rm.MdiParent = this;
+            rm.Show();
+        }
     }
 }

@@ -16,5 +16,16 @@ namespace Institucion_Comercial.activo
         {
             InitializeComponent();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            registroEncargadoMantenimineto registroEncargado = new registroEncargadoMantenimineto();
+            registroEncargado.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
