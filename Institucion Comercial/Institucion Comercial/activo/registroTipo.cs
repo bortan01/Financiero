@@ -86,13 +86,13 @@ namespace Institucion_Comercial.activo
         {
             String clas="000";
             if (cbClasificacion.SelectedValue.ToString() == "1")
-                clas = "100-";
+                clas = "1";
             if (cbClasificacion.SelectedValue.ToString() == "2")
-                clas = "200-";
+                clas = "2";
             if (cbClasificacion.SelectedValue.ToString() == "3")
-                clas = "300-";
+                clas = "3";
             if (cbClasificacion.SelectedValue.ToString() == "4")
-                clas = "400-";
+                clas = "4";
 
             if (n / 10 == 0)
                 return clas+"00" + n;

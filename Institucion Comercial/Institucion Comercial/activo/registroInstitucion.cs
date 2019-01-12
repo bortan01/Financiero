@@ -30,10 +30,10 @@ namespace Institucion_Comercial.activo
             try
             {
                 int codigo = 0;
-                string cmd = String.Format("SELECT CASE WHEN (SELECT COUNT(1) FROM instituciones_financieras.sucursal ) = 0 THEN 1 ELSE IDENT_CURRENT('instituciones_financieras.sucursal ') + 1 END AS IdActual; " );
+                string cmd = String.Format("sELECT COUNT(1) FROM instituciones_financieras.sucursal");
                 DataSet ds = Utilidades.Ejecutar(cmd);
                 codigo = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString().Trim());
-                textCodigo.Text = calcularCod(codigo);
+                textCodigo.Text = calcularCod(codigo+1);
 
             }
             catch (Exception error)
@@ -61,9 +61,9 @@ namespace Institucion_Comercial.activo
             string direc = textDireccion.Text.Trim();
             string tel = textTelefono.Text.Trim();
 
-            string sql = "Insert into instituciones_financieras.tipo_activo " +
-                 "(nombre, id_clasificacion, correlativo)" +
-                " values('" + nombre + "','" + codigo + "','" + direc + "')";
+            string sql = "Insert into instituciones_financieras.sucursal " +
+                 "(nombre, id_sucursal, direccion, telefono)" +
+                " values('" + nombre + "','" + codigo + "','" + direc +"','"+tel+ "')";
             string msj = Utilidades.Registrar(sql);
             MessageBox.Show(msj);
             if (msj.Equals("Registro Completado"))
