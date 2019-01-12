@@ -124,6 +124,11 @@
     </Compile>
     <Compile Include="comercial\controladorPlan.cs" />
     <Compile Include="comercial\DataSet1.Designer.cs" />
+    <Compile Include="comercial\DetallePago.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DetallePago.xsd</DependentUpon>
+    </Compile>
     <Compile Include="comercial\DetalleContado.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -136,6 +141,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DetalleCredito.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="comercial\FacturaPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="comercial\FacturaPago.Designer.cs">
+      <DependentUpon>FacturaPago.cs</DependentUpon>
     </Compile>
     <Compile Include="comercial\FContado.cs">
       <SubType>Form</SubType>
@@ -321,6 +332,9 @@
       <DependentUpon>registroClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="comercial\Contrato.rdlc" />
+    <EmbeddedResource Include="comercial\FacturaPago.resx">
+      <DependentUpon>FacturaPago.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="comercial\FContado.resx">
       <DependentUpon>FContado.cs</DependentUpon>
     </EmbeddedResource>
@@ -343,6 +357,7 @@
     <EmbeddedResource Include="comercial\venta_credito.resx">
       <DependentUpon>venta_credito.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="comercial\vistaFacturaPago.rdlc" />
     <EmbeddedResource Include="inventarios\consultaCompras.resx">
       <DependentUpon>consultaCompras.cs</DependentUpon>
     </EmbeddedResource>
@@ -402,6 +417,17 @@
     <EmbeddedResource Include="RegistrarEmpleado.resx">
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="comercial\DetallePago.xsc">
+      <DependentUpon>DetallePago.xsd</DependentUpon>
+    </None>
+    <None Include="comercial\DetallePago.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DetallePago.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="comercial\DetallePago.xss">
+      <DependentUpon>DetallePago.xsd</DependentUpon>
+    </None>
     <None Include="comercial\DetalleContado.xsc">
       <DependentUpon>DetalleContado.xsd</DependentUpon>
     </None>

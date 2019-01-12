@@ -58,7 +58,7 @@ namespace Institucion_Comercial.comercial
                 String FechaPago = Convert.ToString(Fila["proximo_pago"].ToString().Trim());
                 DateTime fecha_paga = DateTime.ParseExact(FechaPago, "dd/MM/yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                 int Diferencia = DateTime.Compare(fecha_paga, hoy);
-                int saldo_actual = Convert.ToInt16(Fila["saldo_actual"]);
+                int saldo_actual = Convert.ToInt32(Fila["saldo_actual"]);
 
                 if (saldo_actual <1)
                 {
@@ -66,21 +66,16 @@ namespace Institucion_Comercial.comercial
                     sql = "UPDATE instituciones_financieras.venta set estado = 'FINALIZADA' WHERE instituciones_financieras.venta.id_venta = '" + id_venta + "'";
                     Ds = Utilidades.Ejecutar(sql);
                 }
-
-
-                if (hoy.Date > fecha_paga.Date)
-                {
-                  //  MessageBox.Show("hoy " + hoy + "es mayor que la fecha de pago " + fecha_paga);
-                    fecha_paga = fecha_paga.AddDays(30);
-                    sql = "UPDATE instituciones_financieras.venta set intereses_acumulados = intereses_acumulados + cuota,mora_acumulada = mora_acumulada + (cuota * 0.015),contador_mora = contador_mora + 1, estado = 'MORA',proximo_pago = '" + fecha_paga.ToString("yyyy-MM-dd") + "' WHERE instituciones_financieras.venta.id_venta = '" + id_venta + "'";
-                    Ds = Utilidades.Ejecutar(sql);
-                }
                 else
                 {
-                    //MessageBox.Show("hoy " + hoy + "es menor que la fecha de pago " + fecha_paga);
-                    //MessageBox.Show("es menor");
-                    //sql = "UPDATE instituciones_financieras.venta set estado = 'NORMAL' WHERE instituciones_financieras.venta.id_venta = '" + id_venta + "'";
-                    // Ds = Utilidades.Ejecutar(sql);
+                    if (hoy.Date > fecha_paga.Date)
+                    {
+                      //  MessageBox.Show("hoy " + hoy + "es mayor que la fecha de pago " + fecha_paga);
+                        fecha_paga = fecha_paga.AddDays(30);
+                        sql = "UPDATE instituciones_financieras.venta set intereses_acumulados = intereses_acumulados + cuota,mora_acumulada = mora_acumulada + (cuota * 0.015),contador_mora = contador_mora + 1, estado = 'MORA',proximo_pago = '" + fecha_paga.ToString("yyyy-MM-dd") + "' WHERE instituciones_financieras.venta.id_venta = '" + id_venta + "'";
+                        Ds = Utilidades.Ejecutar(sql);
+                    }
+                
                 }
 
             }
@@ -98,7 +93,7 @@ namespace Institucion_Comercial.comercial
             int filaSeleccionada = dataGridView1.CurrentRow.Index;
             //  MessageBox.Show("fila seleccionada " + filaSeleccionada);
             int id_venta = Convert.ToInt32(dataGridView1.Rows[filaSeleccionada].Cells[0].Value);
-            Double total = Convert.ToDouble(dataGridView1.Rows[filaSeleccionada].Cells[5].Value);
+            Double total = Convert.ToDouble(dataGridView1.Rows[filaSeleccionada].Cells[6].Value);
             DateTime fecha = DateTime.Today;
             String hoy = fecha.ToString("yyyy-MM-dd");
             String monto = total.ToString();
@@ -110,6 +105,12 @@ namespace Institucion_Comercial.comercial
                 String sql = "INSERT INTO instituciones_financieras.pago (id_venta, monto, fecha) VALUES ('" + id_venta + "', '" + monto + "', '" + hoy + "')";
                 string msj = Utilidades.Registrar(sql);
 
+
+                MessageBox.Show("PAGO REALIZADO EXITOSAMENTE");
+                ////aqui va la llamada para la factura 
+                FacturaPago  pa = new FacturaPago();
+                pa.ShowDialog();
+               
                 sql = "UPDATE instituciones_financieras.venta SET saldo_actual = saldo_actual-intereses_acumulados-cuota,intereses_acumulados=0,mora_acumulada=0,estado='NORMAL' WHERE id_venta ='" + id_venta + "'";
                 msj = Utilidades.Registrar(sql);
 
@@ -117,7 +118,7 @@ namespace Institucion_Comercial.comercial
 
                 if (msj.Equals("Registro Completado"))
                 {
-                    MessageBox.Show("PAGO REALIZADO EXITOSAMENTE");
+                    //MessageBox.Show("PAGO REALIZADO EXITOSAMENTE");
                     dataGridView1.Rows.Clear();
                     VerificarFecha();
                     llenarTabla();
