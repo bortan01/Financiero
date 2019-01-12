@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textCodigo = new System.Windows.Forms.TextBox();
+            this.textNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textDireccion = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonRegistrar = new System.Windows.Forms.Button();
+            this.buttonCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -49,20 +49,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             // 
-            // textBox1
+            // textCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(139, 31);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(275, 20);
-            this.textBox1.TabIndex = 1;
+            this.textCodigo.Location = new System.Drawing.Point(139, 31);
+            this.textCodigo.Name = "textCodigo";
+            this.textCodigo.ReadOnly = true;
+            this.textCodigo.Size = new System.Drawing.Size(275, 20);
+            this.textCodigo.TabIndex = 1;
             // 
-            // textBox2
+            // textNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(139, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(275, 20);
-            this.textBox2.TabIndex = 3;
+            this.textNombre.Location = new System.Drawing.Point(139, 71);
+            this.textNombre.Name = "textNombre";
+            this.textNombre.Size = new System.Drawing.Size(275, 20);
+            this.textNombre.TabIndex = 3;
             // 
             // label2
             // 
@@ -73,12 +73,12 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Nombre";
             // 
-            // textBox3
+            // textTelefono
             // 
-            this.textBox3.Location = new System.Drawing.Point(139, 153);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(275, 20);
-            this.textBox3.TabIndex = 7;
+            this.textTelefono.Location = new System.Drawing.Point(139, 153);
+            this.textTelefono.Name = "textTelefono";
+            this.textTelefono.Size = new System.Drawing.Size(275, 20);
+            this.textTelefono.TabIndex = 7;
             // 
             // label3
             // 
@@ -89,12 +89,12 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Telefono";
             // 
-            // textBox4
+            // textDireccion
             // 
-            this.textBox4.Location = new System.Drawing.Point(139, 113);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(275, 20);
-            this.textBox4.TabIndex = 5;
+            this.textDireccion.Location = new System.Drawing.Point(139, 113);
+            this.textDireccion.Name = "textDireccion";
+            this.textDireccion.Size = new System.Drawing.Size(275, 20);
+            this.textDireccion.TabIndex = 5;
             // 
             // label4
             // 
@@ -105,41 +105,43 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "Direccion";
             // 
-            // button1
+            // buttonRegistrar
             // 
-            this.button1.Location = new System.Drawing.Point(112, 196);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "REGISTRAR";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRegistrar.Location = new System.Drawing.Point(112, 196);
+            this.buttonRegistrar.Name = "buttonRegistrar";
+            this.buttonRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.buttonRegistrar.TabIndex = 8;
+            this.buttonRegistrar.Text = "REGISTRAR";
+            this.buttonRegistrar.UseVisualStyleBackColor = true;
+            this.buttonRegistrar.Click += new System.EventHandler(this.buttonRegistrar_Click);
             // 
-            // button2
+            // buttonCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(271, 196);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "CANCELAR";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Location = new System.Drawing.Point(271, 196);
+            this.buttonCancelar.Name = "buttonCancelar";
+            this.buttonCancelar.Size = new System.Drawing.Size(75, 23);
+            this.buttonCancelar.TabIndex = 9;
+            this.buttonCancelar.Text = "CANCELAR";
+            this.buttonCancelar.UseVisualStyleBackColor = true;
             // 
             // registroInstitucion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 244);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.buttonCancelar);
+            this.Controls.Add(this.buttonRegistrar);
+            this.Controls.Add(this.textTelefono);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.textDireccion);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textNombre);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textCodigo);
             this.Controls.Add(this.label1);
             this.Name = "registroInstitucion";
             this.Text = "Registro Sucursal";
+            this.Load += new System.EventHandler(this.registroInstitucion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -148,14 +150,14 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textCodigo;
+        private System.Windows.Forms.TextBox textNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textTelefono;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox textDireccion;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonRegistrar;
+        private System.Windows.Forms.Button buttonCancelar;
     }
 }
