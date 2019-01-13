@@ -31,7 +31,7 @@ namespace MiLibreria
                 
                 con.Open();
 
-                SqlCommand comando = new SqlCommand("Insert into compras(total,fecha_compra,comprobante) " +
+                SqlCommand comando = new SqlCommand("Insert into instituciones_financieras.compras (total,fecha_compra,comprobante) " +
                     "values (@total, @fecha, @comprobante)", con);
                 comando.Parameters.Add("@total", SqlDbType.Money);
                 comando.Parameters.Add("@fecha", SqlDbType.Date);
@@ -45,6 +45,7 @@ namespace MiLibreria
             }
             catch (Exception ex)
             {
+
                 return ex.Message;
             }
             finally

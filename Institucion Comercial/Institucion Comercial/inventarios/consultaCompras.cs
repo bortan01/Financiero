@@ -36,7 +36,7 @@ namespace Institucion_Comercial.inventarios
             DataSet ds = new DataSet();
             try
             {
-                string cmd = "Select id_compra, fecha_compra, total from compras " +
+                string cmd = "Select id_compra, fecha_compra, total from instituciones_financieras.compras " +
                     "where id_compra like '%" + campo + "%' or fecha_compra like '%" + campo + "%' or total like '%" + campo + "%' order by fecha_compra desc";
                 ds = Utilidades.Ejecutar(cmd);
             }

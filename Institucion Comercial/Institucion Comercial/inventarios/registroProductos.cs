@@ -72,7 +72,7 @@ namespace Institucion_Comercial.inventarios
                 MessageBox.Show(e.Message);
             }
 
-            MessageBox.Show(""+cbproveedor.SelectedValue);
+            //MessageBox.Show(""+cbproveedor.SelectedValue);
             
         }
 

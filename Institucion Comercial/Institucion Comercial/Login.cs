@@ -181,6 +181,7 @@ namespace Institucion_Comercial
                 {
                     string cmd = "Select * from instituciones_financieras.empleado where (nombre='"+nombre+"') and pass='"+pass+"'";
                     DataSet ds = Utilidades.Ejecutar(cmd);
+                    codigo = ds.Tables[0].Rows[0]["id_empleado"].ToString().Trim();
                     string dui = ds.Tables[0].Rows[0]["nombre"].ToString().Trim();
                    // string id = ds.Tables[0].Rows[0]["id"].ToString().Trim();
                     string passbd = ds.Tables[0].Rows[0]["pass"].ToString().Trim();

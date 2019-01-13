@@ -19,6 +19,9 @@ namespace Institucion_Comercial.inventarios
             InitializeComponent();
             
             txttotal.Text =total2.ToString();
+
+            txtfecha.MaxDate = DateTime.Now;
+            txtfecha.Value = DateTime.Now;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -233,8 +236,10 @@ namespace Institucion_Comercial.inventarios
             System.IO.MemoryStream imagen = new System.IO.MemoryStream();
             fotocomprobante.Image.Save(imagen,System.Drawing.Imaging.ImageFormat.Jpeg);
             string resultado = Utilidades.InsertarImagen(total,fecha,imagen);
+            
             if (resultado.Equals("Exito"))
             {
+                MessageBox.Show("Aqui");
                 string ultimo = obtenerId();
                 string msj = "";
                 foreach (DataGridViewRow fila in tblcompras.Rows)
@@ -242,13 +247,14 @@ namespace Institucion_Comercial.inventarios
                     string producto = fila.Cells[0].Value.ToString();
                     string cantidad = fila.Cells[5].Value.ToString();
                     string precio = fila.Cells[4].Value.ToString();
-                    msj += "\n"+(fila.Index+1)+"- "+Utilidades.Registrar("Insert into detalle_compras (id_producto , id_compra, cantidad, precio) " +
+                    msj += "\n"+(fila.Index+1)+"- "+Utilidades.Registrar("Insert into instituciones_financieras.detalle_compras (id_producto , id_compra, cantidad, precio) " +
                        " values ('"+producto+"', '"+ultimo+"', '"+cantidad+ "', '" + precio + "')");
 
                     meterInventario(producto, cantidad);
 
                 }
                 MessageBox.Show(msj);
+                limpiarTodo();
             }
             else
             {
@@ -281,7 +287,7 @@ namespace Institucion_Comercial.inventarios
         {
             try
             {
-                string cmd = String.Format("select max(id_compra) as IdActual from compras");
+                string cmd = String.Format("select max(id_compra) as IdActual from instituciones_financieras.compras");
                 DataSet ds = Utilidades.Ejecutar(cmd);
 
                return ds.Tables[0].Rows[0]["IdActual"].ToString().Trim();

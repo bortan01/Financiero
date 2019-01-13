@@ -44,6 +44,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.tblcompras = new System.Windows.Forms.DataGridView();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label7 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.txtfoto = new System.Windows.Forms.TextBox();
@@ -56,13 +63,6 @@
             this.btnguardar = new System.Windows.Forms.Button();
             this.btnlimpiar = new System.Windows.Forms.Button();
             this.btneliminar = new System.Windows.Forms.Button();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtcantidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblcompras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotocomprobante)).BeginInit();
@@ -128,7 +128,6 @@
             // 
             this.txtprecio.Location = new System.Drawing.Point(631, 109);
             this.txtprecio.Name = "txtprecio";
-            this.txtprecio.ReadOnly = true;
             this.txtprecio.Size = new System.Drawing.Size(65, 20);
             this.txtprecio.TabIndex = 6;
             // 
@@ -230,6 +229,54 @@
             this.tblcompras.TabIndex = 16;
             this.tblcompras.SelectionChanged += new System.EventHandler(this.tblcompras_SelectionChanged);
             // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 5.061086F;
+            this.Column7.HeaderText = "Código";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 75;
+            // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 10.23156F;
+            this.Column1.HeaderText = "Nombre";
+            this.Column1.Name = "Column1";
+            this.Column1.Width = 140;
+            // 
+            // Column2
+            // 
+            this.Column2.FillWeight = 63.51335F;
+            this.Column2.HeaderText = "Descripcion";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 260;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 85.56129F;
+            this.Column3.HeaderText = "Proveedor";
+            this.Column3.Name = "Column3";
+            this.Column3.Width = 135;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 103.1475F;
+            this.Column4.HeaderText = "Precio";
+            this.Column4.Name = "Column4";
+            this.Column4.Width = 75;
+            // 
+            // Column5
+            // 
+            this.Column5.FillWeight = 165.9878F;
+            this.Column5.HeaderText = "Cantidad";
+            this.Column5.Name = "Column5";
+            this.Column5.Width = 63;
+            // 
+            // Column6
+            // 
+            this.Column6.FillWeight = 266.4975F;
+            this.Column6.HeaderText = "Total";
+            this.Column6.Name = "Column6";
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -273,7 +320,7 @@
             // txtfecha
             // 
             this.txtfecha.Location = new System.Drawing.Point(213, 390);
-            this.txtfecha.MaxDate = new System.DateTime(2018, 12, 26, 0, 0, 0, 0);
+            this.txtfecha.MaxDate = new System.DateTime(2019, 1, 13, 0, 0, 0, 0);
             this.txtfecha.Name = "txtfecha";
             this.txtfecha.Size = new System.Drawing.Size(200, 20);
             this.txtfecha.TabIndex = 21;
@@ -337,54 +384,6 @@
             this.btneliminar.Text = "Eliminar Fila";
             this.btneliminar.UseVisualStyleBackColor = true;
             this.btneliminar.Click += new System.EventHandler(this.btneliminar_Click);
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 5.061086F;
-            this.Column7.HeaderText = "Código";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 75;
-            // 
-            // Column1
-            // 
-            this.Column1.FillWeight = 10.23156F;
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 140;
-            // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 63.51335F;
-            this.Column2.HeaderText = "Descripcion";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 260;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 85.56129F;
-            this.Column3.HeaderText = "Proveedor";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 135;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 103.1475F;
-            this.Column4.HeaderText = "Precio";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 75;
-            // 
-            // Column5
-            // 
-            this.Column5.FillWeight = 165.9878F;
-            this.Column5.HeaderText = "Cantidad";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 63;
-            // 
-            // Column6
-            // 
-            this.Column6.FillWeight = 266.4975F;
-            this.Column6.HeaderText = "Total";
-            this.Column6.Name = "Column6";
             // 
             // registroCompras
             // 

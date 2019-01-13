@@ -48,7 +48,7 @@ namespace Institucion_Comercial.inventarios
             DataSet ds = new DataSet();
             try
             {
-                string cmd = "Select * from compras " +
+                string cmd = "Select * from instituciones_financieras.compras " +
                     "where id_compra = '"+campo+"'";
                 ds = Utilidades.Ejecutar(cmd);
             }
@@ -64,7 +64,7 @@ namespace Institucion_Comercial.inventarios
             DataSet ds = new DataSet();
             try
             {
-                string cmd = "Select p.id_producto,p.nombre,p.descripcion,p.precio_compra, dc.cantidad, (dc.precio*dc.cantidad) as total from instituciones_financieras.producto as p, detalle_compras as dc, compras where compras.id_compra = '"+idcompra+"' and dc.id_compra = compras.id_compra and p.id_producto= dc.id_producto";
+                string cmd = "Select p.id_producto,p.nombre,p.descripcion,p.precio_compra, dc.cantidad, (dc.precio*dc.cantidad) as total from instituciones_financieras.producto as p, instituciones_financieras.detalle_compras as dc, instituciones_financieras.compras as compras where compras.id_compra = '"+idcompra+"' and dc.id_compra = compras.id_compra and p.id_producto= dc.id_producto";
                 ds = Utilidades.Ejecutar(cmd);
             }
             catch (Exception error)

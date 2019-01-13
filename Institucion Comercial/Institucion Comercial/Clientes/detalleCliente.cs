@@ -131,9 +131,10 @@ namespace Institucion_Comercial.Clientes
                 foreach (DataRow Fila in Ds.Tables[0].Rows) {
                     ESTADO = Convert.ToString(Fila["estado"].ToString().Trim());
                 }
-
-                sql = "UPDATE instituciones_financieras.cliente set cartera = '"+ESTADO+"' WHERE instituciones_financieras.cliente.id_cliente = '" + idcliente + "'";
-                Ds = Utilidades.Ejecutar(sql);
+                if (ESTADO != "") {
+                    sql = "UPDATE instituciones_financieras.cliente set cartera = '" + ESTADO + "' WHERE instituciones_financieras.cliente.id_cliente = '" + idcliente + "'";
+                    Ds = Utilidades.Ejecutar(sql);
+                }
             }
             catch (Exception E) {
                 MessageBox.Show(E.Message);

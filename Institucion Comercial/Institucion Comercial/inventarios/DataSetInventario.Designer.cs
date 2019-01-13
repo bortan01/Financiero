@@ -907,9 +907,6 @@ namespace Institucion_Comercial.inventarios {
                 this.columnid_compra.Unique = true;
                 this.columnnombre.MaxLength = 45;
                 this.columndescripcion.MaxLength = 200;
-                this.columncantidad.AllowDBNull = false;
-                this.columnfecha_compra.AllowDBNull = false;
-                this.columnExpr1.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1302,7 +1299,12 @@ namespace Institucion_Comercial.inventarios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int cantidad {
                 get {
-                    return ((int)(this[this.tableCompras.cantidadColumn]));
+                    try {
+                        return ((int)(this[this.tableCompras.cantidadColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'cantidad\' de la tabla \'Compras\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCompras.cantidadColumn] = value;
@@ -1345,7 +1347,12 @@ namespace Institucion_Comercial.inventarios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime fecha_compra {
                 get {
-                    return ((global::System.DateTime)(this[this.tableCompras.fecha_compraColumn]));
+                    try {
+                        return ((global::System.DateTime)(this[this.tableCompras.fecha_compraColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'fecha_compra\' de la tabla \'Compras\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCompras.fecha_compraColumn] = value;
@@ -1356,7 +1363,12 @@ namespace Institucion_Comercial.inventarios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal Expr1 {
                 get {
-                    return ((decimal)(this[this.tableCompras.Expr1Column]));
+                    try {
+                        return ((decimal)(this[this.tableCompras.Expr1Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Expr1\' de la tabla \'Compras\' es DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableCompras.Expr1Column] = value;
@@ -1389,6 +1401,18 @@ namespace Institucion_Comercial.inventarios {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IscantidadNull() {
+                return this.IsNull(this.tableCompras.cantidadColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetcantidadNull() {
+                this[this.tableCompras.cantidadColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsprecioNull() {
                 return this.IsNull(this.tableCompras.precioColumn);
             }
@@ -1409,6 +1433,30 @@ namespace Institucion_Comercial.inventarios {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SettotalNull() {
                 this[this.tableCompras.totalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool Isfecha_compraNull() {
+                return this.IsNull(this.tableCompras.fecha_compraColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void Setfecha_compraNull() {
+                this[this.tableCompras.fecha_compraColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsExpr1Null() {
+                return this.IsNull(this.tableCompras.Expr1Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetExpr1Null() {
+                this[this.tableCompras.Expr1Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -1809,8 +1857,8 @@ FROM            instituciones_financieras.inventario INNER JOIN
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = @"SELECT        compras.id_compra, instituciones_financieras.producto.nombre, instituciones_financieras.producto.descripcion, detalle_compras.cantidad, detalle_compras.precio, detalle_compras.cantidad * detalle_compras.precio AS total, 
                          compras.fecha_compra, compras.total AS Expr1
-FROM            compras INNER JOIN
-                         detalle_compras ON compras.id_compra = detalle_compras.id_compra INNER JOIN
+FROM            instituciones_financieras.compras INNER JOIN
+                         instituciones_financieras.detalle_compras ON instituciones_financieras.compras.id_compra = detalle_compras.id_compra INNER JOIN
                          instituciones_financieras.producto ON detalle_compras.id_producto = instituciones_financieras.producto.id_producto";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
