@@ -172,6 +172,7 @@ namespace Institucion_Comercial
             string nombre = txtuser.Text.Trim();
             string pass = txtpass.Text.Trim();
             if (nombre.Equals("admin") && pass.Equals("admin")) {
+                codigo = "admin";
                 ContenedorPrincipal cp = new ContenedorPrincipal();
                 this.Hide();
                 cp.Show();

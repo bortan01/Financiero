@@ -23,6 +23,35 @@ namespace Institucion_Comercial
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            if (Login.codigo=="admin")
+            {
+                ocultar();
+            }
+            else
+            {
+                mostrar();
+            }
+            
+        }
+
+        public void ocultar()
+        {
+            this.menuActivo.Visible = false;
+            this.menuClientes.Visible = false;
+            this.menuProductos.Visible = false;
+            this.menuPagos.Visible = false;
+            this.menuProveedores.Visible = false;
+            this.menuVentas.Visible = false;
+        }
+
+        public void mostrar()
+        {
+            this.menuActivo.Visible = true;
+            this.menuClientes.Visible = true;
+            this.menuProductos.Visible = true;
+            this.menuPagos.Visible = true;
+            this.menuProveedores.Visible = true;
+            this.menuVentas.Visible = true;
         }
 
         private void ShowNewForm(object sender, EventArgs e)
@@ -237,6 +266,18 @@ namespace Institucion_Comercial
             mostrar_incobrables rc = new mostrar_incobrables();
             rc.MdiParent = this;
             rc.Show();
+        }
+
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            this.Hide();
+            login.Show();
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
