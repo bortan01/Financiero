@@ -1,6 +1,6 @@
 ﻿namespace Institucion_Comercial.comercial
 {
-    partial class listado_deudas
+    partial class mostrar_incobrables
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(listado_deudas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(mostrar_incobrables));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,13 +38,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtVenta = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.txtVenta = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnPagar = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.c1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.c3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,38 +60,39 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(405, 9);
+            this.label1.Location = new System.Drawing.Point(309, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "LISTADO DE CREDITOS";
+            this.label1.Size = new System.Drawing.Size(380, 22);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "LISTADO DE CREDITOS INCOBRABLES";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(713, 70);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "BUSCAR";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // txtVenta
+            // 
+            this.txtVenta.Location = new System.Drawing.Point(324, 72);
+            this.txtVenta.Name = "txtVenta";
+            this.txtVenta.Size = new System.Drawing.Size(347, 20);
+            this.txtVenta.TabIndex = 5;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label2.Location = new System.Drawing.Point(216, 72);
+            this.label2.Location = new System.Drawing.Point(200, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(106, 13);
-            this.label2.TabIndex = 1;
+            this.label2.TabIndex = 4;
             this.label2.Text = "CODIGO DE VENTA";
-            // 
-            // txtVenta
-            // 
-            this.txtVenta.Location = new System.Drawing.Point(340, 69);
-            this.txtVenta.Name = "txtVenta";
-            this.txtVenta.Size = new System.Drawing.Size(347, 20);
-            this.txtVenta.TabIndex = 2;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(729, 67);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "BUSCAR";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -120,46 +120,35 @@
             this.c8,
             this.Column1});
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 125);
+            this.dataGridView1.Location = new System.Drawing.Point(4, 105);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1019, 241);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // btnPagar
-            // 
-            this.btnPagar.Location = new System.Drawing.Point(31, 384);
-            this.btnPagar.Name = "btnPagar";
-            this.btnPagar.Size = new System.Drawing.Size(75, 23);
-            this.btnPagar.TabIndex = 5;
-            this.btnPagar.Text = "PAGAR";
-            this.btnPagar.UseVisualStyleBackColor = true;
-            this.btnPagar.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(846, 384);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(184, 23);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "MARCAR COMO INCOBRABLE";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.dataGridView1.Size = new System.Drawing.Size(1023, 241);
+            this.dataGridView1.TabIndex = 7;
             // 
             // button3
             // 
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.Location = new System.Drawing.Point(810, 67);
+            this.button3.Location = new System.Drawing.Point(794, 69);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 7;
+            this.button3.TabIndex = 8;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(12, 375);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 9;
+            this.button2.Text = "Restaurar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // c1
             // 
@@ -221,22 +210,21 @@
             this.Column1.Name = "Column1";
             this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // listado_deudas
+            // mostrar_incobrables
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 450);
-            this.Controls.Add(this.button3);
+            this.ClientSize = new System.Drawing.Size(1033, 461);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.btnPagar);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtVenta);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "listado_deudas";
-            this.Text = "listado_deudas";
-            this.Load += new System.EventHandler(this.listado_deudas_Load);
+            this.Name = "mostrar_incobrables";
+            this.Text = "mostrar_incobrables";
+            this.Load += new System.EventHandler(this.mostrar_incobrables_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -246,13 +234,12 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtVenta;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtVenta;
+        private System.Windows.Forms.Label label2;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnPagar;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn c1;
         private System.Windows.Forms.DataGridViewTextBoxColumn c2;
         private System.Windows.Forms.DataGridViewTextBoxColumn c3;

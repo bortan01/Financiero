@@ -473,6 +473,7 @@
             this.Controls.Add(this.txtid);
             this.Name = "detalleCliente";
             this.Text = "detalleCliente";
+            this.Load += new System.EventHandler(this.detalleCliente_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

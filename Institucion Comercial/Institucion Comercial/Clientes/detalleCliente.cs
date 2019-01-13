@@ -119,5 +119,25 @@ namespace Institucion_Comercial.Clientes
             }
             return ds;
         }
+
+        private void detalleCliente_Load(object sender, EventArgs e)
+        {
+
+            try {
+                String sql = "SELECT instituciones_financieras.venta.estado FROM instituciones_financieras.venta INNER JOIN instituciones_financieras.detalle_compra ON instituciones_financieras.detalle_compra.id_venta = instituciones_financieras.venta.id_venta INNER JOIN instituciones_financieras.cliente ON instituciones_financieras.detalle_compra.id_cliente = instituciones_financieras.cliente.id_cliente where cliente.id_cliente = '1'  ";
+                DataSet Ds;
+                Ds = Utilidades.Ejecutar(sql);
+                String ESTADO = "";
+                foreach (DataRow Fila in Ds.Tables[0].Rows) {
+                    ESTADO = Convert.ToString(Fila["estado"].ToString().Trim());
+                }
+
+                sql = "UPDATE instituciones_financieras.cliente set cartera = '"+ESTADO+"' WHERE instituciones_financieras.cliente.id_cliente = '" + idcliente + "'";
+                Ds = Utilidades.Ejecutar(sql);
+            }
+            catch (Exception E) {
+                MessageBox.Show(E.Message);
+            }
+        }
     }
 }
