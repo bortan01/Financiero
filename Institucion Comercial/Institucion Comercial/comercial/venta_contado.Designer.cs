@@ -32,6 +32,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtCantidad)).BeginInit();
             this.SuspendLayout();
             // 
+            // button1
+            // 
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // txtEmpleado
             // 
             this.txtEmpleado.Text = "Juan PedroTenorio Arreoza";

@@ -40,7 +40,7 @@ namespace Institucion_Comercial.comercial
                 try
                 {
                     DataSet ds;
-                    String sql = "select * from instituciones_financieras.cliente where nombre like ('%" + txtBuscarCliente.Text + "%') or id_cliente like ('%" + txtBuscarCliente.Text + "%') ";
+                    String sql = "select * from instituciones_financieras.cliente where dui like ('%" + txtBuscarCliente.Text + "%') or id_cliente like ('%" + txtBuscarCliente.Text + "%') ";
                     // MessageBox.Show(sql);
 
                     ds = Utilidades.Ejecutar(sql);

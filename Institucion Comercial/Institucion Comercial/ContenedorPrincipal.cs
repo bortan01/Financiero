@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Institucion_Comercial.Clientes;
+using Institucion_Comercial.comercial;
 
 namespace Institucion_Comercial
 {
@@ -205,6 +206,37 @@ namespace Institucion_Comercial
             registroMantenimineto rm = new registroMantenimineto();
             rm.MdiParent = this;
             rm.Show();
+        }
+
+        private void contadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+
+            venta_contado vc = new venta_contado();
+            vc.MdiParent = this;
+            vc.Show();
+
+        }
+
+        private void creditoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            venta_credito rc = new venta_credito();
+            rc.MdiParent = this;
+            rc.Show();
+        }
+
+        private void realizarPagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listado_deudas rc = new listado_deudas();
+            rc.MdiParent = this;
+            rc.Show();
+        }
+
+        private void incobrablesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mostrar_incobrables rc = new mostrar_incobrables();
+            rc.MdiParent = this;
+            rc.Show();
         }
     }
 }

@@ -87,5 +87,10 @@ namespace Institucion_Comercial.comercial
             FContado ass = new FContado("55");
             ass.ShowDialog();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
