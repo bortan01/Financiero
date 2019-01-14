@@ -41,7 +41,7 @@ namespace Institucion_Comercial.activo
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.Message);
+                //MessageBox.Show(error.Message);
             }
         }
 
@@ -69,7 +69,7 @@ namespace Institucion_Comercial.activo
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                //MessageBox.Show(e.Message);
             }
 
             // MessageBox.Show("" + cbClasificacion.SelectedValue);
@@ -83,7 +83,7 @@ namespace Institucion_Comercial.activo
             string proveedor = textBoxCodigo.Text.Trim();
 
             string sql = "Insert into instituciones_financieras.departamento " +
-                 "(nombre, id_sucursal, id_depto)" +
+                 "(nombre, id_sucursal, id_departamento)" +
                 " values('" + nombre + "','" + clasificacion + "','" + proveedor + "')";
             string msj = Utilidades.Registrar(sql);
             MessageBox.Show(msj);

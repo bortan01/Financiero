@@ -25,8 +25,36 @@ namespace Institucion_Comercial.activo
         public void llenarId()
         {
             String codigo = "AFF-";
+            int correlativo = 0;
             codigo = codigo + comboBoxDepto.SelectedValue +"-"+comboBoxTipo.SelectedValue+"-";
-            textBoxCodigo.Text = codigo;
+
+            try
+            {
+
+                string cmd = String.Format("SELECT Count(1) FROM instituciones_financieras.activo WHERE instituciones_financieras.activo.id_activo LIKE '"+codigo+"%'" );
+                DataSet ds = Utilidades.Ejecutar(cmd);
+                correlativo = Convert.ToInt32(ds.Tables[0].Rows[0][0].ToString().Trim());
+
+                textBoxCodigo.Text = codigo+ calcularCod(correlativo + 1);
+
+            }
+            catch (Exception error)
+            {
+               // MessageBox.Show(error.Message);
+            }
+            
+        }
+
+        private String calcularCod(int n)
+        {
+           
+
+            if (n / 10 == 0)
+                return  "00" + n;
+            else
+                if (n / 100 > 0)
+                return  ""+n;
+            return  "0" + n;
         }
 
         public void cargarComboDepto(String s)
@@ -35,12 +63,12 @@ namespace Institucion_Comercial.activo
             {//departamento
                 DataTable dt = Utilidades.LlenarCombos("Select * from instituciones_financieras.departamento WHERE instituciones_financieras.departamento.id_sucursal = " + s);
                 comboBoxDepto.DataSource = dt;
-                comboBoxDepto.ValueMember = "id_depto";
+                comboBoxDepto.ValueMember = "id_departamento";
                 comboBoxDepto.DisplayMember = "nombre";
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+                //MessageBox.Show(e.Message);
             }
         }
 
@@ -78,7 +106,7 @@ namespace Institucion_Comercial.activo
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+               // MessageBox.Show(e.Message);
             }
 
         }
@@ -144,8 +172,9 @@ namespace Institucion_Comercial.activo
 
         private void buttonRegistrar_Click(object sender, EventArgs e)
         {
+            string msj = "";
             string codigo = textBoxCodigo.Text.Trim();
-            int tipo = Convert.ToInt32( comboBoxTipo.SelectedValue.ToString().Substring(0,1));
+            int tipo = Convert.ToInt32( comboBoxTipo.SelectedValue.ToString().Substring(3,1));
            
             string sucu = comboBoxSucu.SelectedValue.ToString();
             string depto = comboBoxDepto.SelectedValue.ToString();
@@ -153,15 +182,18 @@ namespace Institucion_Comercial.activo
             string proveedor = comboBoxProve.SelectedValue.ToString();
             string estado = comboBoxEstado.SelectedValue.ToString();
             string precio = textBoxPrecio.Text.Trim();
-            string unidades = textBoxUnidades.Text.Trim();
+            int unidades = Convert.ToInt32( textBoxUnidades.Text.Trim());
             string descripcion = txtdireccion.Text.Trim();
             DateTime fecha = (dateTimePicker1.Value);
             
-
+            for(int i = 0; i<= unidades; i++) { 
             string sql = "Insert into instituciones_financieras.activo " +
-                 "(id_activo, id_tipo, id_departamento, id_depto, id_institucion, id_estado, id_usuario, id_proveedor, fecha_adquisicion, descripcion)" +
-                " values('" + codigo + "','" + tipo + "','" + 1 + "','" +depto + "','" + sucu + "','" + estado+ "','" + encargado + "','" + proveedor + "','" + fecha + "','" + descripcion + "')";
-            string msj = Utilidades.Registrar(sql);
+                 "(id_activo, id_tipo,  id_depto,  id_estado, id_usuario, id_proveedor, fecha_adquisicion, descripcion)" +
+                " values('" + codigo + "','" + tipo +  "','" +depto + "','" + estado+ "','" + encargado + "','" + proveedor + "','" + fecha + "','" + descripcion + "')";
+            msj = Utilidades.Registrar(sql);
+                llenarId();
+                codigo = textBoxCodigo.Text.Trim();
+            }
             MessageBox.Show(msj);
             if (msj.Equals("Registro Completado"))
             {

@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="activo\inventarioActivo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\inventarioActivo.Designer.cs">
+      <DependentUpon>inventarioActivo.cs</DependentUpon>
+    </Compile>
     <Compile Include="activo\registroActivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -310,6 +316,9 @@
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="activo\inventarioActivo.resx">
+      <DependentUpon>inventarioActivo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="activo\registroActivo.resx">
       <DependentUpon>registroActivo.cs</DependentUpon>
     </EmbeddedResource>

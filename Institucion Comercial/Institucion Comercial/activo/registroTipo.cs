@@ -31,7 +31,7 @@ namespace Institucion_Comercial.activo
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.Message);
+               // MessageBox.Show(e.Message);
             }
 
            // MessageBox.Show("" + cbClasificacion.SelectedValue);
@@ -53,7 +53,7 @@ namespace Institucion_Comercial.activo
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.Message);
+               // MessageBox.Show(error.Message);
             }
         }
 
@@ -76,7 +76,7 @@ namespace Institucion_Comercial.activo
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.Message);
+               // MessageBox.Show(error.Message);
             }
            
         }

@@ -279,5 +279,12 @@ namespace Institucion_Comercial
         {
             Application.Exit();
         }
+
+        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            inventarioActivo ia = new inventarioActivo();
+            ia.MdiParent = this;
+            ia.Show();
+        }
     }
 }
