@@ -303,6 +303,7 @@
             this.depreciacionToolStripMenuItem.Name = "depreciacionToolStripMenuItem";
             this.depreciacionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.depreciacionToolStripMenuItem.Text = "Depreciacion";
+            this.depreciacionToolStripMenuItem.Click += new System.EventHandler(this.depreciacionToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 

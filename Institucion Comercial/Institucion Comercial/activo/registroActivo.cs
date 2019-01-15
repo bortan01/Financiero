@@ -20,13 +20,15 @@ namespace Institucion_Comercial.activo
             cargarCombo();
             cargarComboDepto("001");
             llenarId();
+            dateTimePicker1.MaxDate = DateTime.Now;
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         public void llenarId()
         {
             String codigo = "AFF-";
             int correlativo = 0;
-            codigo = codigo + comboBoxDepto.SelectedValue +"-"+comboBoxTipo.SelectedValue+"-";
+            codigo = codigo + comboBoxDepto.SelectedValue +"-"+comboBoxTipo.SelectedValue.ToString().Substring(0,4)+"-";
 
             try
             {
@@ -76,7 +78,7 @@ namespace Institucion_Comercial.activo
         {
             try
             {//para tipo
-                DataTable dt = Utilidades.LlenarCombos("Select * from instituciones_financieras.tipo_activo");
+                DataTable dt = Utilidades.LlenarCombos("SELECT instituciones_financieras.tipo_activo.nombre,instituciones_financieras.tipo_activo.correlativo + CONVERT(VARCHAR, instituciones_financieras.tipo_activo.id_tipo) as correlativo FROM instituciones_financieras.tipo_activo");
                 comboBoxTipo.DataSource = dt;
                 comboBoxTipo.ValueMember = "correlativo";
                 comboBoxTipo.DisplayMember = "nombre";
@@ -132,21 +134,26 @@ namespace Institucion_Comercial.activo
             registroTipo registroTipo = new registroTipo();
             
             registroTipo.ShowDialog();
-            
+            cargarCombo();
+            cargarComboDepto("001");
 
         }
 
         private void button4_Click(object sender, EventArgs e)//registro sucursal
         {
             registroInstitucion registroInst = new registroInstitucion();
-
             registroInst.ShowDialog();
+            cargarCombo();
+            cargarComboDepto("001");
+
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
             registroDepartamento registroDepartamento = new registroDepartamento();
             registroDepartamento.ShowDialog();
+            cargarCombo();
+            cargarComboDepto("001");
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -156,7 +163,10 @@ namespace Institucion_Comercial.activo
 
         private void comboBoxSucu_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarComboDepto(comboBoxSucu.SelectedValue+"");
+            
+            comboBoxDepto.DataSource = null;
+            comboBoxDepto.Items.Clear();
+            cargarComboDepto(comboBoxSucu.SelectedValue + "");
             llenarId();
         }
 
@@ -174,7 +184,7 @@ namespace Institucion_Comercial.activo
         {
             string msj = "";
             string codigo = textBoxCodigo.Text.Trim();
-            int tipo = Convert.ToInt32( comboBoxTipo.SelectedValue.ToString().Substring(3,1));
+            int tipo = Convert.ToInt32( comboBoxTipo.SelectedValue.ToString().Substring(4,1));
            
             string sucu = comboBoxSucu.SelectedValue.ToString();
             string depto = comboBoxDepto.SelectedValue.ToString();
@@ -186,10 +196,10 @@ namespace Institucion_Comercial.activo
             string descripcion = txtdireccion.Text.Trim();
             DateTime fecha = (dateTimePicker1.Value);
             
-            for(int i = 0; i<= unidades; i++) { 
+            for(int i = 0; i< unidades; i++) { 
             string sql = "Insert into instituciones_financieras.activo " +
-                 "(id_activo, id_tipo,  id_depto,  id_estado, id_usuario, id_proveedor, fecha_adquisicion, descripcion)" +
-                " values('" + codigo + "','" + tipo +  "','" +depto + "','" + estado+ "','" + encargado + "','" + proveedor + "','" + fecha + "','" + descripcion + "')";
+                 "(id_activo, id_tipo,  id_depto,  id_estado, id_usuario, id_proveedor, fecha_adquisicion, descripcion, correlativo, estado)" +
+                " values('" + codigo + "','" + tipo +  "','" +depto + "','" + estado+ "','" + encargado + "','" + proveedor + "','" + fecha + "','" + descripcion + "','" + precio + "', 'Disponible')";
             msj = Utilidades.Registrar(sql);
                 llenarId();
                 codigo = textBoxCodigo.Text.Trim();

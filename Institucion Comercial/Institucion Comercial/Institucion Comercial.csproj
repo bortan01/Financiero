@@ -68,6 +68,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="activo\depreciacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\depreciacion.Designer.cs">
+      <DependentUpon>depreciacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="activo\inventarioActivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,6 +115,12 @@
     </Compile>
     <Compile Include="activo\registroTipo.Designer.cs">
       <DependentUpon>registroTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="activo\tablaDepre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\tablaDepre.Designer.cs">
+      <DependentUpon>tablaDepre.cs</DependentUpon>
     </Compile>
     <Compile Include="Clientes\consultarClientes.cs">
       <SubType>Form</SubType>
@@ -316,6 +328,9 @@
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="activo\depreciacion.resx">
+      <DependentUpon>depreciacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="activo\inventarioActivo.resx">
       <DependentUpon>inventarioActivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -336,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="activo\registroTipo.resx">
       <DependentUpon>registroTipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="activo\tablaDepre.resx">
+      <DependentUpon>tablaDepre.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes\consultarClientes.resx">
       <DependentUpon>consultarClientes.cs</DependentUpon>

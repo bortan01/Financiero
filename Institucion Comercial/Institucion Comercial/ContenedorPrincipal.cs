@@ -286,5 +286,12 @@ namespace Institucion_Comercial
             ia.MdiParent = this;
             ia.Show();
         }
+
+        private void depreciacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            depreciacion dp = new depreciacion();
+            dp.MdiParent = this;
+            dp.Show();
+        }
     }
 }
