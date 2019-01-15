@@ -31,6 +31,7 @@
             this.tablaProductos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtbuscar = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,18 +62,30 @@
             // 
             this.txtbuscar.Location = new System.Drawing.Point(103, 56);
             this.txtbuscar.Name = "txtbuscar";
-            this.txtbuscar.Size = new System.Drawing.Size(659, 20);
+            this.txtbuscar.Size = new System.Drawing.Size(547, 20);
             this.txtbuscar.TabIndex = 7;
             this.txtbuscar.TextChanged += new System.EventHandler(this.txtbuscar_TextChanged);
+            // 
+            // button1
+            // 
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(674, 54);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(55, 23);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // inventarioActivo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tablaProductos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbuscar);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "inventarioActivo";
             this.Text = "inventarioActivo";
             this.Load += new System.EventHandler(this.inventarioActivo_Load);
@@ -87,5 +100,6 @@
         public System.Windows.Forms.DataGridView tablaProductos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtbuscar;
+        private System.Windows.Forms.Button button1;
     }
 }

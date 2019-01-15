@@ -293,5 +293,12 @@ namespace Institucion_Comercial
             dp.MdiParent = this;
             dp.Show();
         }
+
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            repoInv ri = new repoInv();
+            ri.MdiParent = this;
+            ri.Show();
+        }
     }
 }

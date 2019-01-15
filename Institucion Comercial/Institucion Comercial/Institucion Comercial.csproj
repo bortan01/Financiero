@@ -68,6 +68,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="activo\DataSetActivo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetActivo.xsd</DependentUpon>
+    </Compile>
     <Compile Include="activo\depreciacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +120,12 @@
     </Compile>
     <Compile Include="activo\registroTipo.Designer.cs">
       <DependentUpon>registroTipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="activo\repoInv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\repoInv.Designer.cs">
+      <DependentUpon>repoInv.cs</DependentUpon>
     </Compile>
     <Compile Include="activo\tablaDepre.cs">
       <SubType>Form</SubType>
@@ -352,6 +363,10 @@
     <EmbeddedResource Include="activo\registroTipo.resx">
       <DependentUpon>registroTipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="activo\repoInv.resx">
+      <DependentUpon>repoInv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="activo\Report1.rdlc" />
     <EmbeddedResource Include="activo\tablaDepre.resx">
       <DependentUpon>tablaDepre.cs</DependentUpon>
     </EmbeddedResource>
@@ -453,6 +468,17 @@
     <EmbeddedResource Include="RegistrarEmpleado.resx">
       <DependentUpon>RegistrarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="activo\DataSetActivo.xsc">
+      <DependentUpon>DataSetActivo.xsd</DependentUpon>
+    </None>
+    <None Include="activo\DataSetActivo.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetActivo.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="activo\DataSetActivo.xss">
+      <DependentUpon>DataSetActivo.xsd</DependentUpon>
+    </None>
     <None Include="comercial\DetallePago.xsc">
       <DependentUpon>DetallePago.xsd</DependentUpon>
     </None>
