@@ -52,6 +52,49 @@ INNER JOIN instituciones_financieras.clasificacion ON instituciones_financieras.
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableDepreTableAdapter" GeneratorDataComponentClassName="DataTableDepreTableAdapter" Name="DataTableDepre" UserDataComponentName="DataTableDepreTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="instituciones_financierasConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT 
+instituciones_financieras.activo.id_activo AS cod, 
+instituciones_financieras.tipo_activo.nombre + ' - ' + instituciones_financieras.clasificacion.nombre AS tipo, 
+instituciones_financieras.departamento.nombre AS depto, 
+instituciones_financieras.sucursal.nombre AS sucu, 
+instituciones_financieras.estado.nombre, 
+instituciones_financieras.empleado.nombre + ' ' + instituciones_financieras.empleado.apellido AS enca,
+instituciones_financieras.activo.fecha_adquisicion AS fecha, 
+instituciones_financieras.activo.estado AS estado, 
+instituciones_financieras.clasificacion.tiempo_depreciacion AS dpre , 
+instituciones_financieras.activo.correlativo as costo 
+FROM 
+instituciones_financieras.activo 
+INNER JOIN instituciones_financieras.tipo_activo ON instituciones_financieras.activo.id_tipo = instituciones_financieras.tipo_activo.id_tipo 
+INNER JOIN instituciones_financieras.departamento ON instituciones_financieras.activo.id_depto = instituciones_financieras.departamento.id_departamento 
+INNER JOIN instituciones_financieras.sucursal ON instituciones_financieras.departamento.id_sucursal = instituciones_financieras.sucursal.id_sucursal 
+INNER JOIN instituciones_financieras.estado ON instituciones_financieras.activo.id_estado = instituciones_financieras.estado.id_estado 
+INNER JOIN instituciones_financieras.empleado ON instituciones_financieras.activo.id_usuario = instituciones_financieras.empleado.id_empleado 
+INNER JOIN instituciones_financieras.clasificacion ON instituciones_financieras.tipo_activo.id_clasificacion = instituciones_financieras.clasificacion.id_clasificacion </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="cod" DataSetColumn="cod" />
+              <Mapping SourceColumn="tipo" DataSetColumn="tipo" />
+              <Mapping SourceColumn="depto" DataSetColumn="depto" />
+              <Mapping SourceColumn="sucu" DataSetColumn="sucu" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="enca" DataSetColumn="enca" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="estado" DataSetColumn="estado" />
+              <Mapping SourceColumn="dpre" DataSetColumn="dpre" />
+              <Mapping SourceColumn="costo" DataSetColumn="costo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -60,7 +103,71 @@ INNER JOIN instituciones_financieras.clasificacion ON instituciones_financieras.
   <xs:element name="DataSetActivo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetActivo" msprop:Generator_UserDSName="DataSetActivo">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="DataTableActivo" msprop:Generator_TableClassName="DataTableActivoDataTable" msprop:Generator_TableVarName="tableDataTableActivo" msprop:Generator_TablePropName="DataTableActivo" msprop:Generator_RowDeletingName="DataTableActivoRowDeleting" msprop:Generator_RowChangingName="DataTableActivoRowChanging" msprop:Generator_RowEvHandlerName="DataTableActivoRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableActivoRowDeleted" msprop:Generator_UserTableName="DataTableActivo" msprop:Generator_RowChangedName="DataTableActivoRowChanged" msprop:Generator_RowEvArgName="DataTableActivoRowChangeEvent" msprop:Generator_RowClassName="DataTableActivoRow">
+        <xs:element name="DataTableActivo" msprop:Generator_TableClassName="DataTableActivoDataTable" msprop:Generator_TableVarName="tableDataTableActivo" msprop:Generator_RowChangedName="DataTableActivoRowChanged" msprop:Generator_TablePropName="DataTableActivo" msprop:Generator_RowDeletingName="DataTableActivoRowDeleting" msprop:Generator_RowChangingName="DataTableActivoRowChanging" msprop:Generator_RowEvHandlerName="DataTableActivoRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableActivoRowDeleted" msprop:Generator_RowClassName="DataTableActivoRow" msprop:Generator_UserTableName="DataTableActivo" msprop:Generator_RowEvArgName="DataTableActivoRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="cod" msprop:Generator_ColumnVarNameInTable="columncod" msprop:Generator_ColumnPropNameInRow="cod" msprop:Generator_ColumnPropNameInTable="codColumn" msprop:Generator_UserColumnName="cod">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tipo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntipo" msprop:Generator_ColumnPropNameInRow="tipo" msprop:Generator_ColumnPropNameInTable="tipoColumn" msprop:Generator_UserColumnName="tipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="93" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="depto" msprop:Generator_ColumnVarNameInTable="columndepto" msprop:Generator_ColumnPropNameInRow="depto" msprop:Generator_ColumnPropNameInTable="deptoColumn" msprop:Generator_UserColumnName="depto" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="sucu" msprop:Generator_ColumnVarNameInTable="columnsucu" msprop:Generator_ColumnPropNameInRow="sucu" msprop:Generator_ColumnPropNameInTable="sucuColumn" msprop:Generator_UserColumnName="sucu" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="enca" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnenca" msprop:Generator_ColumnPropNameInRow="enca" msprop:Generator_ColumnPropNameInTable="encaColumn" msprop:Generator_UserColumnName="enca" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="61" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="estado" msprop:Generator_ColumnVarNameInTable="columnestado" msprop:Generator_ColumnPropNameInRow="estado" msprop:Generator_ColumnPropNameInTable="estadoColumn" msprop:Generator_UserColumnName="estado" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="dpre" msprop:Generator_ColumnVarNameInTable="columndpre" msprop:Generator_ColumnPropNameInRow="dpre" msprop:Generator_ColumnPropNameInTable="dpreColumn" msprop:Generator_UserColumnName="dpre" type="xs:int" minOccurs="0" />
+              <xs:element name="costo" msprop:Generator_ColumnVarNameInTable="columncosto" msprop:Generator_ColumnPropNameInRow="costo" msprop:Generator_ColumnPropNameInTable="costoColumn" msprop:Generator_UserColumnName="costo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DataTableDepre" msprop:Generator_TableClassName="DataTableDepreDataTable" msprop:Generator_TableVarName="tableDataTableDepre" msprop:Generator_TablePropName="DataTableDepre" msprop:Generator_RowDeletingName="DataTableDepreRowDeleting" msprop:Generator_RowChangingName="DataTableDepreRowChanging" msprop:Generator_RowEvHandlerName="DataTableDepreRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTableDepreRowDeleted" msprop:Generator_UserTableName="DataTableDepre" msprop:Generator_RowChangedName="DataTableDepreRowChanged" msprop:Generator_RowEvArgName="DataTableDepreRowChangeEvent" msprop:Generator_RowClassName="DataTableDepreRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="cod" msprop:Generator_ColumnVarNameInTable="columncod" msprop:Generator_ColumnPropNameInRow="cod" msprop:Generator_ColumnPropNameInTable="codColumn" msprop:Generator_UserColumnName="cod">
@@ -128,6 +235,10 @@ INNER JOIN instituciones_financieras.clasificacion ON instituciones_financieras.
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:DataTableActivo" />
+      <xs:field xpath="mstns:cod" />
+    </xs:unique>
+    <xs:unique name="DataTableDepre_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:DataTableDepre" />
       <xs:field xpath="mstns:cod" />
     </xs:unique>
   </xs:element>

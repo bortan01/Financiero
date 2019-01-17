@@ -9,8 +9,10 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Inventario</Value>
-                <Style />
+                <Value>Reporte de Inventario</Value>
+                <Style>
+                  <FontSize>14pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -18,9 +20,9 @@
         </Paragraphs>
         <rd:DefaultName>Textbox1</rd:DefaultName>
         <Top>0.44662cm</Top>
-        <Left>2.66912cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <Left>2.85433cm</Left>
+        <Height>0.89104cm</Height>
+        <Width>6.05832cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -511,10 +513,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>2.19287cm</Top>
+        <Top>2.88079cm</Top>
         <Left>0.81703cm</Left>
         <Height>1.94083cm</Height>
-        <Width>26.24479cm</Width>
+        <Width>26.24478cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -537,7 +539,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>ExecutionTime</rd:DefaultName>
-        <Top>1.22301cm</Top>
+        <Top>1.91093cm</Top>
         <Left>0.81703cm</Left>
         <Height>0.6cm</Height>
         <Width>2.5cm</Width>

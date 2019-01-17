@@ -13,7 +13,10 @@ namespace Institucion_Comercial.activo
 {
     public partial class tablaDepre : Form
     {
+        String  tipo, sucu, depto, enca, valor, fecha, estado;
         String cod = "";
+        String[] anio = new string[20];
+        int na;
         public tablaDepre()
         {
             InitializeComponent();
@@ -51,7 +54,7 @@ namespace Institucion_Comercial.activo
 "WHERE " +
 "instituciones_financieras.activo.id_activo = '"+cod+"'");
             DataSet ds = Utilidades.Ejecutar(cmd);
-            int tiempo = Convert.ToInt32(ds.Tables[0].Rows[0]["dpre"]);
+            int tiempo = Convert.ToInt32(ds.Tables[0].Rows[0]["dpre"]); na = tiempo;
             double costo = Convert.ToDouble(ds.Tables[0].Rows[0]["costo"].ToString());
             double depre = costo / tiempo;
             double depreAcum = depre;
@@ -68,12 +71,20 @@ namespace Institucion_Comercial.activo
 
             for (int i=0; i<tiempo; i++)
             {
+                this.anio[i] = anio + "*"+depre + "*"+depreAcum + "*"+libro;
                 tblcompras.Rows.Insert(tblcompras.RowCount, anio, depre, depreAcum, libro);
                 anio++;
                 depreAcum = depreAcum + depre;
                 libro = libro - depre;
             }
-           
+            this.cod = textBoxcodigo.Text;
+            this.tipo = textBoxTipo.Text;
+            this.depto = textBoxDepartamento.Text;
+            this.sucu = textBoxSucu.Text;
+            this.enca = textBoxEncargado.Text;
+            this.valor = textBoxCosto.Text;
+            this.fecha = Convert.ToString(dateTimePicker1.Value);
+            this.estado = textBoxEstado.Text;
 
 
             //MessageBox.Show("" + ds.Tables[0].Rows[0][0].ToString());
@@ -88,6 +99,13 @@ namespace Institucion_Comercial.activo
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+           
+            repoDepre rd = new repoDepre(na, anio, cod,tipo,sucu,depto,enca,valor,fecha,estado);
+            rd.ShowDialog();
         }
     }
 }
