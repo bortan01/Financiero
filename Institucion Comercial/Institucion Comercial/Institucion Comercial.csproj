@@ -85,6 +85,12 @@
     <Compile Include="activo\inventarioActivo.Designer.cs">
       <DependentUpon>inventarioActivo.cs</DependentUpon>
     </Compile>
+    <Compile Include="activo\mod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="activo\mod.Designer.cs">
+      <DependentUpon>mod.cs</DependentUpon>
+    </Compile>
     <Compile Include="activo\registroActivo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -351,6 +357,9 @@
     <EmbeddedResource Include="activo\inventarioActivo.resx">
       <DependentUpon>inventarioActivo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="activo\mod.resx">
+      <DependentUpon>mod.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="activo\registroActivo.resx">
       <DependentUpon>registroActivo.cs</DependentUpon>
     </EmbeddedResource>
@@ -380,6 +389,8 @@
     <EmbeddedResource Include="activo\Report2b.rdlc" />
     <EmbeddedResource Include="activo\Report2a.rdlc" />
     <EmbeddedResource Include="activo\Report2.rdlc" />
+    <EmbeddedResource Include="activo\Report3a.rdlc" />
+    <EmbeddedResource Include="activo\Report3.rdlc" />
     <EmbeddedResource Include="activo\tablaDepre.resx">
       <DependentUpon>tablaDepre.cs</DependentUpon>
     </EmbeddedResource>

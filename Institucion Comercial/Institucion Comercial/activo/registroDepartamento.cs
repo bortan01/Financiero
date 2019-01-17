@@ -107,5 +107,10 @@ namespace Institucion_Comercial.activo
         {
             llenarId(comboBoxSucu.SelectedValue+"");
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            textBoxNombre.Text = "";
+        }
     }
 }

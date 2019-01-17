@@ -39,7 +39,7 @@ namespace Institucion_Comercial.activo
 "instituciones_financieras.departamento.nombre, "+
 "instituciones_financieras.sucursal.nombre, "+
 "instituciones_financieras.empleado.nombre + ' ' +instituciones_financieras.empleado.apellido, " +
-"instituciones_financieras.estado.nombre "+
+"instituciones_financieras.activo.estado " +
 "FROM "+
 "instituciones_financieras.activo "+
 "INNER JOIN instituciones_financieras.tipo_activo ON instituciones_financieras.activo.id_tipo = instituciones_financieras.tipo_activo.id_tipo "+
@@ -61,6 +61,12 @@ namespace Institucion_Comercial.activo
         private void txtbuscar_TextChanged(object sender, EventArgs e)
         {
             tablaProductos.DataSource = Buscar(txtbuscar.Text.ToString()).Tables[0];
+        }
+
+        private void tablaProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            mod md = new mod(tablaProductos.Rows[tablaProductos.CurrentRow.Index].Cells[0].Value + "");
+            md.ShowDialog();
         }
     }
 }

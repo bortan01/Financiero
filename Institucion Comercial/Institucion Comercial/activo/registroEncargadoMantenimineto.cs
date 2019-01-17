@@ -16,5 +16,10 @@ namespace Institucion_Comercial.activo
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

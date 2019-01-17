@@ -123,6 +123,7 @@
             this.buttonCancelar.TabIndex = 9;
             this.buttonCancelar.Text = "CANCELAR";
             this.buttonCancelar.UseVisualStyleBackColor = true;
+            this.buttonCancelar.Click += new System.EventHandler(this.buttonCancelar_Click);
             // 
             // registroInstitucion
             // 

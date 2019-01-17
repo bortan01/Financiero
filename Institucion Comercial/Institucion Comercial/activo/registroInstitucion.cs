@@ -81,5 +81,12 @@ namespace Institucion_Comercial.activo
 
             }
         }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            textDireccion.Text = "";
+            textNombre.Text = "";
+            textTelefono.Text = "";
+        }
     }
 }

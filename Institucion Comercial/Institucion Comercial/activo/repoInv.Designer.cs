@@ -29,18 +29,47 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.DataTableActivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.DataSetActivo = new Institucion_Comercial.activo.DataSetActivo();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DataTableActivoTableAdapter = new Institucion_Comercial.activo.DataSetActivoTableAdapters.DataTableActivoTableAdapter();
-            this.label1 = new System.Windows.Forms.Label();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource9 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.comboBoxSucursal = new System.Windows.Forms.ComboBox();
             this.comboBoxDepartamento = new System.Windows.Forms.ComboBox();
             this.comboBoxTipo = new System.Windows.Forms.ComboBox();
+            this.DataTableActivoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DataSetActivo = new Institucion_Comercial.activo.DataSetActivo();
+            this.DataTableActivoTableAdapter = new Institucion_Comercial.activo.DataSetActivoTableAdapters.DataTableActivoTableAdapter();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.reportViewer3 = new Microsoft.Reporting.WinForms.ReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.DataTableActivoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataSetActivo)).BeginInit();
             this.SuspendLayout();
+            // 
+            // comboBoxSucursal
+            // 
+            this.comboBoxSucursal.FormattingEnabled = true;
+            this.comboBoxSucursal.Location = new System.Drawing.Point(27, 47);
+            this.comboBoxSucursal.Name = "comboBoxSucursal";
+            this.comboBoxSucursal.Size = new System.Drawing.Size(155, 21);
+            this.comboBoxSucursal.TabIndex = 2;
+            this.comboBoxSucursal.SelectedIndexChanged += new System.EventHandler(this.comboBoxSucursal_SelectedIndexChanged);
+            // 
+            // comboBoxDepartamento
+            // 
+            this.comboBoxDepartamento.FormattingEnabled = true;
+            this.comboBoxDepartamento.Location = new System.Drawing.Point(241, 47);
+            this.comboBoxDepartamento.Name = "comboBoxDepartamento";
+            this.comboBoxDepartamento.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxDepartamento.TabIndex = 3;
+            this.comboBoxDepartamento.SelectedIndexChanged += new System.EventHandler(this.comboBoxDepartamento_SelectedIndexChanged);
+            // 
+            // comboBoxTipo
+            // 
+            this.comboBoxTipo.FormattingEnabled = true;
+            this.comboBoxTipo.Location = new System.Drawing.Point(455, 47);
+            this.comboBoxTipo.Name = "comboBoxTipo";
+            this.comboBoxTipo.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTipo.TabIndex = 4;
+            this.comboBoxTipo.Visible = false;
             // 
             // DataTableActivoBindingSource
             // 
@@ -52,66 +81,63 @@
             this.DataSetActivo.DataSetName = "DataSetActivo";
             this.DataSetActivo.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // reportViewer1
-            // 
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.DataTableActivoBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Institucion_Comercial.activo.Report1.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(12, 86);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1126, 474);
-            this.reportViewer1.TabIndex = 0;
-            // 
             // DataTableActivoTableAdapter
             // 
             this.DataTableActivoTableAdapter.ClearBeforeFill = true;
             // 
-            // label1
+            // reportViewer1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(23, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 20);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Filtro";
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Institucion_Comercial.activo.Report3.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 98);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(1147, 462);
+            this.reportViewer1.TabIndex = 5;
             // 
-            // comboBoxSucursal
+            // reportViewer2
             // 
-            this.comboBoxSucursal.FormattingEnabled = true;
-            this.comboBoxSucursal.Location = new System.Drawing.Point(27, 47);
-            this.comboBoxSucursal.Name = "comboBoxSucursal";
-            this.comboBoxSucursal.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxSucursal.TabIndex = 2;
+            reportDataSource9.Name = "DataSet1";
+            reportDataSource9.Value = this.DataTableActivoBindingSource;
+            this.reportViewer2.LocalReport.DataSources.Add(reportDataSource9);
+            this.reportViewer2.LocalReport.ReportEmbeddedResource = "Institucion_Comercial.activo.Report1.rdlc";
+            this.reportViewer2.Location = new System.Drawing.Point(0, 98);
+            this.reportViewer2.Name = "reportViewer2";
+            this.reportViewer2.ServerReport.BearerToken = null;
+            this.reportViewer2.Size = new System.Drawing.Size(1147, 462);
+            this.reportViewer2.TabIndex = 6;
             // 
-            // comboBoxDepartamento
+            // checkBox1
             // 
-            this.comboBoxDepartamento.FormattingEnabled = true;
-            this.comboBoxDepartamento.Location = new System.Drawing.Point(241, 47);
-            this.comboBoxDepartamento.Name = "comboBoxDepartamento";
-            this.comboBoxDepartamento.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxDepartamento.TabIndex = 3;
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(27, 13);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(53, 17);
+            this.checkBox1.TabIndex = 7;
+            this.checkBox1.Text = "Filtros";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // comboBoxTipo
+            // reportViewer3
             // 
-            this.comboBoxTipo.FormattingEnabled = true;
-            this.comboBoxTipo.Location = new System.Drawing.Point(455, 47);
-            this.comboBoxTipo.Name = "comboBoxTipo";
-            this.comboBoxTipo.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxTipo.TabIndex = 4;
+            this.reportViewer3.LocalReport.ReportEmbeddedResource = "Institucion_Comercial.activo.Report3a.rdlc";
+            this.reportViewer3.Location = new System.Drawing.Point(0, 98);
+            this.reportViewer3.Name = "reportViewer3";
+            this.reportViewer3.ServerReport.BearerToken = null;
+            this.reportViewer3.Size = new System.Drawing.Size(1147, 462);
+            this.reportViewer3.TabIndex = 8;
             // 
             // repoInv
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 572);
+            this.Controls.Add(this.reportViewer3);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.reportViewer2);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.comboBoxTipo);
             this.Controls.Add(this.comboBoxDepartamento);
             this.Controls.Add(this.comboBoxSucursal);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.reportViewer1);
             this.Name = "repoInv";
             this.Text = "repoInv";
             this.Load += new System.EventHandler(this.repoInv_Load);
@@ -123,14 +149,15 @@
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource DataTableActivoBindingSource;
         private DataSetActivo DataSetActivo;
         private DataSetActivoTableAdapters.DataTableActivoTableAdapter DataTableActivoTableAdapter;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBoxSucursal;
         private System.Windows.Forms.ComboBox comboBoxDepartamento;
         private System.Windows.Forms.ComboBox comboBoxTipo;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer2;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer3;
     }
 }

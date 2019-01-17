@@ -48,6 +48,7 @@
             this.tablaProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.tablaProductos.Size = new System.Drawing.Size(720, 279);
             this.tablaProductos.TabIndex = 9;
+            this.tablaProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tablaProductos_CellContentClick);
             // 
             // label1
             // 

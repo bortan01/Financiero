@@ -89,7 +89,7 @@ namespace Institucion_Comercial.activo
                 comboBoxSucu.DisplayMember = "nombre";               
 
                 //encargado
-                dt = Utilidades.LlenarCombos("Select * from instituciones_financieras.empleado");
+                dt = Utilidades.LlenarCombos("SELECT instituciones_financieras.empleado.id_empleado, instituciones_financieras.empleado.nombre + ' ' + instituciones_financieras.empleado.apellido as nombre from instituciones_financieras.empleado");
                 comboBoxEnca.DataSource = dt;
                 comboBoxEnca.ValueMember = "id_empleado";
                 comboBoxEnca.DisplayMember = "nombre";
@@ -219,6 +219,14 @@ namespace Institucion_Comercial.activo
                 }
 
             }
+        }
+
+        private void buttonCancelar_Click(object sender, EventArgs e)
+        {
+            textBoxPrecio.Text = "";
+            textBoxUnidades.Text = "";
+            txtdireccion.Text = "";
+
         }
     }
 }
