@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnseleccionar = new System.Windows.Forms.Button();
             this.tablaProductos = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.txtbuscar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.tablaProductos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnseleccionar
-            // 
-            this.btnseleccionar.Location = new System.Drawing.Point(42, 399);
-            this.btnseleccionar.Name = "btnseleccionar";
-            this.btnseleccionar.Size = new System.Drawing.Size(75, 23);
-            this.btnseleccionar.TabIndex = 11;
-            this.btnseleccionar.Text = "Seleccionar";
-            this.btnseleccionar.UseVisualStyleBackColor = true;
             // 
             // tablaProductos
             // 
@@ -79,7 +69,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnseleccionar);
             this.Controls.Add(this.tablaProductos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtbuscar);
@@ -93,8 +82,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnseleccionar;
         public System.Windows.Forms.DataGridView tablaProductos;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtbuscar;

@@ -84,5 +84,10 @@ namespace Institucion_Comercial.inventarios
             tablaProductos.DataSource = Buscar(txtbuscar.Text.ToString()).Tables[0];
             colore();
         }
+
+        private void btnseleccionar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

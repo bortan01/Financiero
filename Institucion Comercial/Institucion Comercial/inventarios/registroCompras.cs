@@ -239,7 +239,7 @@ namespace Institucion_Comercial.inventarios
             
             if (resultado.Equals("Exito"))
             {
-                MessageBox.Show("Aqui");
+               // MessageBox.Show("Aqui");
                 string ultimo = obtenerId();
                 string msj = "";
                 foreach (DataGridViewRow fila in tblcompras.Rows)
@@ -247,7 +247,7 @@ namespace Institucion_Comercial.inventarios
                     string producto = fila.Cells[0].Value.ToString();
                     string cantidad = fila.Cells[5].Value.ToString();
                     string precio = fila.Cells[4].Value.ToString();
-                    msj += "\n"+(fila.Index+1)+"- "+Utilidades.Registrar("Insert into instituciones_financieras.detalle_compras (id_producto , id_compra, cantidad, precio) " +
+                    msj = Utilidades.Registrar("Insert into instituciones_financieras.detalle_compras (id_producto , id_compra, cantidad, precio) " +
                        " values ('"+producto+"', '"+ultimo+"', '"+cantidad+ "', '" + precio + "')");
 
                     meterInventario(producto, cantidad);
