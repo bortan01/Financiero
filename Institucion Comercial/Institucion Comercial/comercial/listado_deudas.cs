@@ -56,7 +56,10 @@ namespace Institucion_Comercial.comercial
                 String id_venta = Convert.ToString(Fila["id_venta"].ToString().Trim());
 
                 String FechaPago = Convert.ToString(Fila["proximo_pago"].ToString().Trim());
-                DateTime fecha_paga = DateTime.ParseExact(FechaPago, "dd/MM/yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                //DateTime fp = Fila["proximo_pago"].ToString();
+                MessageBox.Show(FechaPago);
+
+                DateTime fecha_paga = DateTime.ParseExact(FechaPago, "dd-M-yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                 int Diferencia = DateTime.Compare(fecha_paga, hoy);
                 int saldo_actual = Convert.ToInt32(Fila["saldo_actual"]);
 

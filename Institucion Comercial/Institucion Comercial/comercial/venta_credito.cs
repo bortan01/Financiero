@@ -151,15 +151,21 @@ namespace Institucion_Comercial.comercial
                 cuotaX = cuotaX.Replace(",",".");
 
 
-                sql = "INSERT INTO instituciones_financieras.venta ( id_plan, id_empleado, prestamo_original, saldo_actual, mora_acumulada, intereses_acumulados, estado,tipo,fecha,proximo_pago,cuota,contador_mora)" +
-                                                                    " VALUES ( '"+id_plan+"','"+Id_empleado+"','"+Prestamo_original+"','"+SaldoActual+"','0','0','NORMAL', 'CREDITO', '"+ fecha.ToString("yyyy-MM-dd") + "','"+ proximoPago.ToString("yyyy-MM-dd") + "', '"+cuotaX+"',0)";
+                sql = "INSERT INTO instituciones_financieras.venta ( id_plan, id_empleado, prestamo_original, saldo_actual, mora_acumulada, intereses_acumulados, estado,fecha,proximo_pago,cuota,contador_mora,tipo)" +
+                                                                    " VALUES ( '"+id_plan+"','"+Id_empleado+"','"+Prestamo_original+"','"+SaldoActual+"','0','0','NORMAL', '"+ fecha.ToString("yyyy-MM-dd") + "','"+ proximoPago.ToString("yyyy-MM-dd") + "', '"+cuotaX+ "',0, 'CREDITO')";
 
                 string msj = Utilidades.Registrar(sql);
+               // MessageBox.Show(msj);
                
                 ///con este sql recuperamos el ultimo registro que hemos realizado 
                 sql = "SELECT * FROM instituciones_financieras.venta WHERE id_venta = (SELECT MAX(id_venta) from instituciones_financieras.venta)";
 
                ds = Utilidades.Ejecutar(sql);
+
+                if (true)
+                {
+
+                }
                 id_venta = ds.Tables[0].Rows[0]["id_venta"].ToString().Trim();
               
 
