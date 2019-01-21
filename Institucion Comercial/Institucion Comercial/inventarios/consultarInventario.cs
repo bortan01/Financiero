@@ -64,7 +64,7 @@ namespace Institucion_Comercial.inventarios
             try
             {
                 string cmd = "Select prod.id_producto, prod.nombre, prod.descripcion, prov.nombre, prod.precio_venta, inv.cantidad, prod.minimo from instituciones_financieras.producto as prod, instituciones_financieras.proveedor as prov, instituciones_financieras.inventario as inv " +
-                    "where (prod.id_producto like '%" + campo + "%' or prod.nombre like '%" + campo + "%' or prod.descripcion like '%" + campo + "%' or prod.precio_compra like '%" + campo + "%' or prod.precio_venta like '%" + campo + "%' or prov.nombre like '%" + campo + "%') and prod.id_producto = inv.id_producto order by inv.cantidad asc";
+                    "where (prod.id_producto like '%" + campo + "%' or prod.nombre like '%" + campo + "%' or prod.descripcion like '%" + campo + "%' or prod.precio_compra like '%" + campo + "%' or prod.precio_venta like '%" + campo + "%' or prov.nombre like '%" + campo + "%') and prod.id_producto = inv.id_producto and prod.id_proveedor = prov.id_proveedor order by inv.cantidad asc";
                 ds = Utilidades.Ejecutar(cmd);
             }
             catch (Exception error)

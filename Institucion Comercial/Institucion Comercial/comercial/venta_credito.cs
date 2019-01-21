@@ -158,8 +158,11 @@ namespace Institucion_Comercial.comercial
                
                 ///con este sql recuperamos el ultimo registro que hemos realizado 
                 sql = "SELECT * FROM instituciones_financieras.venta WHERE id_venta = (SELECT MAX(id_venta) from instituciones_financieras.venta)";
-                
-                ds = Utilidades.Ejecutar(sql);
+
+               ds = Utilidades.Ejecutar(sql);
+                id_venta = ds.Tables[0].Rows[0]["id_venta"].ToString().Trim();
+              
+
                 id_venta = ds.Tables[0].Rows[0]["id_venta"].ToString().Trim();
                 /// esto es para guardar la clave foranea en el pago  
 

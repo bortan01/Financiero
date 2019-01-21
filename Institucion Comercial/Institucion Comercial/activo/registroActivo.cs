@@ -28,7 +28,11 @@ namespace Institucion_Comercial.activo
         {
             String codigo = "AFF-";
             int correlativo = 0;
-            codigo = codigo + comboBoxDepto.SelectedValue +"-"+comboBoxTipo.SelectedValue.ToString().Substring(0,4)+"-";
+            if (comboBoxDepto.Items.Count>0 && comboBoxTipo.Items.Count > 0 )
+            {
+                codigo = codigo + comboBoxDepto.SelectedValue + "-" + comboBoxTipo.SelectedValue.ToString().Substring(0, 4) + "-";
+            }
+            //
 
             try
             {
@@ -194,12 +198,13 @@ namespace Institucion_Comercial.activo
             string precio = textBoxPrecio.Text.Trim();
             int unidades = Convert.ToInt32( textBoxUnidades.Text.Trim());
             string descripcion = txtdireccion.Text.Trim();
-            DateTime fecha = (dateTimePicker1.Value);
-            
-            for(int i = 0; i< unidades; i++) { 
+            DateTime fecha = (dateTimePicker1.Value.Date);
+            //DateTime fecha = DateTime.ParseExact(dateTimePicker1.Value.ToString(), "dd/MM/yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+
+            for (int i = 0; i< unidades; i++) { 
             string sql = "Insert into instituciones_financieras.activo " +
                  "(id_activo, id_tipo,  id_depto,  id_estado, id_usuario, id_proveedor, fecha_adquisicion, descripcion, correlativo, estado)" +
-                " values('" + codigo + "','" + tipo +  "','" +depto + "','" + estado+ "','" + encargado + "','" + proveedor + "','" + fecha + "','" + descripcion + "','" + precio + "', 'Disponible')";
+                " values('" + codigo + "','" + tipo +  "','" +depto + "','" + estado+ "','" + encargado + "','" + proveedor + "','" + fecha.ToString("yyyy-MM-dd") + "','" + descripcion + "','" + precio + "', 'Disponible')";
             msj = Utilidades.Registrar(sql);
                 llenarId();
                 codigo = textBoxCodigo.Text.Trim();
