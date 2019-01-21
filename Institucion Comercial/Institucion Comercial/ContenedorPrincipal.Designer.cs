@@ -60,6 +60,7 @@
             this.depreciacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inventarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.depreciacionToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -311,17 +312,25 @@
             // reporteToolStripMenuItem
             // 
             this.reporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.inventarioToolStripMenuItem1});
+            this.inventarioToolStripMenuItem1,
+            this.depreciacionToolStripMenuItem1});
             this.reporteToolStripMenuItem.Name = "reporteToolStripMenuItem";
             this.reporteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.reporteToolStripMenuItem.Text = "reporte";
+            this.reporteToolStripMenuItem.Text = "Reportes";
             // 
             // inventarioToolStripMenuItem1
             // 
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
             this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.inventarioToolStripMenuItem1.Text = "inventario";
+            this.inventarioToolStripMenuItem1.Text = "Inventario";
             this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
+            // 
+            // depreciacionToolStripMenuItem1
+            // 
+            this.depreciacionToolStripMenuItem1.Name = "depreciacionToolStripMenuItem1";
+            this.depreciacionToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.depreciacionToolStripMenuItem1.Text = "Mantenimiento";
+            this.depreciacionToolStripMenuItem1.Click += new System.EventHandler(this.depreciacionToolStripMenuItem1_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -517,6 +526,7 @@
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem reporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem depreciacionToolStripMenuItem1;
     }
 }
 

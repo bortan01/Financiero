@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MiLibreria;
 
+
 namespace Institucion_Comercial.activo
 {
     public partial class depreciacion : Form

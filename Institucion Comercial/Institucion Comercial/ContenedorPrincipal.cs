@@ -300,5 +300,12 @@ namespace Institucion_Comercial
             ri.MdiParent = this;
             ri.Show();
         }
+
+        private void depreciacionToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            listDepre ld = new listDepre();
+            ld.MdiParent = this;
+            ld.Show();
+        }
     }
 }

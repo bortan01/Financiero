@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetMant" targetNamespace="http://tempuri.org/DataSetMant.xsd" xmlns:mstns="http://tempuri.org/DataSetMant.xsd" xmlns="http://tempuri.org/DataSetMant.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="instituciones_financierasConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="instituciones_financierasConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Institucion_Comercial.Properties.Settings.GlobalReference.Default.instituciones_financierasConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DataTableManttenimineto" GeneratorDataComponentClassName="DataTableManttenimineto" Name="DataTablemantzdfd" UserDataComponentName="DataTableManttenimineto">
+            <MainSource>
+              <DbSource ConnectionRef="instituciones_financierasConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+instituciones_financieras.mantenimiento.detalle,
+instituciones_financieras.mantenimiento.costo,
+instituciones_financieras.mantenimiento.fecha,
+instituciones_financieras.mantenimiento.id_mantenimiento,
+instituciones_financieras.encargado.nombre,
+instituciones_financieras.encargado.direccion,
+instituciones_financieras.encargado.telefono,
+instituciones_financieras.activo.id_activo,
+instituciones_financieras.tipo_activo.nombre
+
+FROM
+instituciones_financieras.mantenimiento
+INNER JOIN instituciones_financieras.mant_encar ON instituciones_financieras.mant_encar.idmant_encar = instituciones_financieras.mantenimiento.id_mantenimiento
+INNER JOIN instituciones_financieras.encargado ON instituciones_financieras.mant_encar.encarg_mant = instituciones_financieras.encargado.id_encargado
+INNER JOIN instituciones_financieras.activo_mant ON instituciones_financieras.activo_mant.mant_activo = instituciones_financieras.mantenimiento.id_mantenimiento
+INNER JOIN instituciones_financieras.activo ON instituciones_financieras.activo_mant.idactivo_mant = instituciones_financieras.activo.id_activo
+INNER JOIN instituciones_financieras.tipo_activo ON instituciones_financieras.activo.id_tipo = instituciones_financieras.tipo_activo.id_tipo
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="detalle" DataSetColumn="detalle" />
+              <Mapping SourceColumn="costo" DataSetColumn="costo" />
+              <Mapping SourceColumn="fecha" DataSetColumn="fecha" />
+              <Mapping SourceColumn="id_mantenimiento" DataSetColumn="id_mantenimiento" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="direccion" DataSetColumn="direccion" />
+              <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
+              <Mapping SourceColumn="id_activo" DataSetColumn="id_activo" />
+              <Mapping SourceColumn="nombre1" DataSetColumn="nombre1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="activosTableAdapter" GeneratorDataComponentClassName="activosTableAdapter" Name="activos" UserDataComponentName="activosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="instituciones_financierasConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+instituciones_financieras.activo.id_activo,
+instituciones_financieras.tipo_activo.nombre,
+instituciones_financieras.departamento.nombre,
+instituciones_financieras.sucursal.nombre,
+instituciones_financieras.activo_mant.mant_activo
+
+FROM
+instituciones_financieras.activo_mant
+INNER JOIN instituciones_financieras.activo ON instituciones_financieras.activo_mant.idactivo_mant = instituciones_financieras.activo.id_activo
+INNER JOIN instituciones_financieras.tipo_activo ON instituciones_financieras.activo.id_tipo = instituciones_financieras.tipo_activo.id_tipo
+INNER JOIN instituciones_financieras.departamento ON instituciones_financieras.activo.id_depto = instituciones_financieras.departamento.id_departamento
+INNER JOIN instituciones_financieras.sucursal ON instituciones_financieras.departamento.id_sucursal = instituciones_financieras.sucursal.id_sucursal</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_activo" DataSetColumn="id_activo" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="nombre1" DataSetColumn="nombre1" />
+              <Mapping SourceColumn="nombre2" DataSetColumn="nombre2" />
+              <Mapping SourceColumn="mant_activo" DataSetColumn="mant_activo" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="encaTableAdapter" GeneratorDataComponentClassName="encaTableAdapter" Name="enca" UserDataComponentName="encaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="instituciones_financierasConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT
+instituciones_financieras.mant_encar.idmant_encar,
+instituciones_financieras.encargado.nombre,
+instituciones_financieras.encargado.direccion,
+instituciones_financieras.encargado.telefono
+
+FROM
+instituciones_financieras.mant_encar
+INNER JOIN instituciones_financieras.encargado ON instituciones_financieras.mant_encar.encarg_mant = instituciones_financieras.encargado.id_encargado</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="idmant_encar" DataSetColumn="idmant_encar" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="direccion" DataSetColumn="direccion" />
+              <Mapping SourceColumn="telefono" DataSetColumn="telefono" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetMant" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetMant" msprop:Generator_UserDSName="DataSetMant">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTablemantzdfd" msprop:Generator_TableClassName="DataTablemantzdfdDataTable" msprop:Generator_TableVarName="tableDataTablemantzdfd" msprop:Generator_RowChangedName="DataTablemantzdfdRowChanged" msprop:Generator_TablePropName="DataTablemantzdfd" msprop:Generator_RowDeletingName="DataTablemantzdfdRowDeleting" msprop:Generator_RowChangingName="DataTablemantzdfdRowChanging" msprop:Generator_RowEvHandlerName="DataTablemantzdfdRowChangeEventHandler" msprop:Generator_RowDeletedName="DataTablemantzdfdRowDeleted" msprop:Generator_RowClassName="DataTablemantzdfdRow" msprop:Generator_UserTableName="DataTablemantzdfd" msprop:Generator_RowEvArgName="DataTablemantzdfdRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="detalle" msprop:Generator_ColumnVarNameInTable="columndetalle" msprop:Generator_ColumnPropNameInRow="detalle" msprop:Generator_ColumnPropNameInTable="detalleColumn" msprop:Generator_UserColumnName="detalle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="costo" msprop:Generator_ColumnVarNameInTable="columncosto" msprop:Generator_ColumnPropNameInRow="costo" msprop:Generator_ColumnPropNameInTable="costoColumn" msprop:Generator_UserColumnName="costo" type="xs:double" minOccurs="0" />
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="id_mantenimiento" msprop:Generator_ColumnVarNameInTable="columnid_mantenimiento" msprop:Generator_ColumnPropNameInRow="id_mantenimiento" msprop:Generator_ColumnPropNameInTable="id_mantenimientoColumn" msprop:Generator_UserColumnName="id_mantenimiento" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="direccion" msprop:Generator_ColumnVarNameInTable="columndireccion" msprop:Generator_ColumnPropNameInRow="direccion" msprop:Generator_ColumnPropNameInTable="direccionColumn" msprop:Generator_UserColumnName="direccion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_activo" msprop:Generator_ColumnVarNameInTable="columnid_activo" msprop:Generator_ColumnPropNameInRow="id_activo" msprop:Generator_ColumnPropNameInTable="id_activoColumn" msprop:Generator_UserColumnName="id_activo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre1" msprop:Generator_ColumnVarNameInTable="columnnombre1" msprop:Generator_ColumnPropNameInRow="nombre1" msprop:Generator_ColumnPropNameInTable="nombre1Column" msprop:Generator_UserColumnName="nombre1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="activos" msprop:Generator_TableClassName="activosDataTable" msprop:Generator_TableVarName="tableactivos" msprop:Generator_RowChangedName="activosRowChanged" msprop:Generator_TablePropName="activos" msprop:Generator_RowDeletingName="activosRowDeleting" msprop:Generator_RowChangingName="activosRowChanging" msprop:Generator_RowEvHandlerName="activosRowChangeEventHandler" msprop:Generator_RowDeletedName="activosRowDeleted" msprop:Generator_RowClassName="activosRow" msprop:Generator_UserTableName="activos" msprop:Generator_RowEvArgName="activosRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_activo" msprop:Generator_ColumnVarNameInTable="columnid_activo" msprop:Generator_ColumnPropNameInRow="id_activo" msprop:Generator_ColumnPropNameInTable="id_activoColumn" msprop:Generator_UserColumnName="id_activo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="23" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre1" msprop:Generator_ColumnVarNameInTable="columnnombre1" msprop:Generator_ColumnPropNameInRow="nombre1" msprop:Generator_ColumnPropNameInTable="nombre1Column" msprop:Generator_UserColumnName="nombre1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre2" msprop:Generator_ColumnVarNameInTable="columnnombre2" msprop:Generator_ColumnPropNameInRow="nombre2" msprop:Generator_ColumnPropNameInTable="nombre2Column" msprop:Generator_UserColumnName="nombre2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="mant_activo" msprop:Generator_ColumnVarNameInTable="columnmant_activo" msprop:Generator_ColumnPropNameInRow="mant_activo" msprop:Generator_ColumnPropNameInTable="mant_activoColumn" msprop:Generator_UserColumnName="mant_activo" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="enca" msprop:Generator_TableClassName="encaDataTable" msprop:Generator_TableVarName="tableenca" msprop:Generator_TablePropName="enca" msprop:Generator_RowDeletingName="encaRowDeleting" msprop:Generator_RowChangingName="encaRowChanging" msprop:Generator_RowEvHandlerName="encaRowChangeEventHandler" msprop:Generator_RowDeletedName="encaRowDeleted" msprop:Generator_UserTableName="enca" msprop:Generator_RowChangedName="encaRowChanged" msprop:Generator_RowEvArgName="encaRowChangeEvent" msprop:Generator_RowClassName="encaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idmant_encar" msprop:Generator_ColumnVarNameInTable="columnidmant_encar" msprop:Generator_ColumnPropNameInRow="idmant_encar" msprop:Generator_ColumnPropNameInTable="idmant_encarColumn" msprop:Generator_UserColumnName="idmant_encar" type="xs:int" />
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="direccion" msprop:Generator_ColumnVarNameInTable="columndireccion" msprop:Generator_ColumnPropNameInRow="direccion" msprop:Generator_ColumnPropNameInTable="direccionColumn" msprop:Generator_UserColumnName="direccion" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="telefono" msprop:Generator_ColumnVarNameInTable="columntelefono" msprop:Generator_ColumnPropNameInRow="telefono" msprop:Generator_ColumnPropNameInTable="telefonoColumn" msprop:Generator_UserColumnName="telefono" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="45" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:activos" />
+      <xs:field xpath="mstns:id_activo" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

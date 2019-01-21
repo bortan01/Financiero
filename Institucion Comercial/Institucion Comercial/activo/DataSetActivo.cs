@@ -9,3 +9,10 @@
         }
     }
 }
+
+namespace Institucion_Comercial.DataSetActivoTableAdapters {
+    
+    
+    public partial class DataTableActivoTableAdapter {
+    }
+}
