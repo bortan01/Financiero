@@ -19,6 +19,7 @@ namespace Institucion_Comercial.Clientes
             InitializeComponent();
             this.idcliente = id;
             cargar();
+            cargarFiador();
         }
 
         public void cargar()

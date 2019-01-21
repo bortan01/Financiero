@@ -127,7 +127,8 @@ namespace Institucion_Comercial.Clientes
                  "(id_persona_natural,  nombre, apellido, direccion, dui, nit, correo, lugar_trabajo,telefono)" +
                 " values('" + cliente + "','" + nombre1 + "','" + apellido + "','" + direccion1 + "','" + dui1 + "','" + nit + "','" + correo + "','" + trabajp + "','" + telefono1 + "')";
             string msj = Utilidades.Registrar(sql);
-            
+            MessageBox.Show(msj);
+
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
