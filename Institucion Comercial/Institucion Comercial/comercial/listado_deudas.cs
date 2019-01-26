@@ -59,7 +59,7 @@ namespace Institucion_Comercial.comercial
                 //DateTime fp = Fila["proximo_pago"].ToString();
                 MessageBox.Show(FechaPago);
 
-                DateTime fecha_paga = DateTime.ParseExact(FechaPago, "dd-M-yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
+                DateTime fecha_paga = DateTime.ParseExact(FechaPago, "dd/M/yyyy H:mm:ss", System.Globalization.CultureInfo.InvariantCulture);
                 int Diferencia = DateTime.Compare(fecha_paga, hoy);
                 int saldo_actual = Convert.ToInt32(Fila["saldo_actual"]);
 

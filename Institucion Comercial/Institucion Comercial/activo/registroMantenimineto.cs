@@ -160,7 +160,7 @@ namespace Institucion_Comercial.activo
             DateTime fecha = (dateTimePicker1.Value);
             string sql = "Insert into instituciones_financieras.mantenimiento " +
                  "(id_mantenimiento,fecha,  costo,detalle)" +
-                " values('" + cod + "','" +fecha + "','" +Convert.ToDecimal( textBoxCosto.Text) + "','" + txtdireccion.Text + "')";
+                " values('" + cod + "','" +fecha.ToString("yyyy-M-dd") + "','" +Convert.ToDecimal( textBoxCosto.Text) + "','" + txtdireccion.Text + "')";
             string msj = Utilidades.Registrar(sql);
             //registro tabla activo_mant
             
